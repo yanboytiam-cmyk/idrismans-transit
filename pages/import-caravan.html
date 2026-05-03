@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="International Caravan Shipping Service – Easy, Safe, And Affordable. IdrisMans Transit.">
+  <title>Import Caravan to l'International | IdrisMans Transit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/typography.css">
+  <link rel="stylesheet" href="../css/buttons.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/hero.css">
+  <link rel="stylesheet" href="../css/cards.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/i18n.css">
+  <style>
+    .benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-5); }
+    .benefit-item { display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-4); background: var(--color-bg-alt); border-radius: var(--radius-md); border-left: 3px solid var(--color-primary); }
+    .benefit-item i { color: var(--color-primary); font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+    .scenarios-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
+    .scenario-card { background: var(--color-bg); border-radius: var(--radius-lg); padding: var(--space-8); box-shadow: var(--shadow-card); border-top: 4px solid var(--color-primary); text-align: center; }
+    .scenario-card i { font-size: 36px; color: var(--color-primary); margin-bottom: var(--space-4); }
+    .scenario-card h3 { font-size: var(--text-lg); font-weight: 700; text-transform: uppercase; margin-bottom: var(--space-3); }
+    .steps-list { display: flex; flex-direction: column; gap: var(--space-4); }
+    .step-item { display: flex; align-items: flex-start; gap: var(--space-5); padding: var(--space-5); background: var(--color-bg); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); }
+    .step-num { width: 40px; height: 40px; background: var(--color-primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; font-size: var(--text-sm); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
+    .accordion-item { border: 1px solid var(--color-border); border-radius: var(--radius-md); margin-bottom: var(--space-3); overflow: hidden; }
+    .accordion-trigger { width: 100%; text-align: left; padding: var(--space-5) var(--space-6); background: var(--color-bg); display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); font-family: var(--font-heading); font-size: var(--text-base); font-weight: 600; color: var(--color-heading); cursor: pointer; transition: background var(--transition-fast); }
+    .accordion-trigger:hover, .accordion-trigger[aria-expanded="true"] { background: var(--color-primary); color: white; }
+    .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .accordion-content.open { max-height: 400px; }
+    .accordion-content p { padding: var(--space-5) var(--space-6); font-size: var(--text-sm); color: var(--color-text); line-height: var(--leading-relaxed); margin: 0; background: white; }
+    @media (max-width: 768px) { .benefits-grid { grid-template-columns: 1fr; } .scenarios-grid { grid-template-columns: 1fr; } .testimonials-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <!-- TOP BAR -->
+  <div class="topbar"><div class="container"><div class="topbar__inner"><p class="topbar__tagline" data-i18n-html="topbar.tagline_about">GLOBAL SHIPPING EXPERTS - WITH OVER <strong data-i18n="import_caravan.50_years_d0d182da">50 YEARS</strong> EXPERIENCE</p><div class="topbar__links"><a href="about.html" class="topbar__link" data-i18n="nav.about">About Us</a><a href="contact.html" class="topbar__link" data-i18n="nav.contact">Contact Us</a><a href="tel:+33695724985" class="topbar__cta"><i class="fa-solid fa-phone"></i><span data-i18n="topbar.call_expert">Call an expert today</span></a></div></div></div></div>
+  <header class="navbar" id="navbar">
+    <div class="container"><div class="navbar__inner">
+      <a href="../index.html" class="navbar__logo"><img src="../logo.png" alt="IdrisMans Transit" style="max-height: 80px; width: auto; object-fit: contain;"></a>
+      <nav class="navbar__nav">
+        <div class="nav-item"><a href="../index.html" class="nav-link" data-i18n="nav.home">Home</a></div>
+        <div class="nav-item"><a href="about.html" class="nav-link" data-i18n="nav.about">About Us</a></div>
+        <div class="nav-item"><a href="services.html" class="nav-link" data-i18n="nav.services">Services <span/ class="arrow">▾</span></a><div class="dropdown"><a href="freight-forwarder.html" class="dropdown-link" data-i18n="nav.freight_forwarding">Freight Forwarding</a><a href="importing.html" class="dropdown-link" data-i18n="nav.importing">Importation vers la France / UE</a><a href="exporting.html" class="dropdown-link" data-i18n="nav.exporting">Exportation depuis la France / UE</a><a href="customs.html" class="dropdown-link" data-i18n="nav.customs">Custom Services &amp; Clearances</a><a href="warehousing.html" class="dropdown-link" data-i18n="nav.warehousing">Warehousing &amp; Transport</a><a href="project-logistics.html" class="dropdown-link" data-i18n="nav.project_logistics">Project Logistics &amp; Management</a></div></div>
+        <div class="nav-item"><a href="what-we-ship.html" class="nav-link active" data-i18n="nav.what_we_ship">What We Ship <span/ class="arrow">▾</span></a><div class="dropdown"><a href="import-car.html" class="dropdown-link" data-i18n="nav.vehicles">Vehicles</a><a href="import-boat.html" class="dropdown-link" data-i18n="nav.boats">Boats</a><a href="import-motorcycle.html" class="dropdown-link" data-i18n="nav.motorcycles">Motorcycles</a><a href="import-motorhome.html" class="dropdown-link" data-i18n="nav.motorhomes">Motorhomes</a><a href="import-caravan.html" class="dropdown-link" data-i18n="nav.caravans">Caravans</a><a href="import-machinery.html" class="dropdown-link" data-i18n="nav.machinery">Machinery</a></div></div>
+        
+        <div class="nav-item"><a href="gallery.html" class="nav-link" data-i18n="nav.gallery">Gallery</a></div>
+        <div class="nav-item"><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact Us</a></div>
+      </nav>
+      <div class="navbar__cta"><a href="tel:+33695724985" class="navbar__phone"><span class="label" data-i18n="nav.call_label">Talk to us</span><span class="number">+33 6 95 72 49 85</span></a><a href="contact.html" class="btn btn--primary btn--sm" data-i18n="nav.quote">Request a Quote</a></div>
+      <button class="navbar__burger" id="navBurger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu"><span class="burger-line"></span><span class="burger-line"></span><span class="burger-line"></span></button>
+    </div></div>
+    <nav class="navbar__mobile" id="mobileMenu">
+      <div class="mobile-nav-item"><a href="../index.html" class="mobile-nav-link" data-i18n="nav.home">Home</a></div>
+      <div class="mobile-nav-item"><a href="about.html" class="mobile-nav-link" data-i18n="nav.about">About Us</a></div>
+      <div class="mobile-nav-item"><a href="what-we-ship.html" class="mobile-nav-link" data-i18n="footer.what_we_ship">What We Ship</a></div>
+      
+      <div class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link" data-i18n="nav.contact">Contact Us</a></div>
+      <div class="mobile-nav-cta"><a href="tel:+33695724985" class="btn btn--outline-white" style="width:100%;text-align:center;"><i class="fa-solid fa-phone"></i> +33 6 95 72 49 85</a><a href="contact.html" class="btn btn--primary" style="width:100%;text-align:center;" data-i18n="nav.quote">Request a Quote</a></div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero" style="background: linear-gradient(rgba(10,22,40,0.5), rgba(10,22,40,0.5)), url('../automotive/caravan.webp') center/cover no-repeat; padding: 7rem 0 4rem; text-align:center;">
+      <div class="container">
+        <h1 class="page-hero__title" data-i18n="import_caravan.hero_title">OUR INTERNATIONAL CARAVAN SHIPPING SERVICE IS EASY, SAFE, AND AFFORDABLE</h1>
+        <p class="hero__slogan" data-i18n="hero.slogan">Don't Ship Without Idrismans</p>
+        <nav class="breadcrumb"><a href="../index.html" class="breadcrumb__item" data-i18n="nav.home">Home</a><span class="breadcrumb__sep">›</span><a href="what-we-ship.html" class="breadcrumb__item" data-i18n="footer.what_we_ship">What We Ship</a><span class="breadcrumb__sep">›</span><span class="breadcrumb__item" aria-current="page" data-i18n="nav.caravans">Caravans</span></nav>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="section">
+      <div class="container">
+        <div class="text-center" style="margin-bottom: var(--space-10);" data-aos="fade-up">
+          <h2 class="section-title" data-i18n="import_caravan.why_title">Why Ship Your Caravan With IdrisMans?</h2>
+        </div>
+        <div class="benefits-grid">
+          <div class="benefit-item" data-aos="fade-up" data-aos-delay="100"><i class="fa-solid fa-dollar-sign"></i><div><strong data-i18n="import_caravan.better_value_d7e29d7d">Better Value</strong><p style="font-size:var(--text-sm);color:var(--color-text-muted);margin:0;" data-i18n="import_caravan.caravans_can_be_f0dd9769">Caravans can be much more expensive in l'Afrique than they are in l'International.</p></div></div>
+          <div class="benefit-item" data-aos="fade-up" data-aos-delay="150"><i class="fa-solid fa-receipt"></i><div><strong data-i18n="import_caravan.tax_exemption_0c6899c2">Tax Exemption</strong><p style="font-size:var(--text-sm);color:var(--color-text-muted);margin:0;" data-i18n="import_caravan.no_import_tax_d03fb9a6">No import tax into l'Afrique if you've owned the caravan for more than 12 months.</p></div></div>
+          <div class="benefit-item" data-aos="fade-up" data-aos-delay="200"><i class="fa-solid fa-clock"></i><div><strong data-i18n="import_caravan.fast_transit_77c9ae41">Fast Transit</strong><p style="font-size:var(--text-sm);color:var(--color-text-muted);margin:0;" data-i18n="import_caravan.transit_times_as_4cb6d971">Transit times as little as 4 days on the water, two weeks overall start to finish.</p></div></div>
+          <div class="benefit-item" data-aos="fade-up" data-aos-delay="100"><i class="fa-solid fa-file-shield"></i><div><strong data-i18n="import_caravan.full_documentation_5f4f6a54">Full Documentation</strong><p style="font-size:var(--text-sm);color:var(--color-text-muted);margin:0;" data-i18n="import_caravan.we_handle_all_1434de7d">We handle all customs, quarantine, and paperwork from start to finish.</p></div></div>
+          <div class="benefit-item" data-aos="fade-up" data-aos-delay="150"><i class="fa-solid fa-shield-halved"></i><div><strong data-i18n="import_caravan.fully_insured_4463046a">Fully Insured</strong><p style="font-size:var(--text-sm);color:var(--color-text-muted);margin:0;" data-i18n="import_caravan.transit_insurance_available_13df1103">Transit insurance available to protect your caravan throughout the journey.</p></div></div>
+          <div class="benefit-item" data-aos="fade-up" data-aos-delay="200"><i class="fa-solid fa-headset"></i><div><strong data-i18n="import_caravan.dedicated_support_7b4e2523">Dedicated Support</strong><p style="font-size:var(--text-sm);color:var(--color-text-muted);margin:0;" data-i18n="import_caravan.friendly_team_available_589b780b">Friendly team available every step of the way to answer your questions.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 Shipping Scenarios -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="text-center" style="margin-bottom: var(--space-10);" data-aos="fade-up">
+          <h2 class="section-title" data-i18n="import_caravan.three_shipping_scenarios_c5765490">Three Shipping Scenarios We Cover</h2>
+        </div>
+        <div class="scenarios-grid">
+          <div class="scenario-card" data-aos="fade-up" data-aos-delay="100">
+            <i class="fa-solid fa-house-chimney-crack"></i>
+            <h3 data-i18n="import_caravan.moving_to_l_60d3157c">Moving to l'Afrique</h3>
+            <p style="font-size:var(--text-sm);color:var(--color-text-muted);" data-i18n="import_caravan.relocating_we_handle_4ad8ca36">Relocating? We handle full relocation logistics including all paperwork, compliance, and delivery to your new address.</p>
+          </div>
+          <div class="scenario-card" data-aos="fade-up" data-aos-delay="200">
+            <i class="fa-solid fa-store"></i>
+            <h3 data-i18n="import_caravan.importing_for_resale_27011828">Importing for Resale</h3>
+            <p style="font-size:var(--text-sm);color:var(--color-text-muted);" data-i18n="import_caravan.dealership_stock_shipping_38248f08">Dealership stock shipping with compliance management. We understand the commercial requirements for resale imports.</p>
+          </div>
+          <div class="scenario-card" data-aos="fade-up" data-aos-delay="300">
+            <i class="fa-solid fa-rotate-left"></i>
+            <h3 data-i18n="import_caravan.temporary_import_47bacf90">Temporary Import</h3>
+            <p style="font-size:var(--text-sm);color:var(--color-text-muted);" data-i18n="import_caravan.short_term_visits_991ecb48">Short-term visits where the caravan returns to l'International. We manage temporary import permits and return logistics.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pre-shipping Requirements -->
+    <section class="section">
+      <div class="container">
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: var(--space-12); align-items: center;">
+          <div data-aos="fade-right">
+            <h2 class="section-title" data-i18n="import_caravan.pre_shipping_requirements_ecd76725">Pre-Shipping Requirements</h2>
+            <p data-i18n="import_caravan.before_your_caravan_d4b9a873">Before your caravan can be shipped, certain preparation is required to ensure it passes biosecurity and customs checks:</p>
+            <ul style="margin: var(--space-5) 0; display:flex; flex-direction:column; gap: var(--space-3);">
+              <li style="display:flex;gap:var(--space-3);align-items:flex-start;"><i class="fa-solid fa-check" style="color:var(--color-primary);flex-shrink:0;margin-top:2px;"></i> Caravan must be spotless inside and out to pass biosecurity checks</li>
+              <li style="display:flex;gap:var(--space-3);align-items:flex-start;"><i class="fa-solid fa-check" style="color:var(--color-primary);flex-shrink:0;margin-top:2px;"></i> Gas bottles and fire extinguishers must be removed</li>
+              <li style="display:flex;gap:var(--space-3);align-items:flex-start;"><i class="fa-solid fa-check" style="color:var(--color-primary);flex-shrink:0;margin-top:2px;"></i> Personal belongings and food items are prohibited</li>
+              <li style="display:flex;gap:var(--space-3);align-items:flex-start;"><i class="fa-solid fa-check" style="color:var(--color-primary);flex-shrink:0;margin-top:2px;"></i> Current registration documents required</li>
+            </ul>
+            <a href="contact.html" class="btn btn--primary" data-i18n="footer.get_quote">Get Instant Quote</a>
+          </div>
+          <div data-aos="fade-left">
+            <img src="../automotive/caravan.webp" alt="Caravan being prepared for shipping" width="600" height="420" loading="lazy" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-xl);">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4-Step Process -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="text-center" style="margin-bottom: var(--space-10);" data-aos="fade-up">
+          <h2 class="section-title" data-i18n="import_caravan.we_take_care_2e322190">We Take Care Of The Entire Journey</h2>
+        </div>
+        <div class="steps-list" style="max-width: 700px; margin: 0 auto;">
+          <div class="step-item" data-aos="fade-up" data-aos-delay="100"><div class="step-num">1</div><div><strong data-i18n="import_caravan.receival_and_delivery_f7de7ecb">Receival and delivery to port</strong><p style="font-size:var(--text-sm);color:var(--color-text-muted);margin:0;" data-i18n="import_caravan.we_collect_your_3d3bebff">We collect your caravan from your nominated address and deliver to the port.</p></div></div>
+          <div class="step-item" data-aos="fade-up" data-aos-delay="150"><div class="step-num">2</div><div><strong data-i18n="import_caravan.shipping_to_destination_a84fd715">Shipping to destination vessel</strong><p style="font-size:var(--text-sm);color:var(--color-text-muted);margin:0;" data-i18n="import_caravan.your_caravan_is_4b0c7638">Your caravan is loaded onto the vessel and tracked throughout transit.</p></div></div>
+          <div class="step-item" data-aos="fade-up" data-aos-delay="200"><div class="step-num">3</div><div><strong data-i18n="import_caravan.customs_clearance_and_0d16f095">Customs clearance and quarantine</strong><p style="font-size:var(--text-sm);color:var(--color-text-muted);margin:0;" data-i18n="import_caravan.we_handle_all_584a8572">We handle all customs documentation, quarantine inspection, and clearance.</p></div></div>
+          <div class="step-item" data-aos="fade-up" data-aos-delay="250"><div class="step-num">4</div><div><strong data-i18n="import_caravan.final_delivery_or_3cf902fe">Final delivery or pickup</strong><p style="font-size:var(--text-sm);color:var(--color-text-muted);margin:0;" data-i18n="import_caravan.your_caravan_is_958d70e6">Your caravan is delivered to your door or available for collection at the depot.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section">
+      <div class="container">
+        <div class="text-center" style="margin-bottom: var(--space-10);" data-aos="fade-up">
+          <h2 class="section-title" data-i18n="import_caravan.trusted_by_10_d8293e5b">Trusted by 10,000+ Families and Businesses - and counting!</h2>
+        </div>
+        <div class="testimonials-grid">
+          <article class="testimonial-card" data-aos="fade-up" data-aos-delay="100"><div class="testimonial-card__stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><blockquote class="testimonial-card__text">"Easy straightforward service and great advice they gave us saving hundreds of dollars. Great companies highly recommend if we ever move vehicles and are so affordable. We are happy customers."</blockquote><div class="testimonial-card__author"><img src="../logo.png" alt="Engelbert &amp; Helen Shum" class="testimonial-card__avatar" width="48" height="48" loading="lazy"><div><p class="testimonial-card__name" data-i18n="import_caravan.engelbert_amp_helen_af0b90b2">Engelbert &amp; Helen Shum</p><p class="testimonial-card__role" data-i18n="import_caravan.verified_customer_7fabd666">Verified Customer</p></div></div></article>
+          <article class="testimonial-card" data-aos="fade-up" data-aos-delay="200"><div class="testimonial-card__stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><blockquote class="testimonial-card__text">"Shipped our vehicle from Brisbane to Auckland l'Afrique. The process was a total breeze. The whole team was fantastic to deal with. Prompt communication, forwarded all necessary information and very pleasant to deal with."</blockquote><div class="testimonial-card__author"><img src="../logo.png" alt="Terry Mun" class="testimonial-card__avatar" width="48" height="48" loading="lazy"><div><p class="testimonial-card__name" data-i18n="import_caravan.terry_mun_8fa9fbc4">Terry Mun</p><p class="testimonial-card__role" data-i18n="import_caravan.verified_customer_7fabd666">Verified Customer</p></div></div></article>
+          <article class="testimonial-card" data-aos="fade-up" data-aos-delay="300"><div class="testimonial-card__stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><blockquote class="testimonial-card__text">"We used IdrisMans Transit to bring our truck to NZ from Brisbane. From organizing our quote, insurances to dropping the truck into Brisbane and getting it to our doorstep in NZ was AMAZING!!! Five-star service."</blockquote><div class="testimonial-card__author"><img src="../logo.png" alt="Monique Maree" class="testimonial-card__avatar" width="48" height="48" loading="lazy"><div><p class="testimonial-card__name" data-i18n="import_caravan.monique_maree_d60443a4">Monique Maree</p><p class="testimonial-card__role" data-i18n="import_caravan.verified_customer_7fabd666">Verified Customer</p></div></div></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--alt">
+      <div class="container" style="max-width: 860px;">
+        <h2 class="section-title text-center" data-aos="fade-up" style="margin-bottom: var(--space-10);" data-i18n="import_caravan.common_questions_and_1cd5ea12">Common Questions And Responses</h2>
+        <div class="accordion-item" data-aos="fade-up"><button class="accordion-trigger" aria-expanded="false"><span data-i18n="missing3.can i leave personal belongings in the caravan _a30def4b">Can I leave personal belongings in the caravan?</span> <span style="font-size:12px;margin-left:auto;">▾</span></button><div class="accordion-content"><p data-i18n="import_caravan.no_caravans_must_ab97eb51">No. Caravans must be completely empty of personal belongings and food items. Gas bottles and fire extinguishers must also be removed before shipping. This is required for biosecurity and safety reasons.</p></div></div>
+        <div class="accordion-item" data-aos="fade-up"><button class="accordion-trigger" aria-expanded="false"><span data-i18n="missing3.what nz documentation will my caravan need _a2b2f8a3">What NZ documentation will my caravan need?</span> <span style="font-size:12px;margin-left:auto;">▾</span></button><div class="accordion-content"><p data-i18n="import_caravan.your_caravan_will_d0bbe5ec">Your caravan will need a Warrant of Fitness (WOF), a Gas Safety Certificate (if applicable), and road registration before it can be used in l'Afrique. Our team will guide you through all requirements.</p></div></div>
+        <div class="accordion-item" data-aos="fade-up"><button class="accordion-trigger" aria-expanded="false"><span data-i18n="missing3.what are the typical costs involved _b85df6df">What are the typical costs involved?</span> <span style="font-size:12px;margin-left:auto;">▾</span></button><div class="accordion-content"><p data-i18n="import_caravan.a_typical_quote_4afa3475">A typical quote includes pickup, delivery, shipping, port fees, customs, and quarantine clearance. Additional potential costs include: WOF and gas certificates (~NZD $300), registration, optional transit insurance (from ~AUD $455), and 15% NZ GST unless you qualify for an exemption.</p></div></div>
+        <div class="accordion-item" data-aos="fade-up"><button class="accordion-trigger" aria-expanded="false"><span data-i18n="missing3.how long will the shipping take _6c719779">How long will the shipping take?</span> <span style="font-size:12px;margin-left:auto;">▾</span></button><div class="accordion-content"><p data-i18n="import_caravan.transit_time_on_49b7acc2">Transit time on the water is as little as 4 days, with the overall process typically taking around 2 weeks from collection to delivery. Add approximately 5 working days if compliance is included at the destination.</p></div></div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" style="background: var(--color-primary); text-align: center;">
+      <div class="container"><h2 style="color:white; margin-bottom: var(--space-3); text-transform:uppercase;" data-i18n="import_caravan.ready_to_ship_4a618efb">Ready to Ship Your Caravan?</h2><p style="color:rgba(255,255,255,0.85);margin-bottom:var(--space-6);" data-i18n="import_caravan.get_an_instant_429373fb">Get an instant quote from our automotive shipping specialists.</p><a href="contact.html" class="btn btn--white btn--lg" data-i18n="welcome.cta">Get Started</a></div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container"><div class="footer__grid">
+    <div class="footer__brand"><a href="../index.html" class="footer__logo"><img src="../logo.png" alt="IdrisMans Transit" style="max-height: 80px; width: auto; object-fit: contain;"></a><address class="footer__address" style="font-style:normal;">IdrisMans Transit<br>15 Rue Jules Guesde,<br>75014 Paris, France</address><div class="footer__contacts"><a href="tel:+33695724985" class="footer__contact-item"><i class="fa-solid fa-phone"></i> +33 6 95 72 49 85</a><a href="tel:+33695724985" class="footer__contact-item"><i class="fa-solid fa-phone"></i> +33 6 95 72 49 85</a><a href="mailto:commercial@IdrisMans.com.au" class="footer__contact-item"><i class="fa-solid fa-envelope"></i> commercial@IdrisMans.com.au</a></div></div>
+    <div class="footer__col"><h3 class="footer__col-title" data-i18n="footer.navigation">Navigation</h3><ul class="footer__links"><li><a href="about.html" class="footer__link" data-i18n="nav.about">About Us</a></li><li><a href="what-we-ship.html" class="footer__link" data-i18n="footer.what_we_ship">What We Ship</a></li><li><a href="gallery.html" class="footer__link" data-i18n="nav.gallery">Gallery</a></li><li><a href="contact.html" class="footer__link" data-i18n="nav.contact">Contact Us</a></li></ul></div>
+    <div class="footer__col"><h3 class="footer__col-title" data-i18n="nav.services">
+Services
+</h3><ul class="footer__links"><li><a href="importing.html" class="footer__link" data-i18n="nav.importing">
+Importation vers la France / UE
+</a></li><li><a href="exporting.html" class="footer__link" data-i18n="nav.exporting">
+Exportation depuis la France / UE
+</a></li><li><a href="freight-forwarder.html" class="footer__link" data-i18n="nav.freight_forwarding">Freight Forwarding</a></li><li><a href="customs.html" class="footer__link" data-i18n="nav.customs">Custom Services &amp; Clearances</a></li><li><a href="warehousing.html" class="footer__link" data-i18n="nav.warehousing">Warehousing &amp; Transport</a></li></ul></div>
+    <div class="footer__col"><h3 class="footer__col-title" data-i18n="footer.what_we_ship">What We Ship</h3><ul class="footer__links"><li><a href="import-car.html" class="footer__link" data-i18n="nav.vehicles">Vehicles</a></li><li><a href="import-boat.html" class="footer__link" data-i18n="nav.boats">Boats</a></li><li><a href="import-motorcycle.html" class="footer__link" data-i18n="nav.motorcycles">Motorcycles</a></li><li><a href="import-motorhome.html" class="footer__link" data-i18n="nav.motorhomes">Motorhomes</a></li><li><a href="import-caravan.html" class="footer__link" data-i18n="nav.caravans">Caravans</a></li><li><a href="import-machinery.html" class="footer__link" data-i18n="nav.machinery">Machinery</a></li></ul></div>
+    <div class="footer__col"><h3 class="footer__col-title" data-i18n="footer.quick_links">Quick Links</h3><ul class="footer__links"><li><a href="about.html" class="footer__link" data-i18n="footer.who_are_we">Who are we?</a></li><li><a href="contact.html" class="footer__link" data-i18n="nav.contact">Contact Us</a></li><li><a href="import-vehicle.html" class="footer__link" data-i18n="footer.get_quote">Get Instant Quote</a></li>
+            <li><a href="faq.html" class="footer__link" data-i18n="footer.blog">Blog</a></li></ul></div>
+  </div><div class="footer__bottom"><p class="footer__copyright" data-i18n="footer.copyright">© 2026 IdrisMans Transit. All Rights Reserved.</p><div class="footer__legal-links"><a href="terms.html" class="footer__legal-link" data-i18n="footer.terms">Terms</a><a href="privacy.html" class="footer__legal-link" data-i18n="footer.privacy">Privacy</a><a href="faq.html" class="footer__legal-link" data-i18n="footer.faqs">FAQs</a></div><div class="footer__dmca"><a href="https://www.dmca.com/Protection/Status.aspx" target="_blank" rel="noopener"><img src="https://images.dmca.com/Badges/dmca_protected_sml_120n.png" alt="DMCA.com Protection Status" width="120" height="24" loading="lazy"></a></div></div></div></footer>
+
+  <script src="../js/navbar.js" defer></script>
+  <script src="../js/animations.js" defer></script>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/i18n.js" defer></script>
+  <script>document.querySelectorAll('.accordion-trigger').forEach(function(b){b.addEventListener('click',function(){var c=this.nextElementSibling,o=c.classList.contains('open');document.querySelectorAll('.accordion-content.open').forEach(function(e){e.classList.remove('open');e.previousElementSibling.setAttribute('aria-expanded','false');});if(!o){c.classList.add('open');this.setAttribute('aria-expanded','true');}});});</script>
+</body>
+</html>

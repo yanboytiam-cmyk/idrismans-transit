@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Project Logistics and Management — complex, oversized and high-value cargo. IdrisMans Transit.">
+  <title>Project Logistics &amp; Management | IdrisMans Transit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/typography.css">
+  <link rel="stylesheet" href="../css/buttons.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/hero.css">
+  <link rel="stylesheet" href="../css/cards.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/i18n.css">
+  <style>.split{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-12);align-items:center}.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-5);margin-top:var(--space-10)}.fi{background:var(--color-bg-alt);border-radius:var(--radius-md);padding:var(--space-5);border-left:3px solid var(--color-primary)}@media(max-width:768px){.split{grid-template-columns:1fr}.feat{grid-template-columns:1fr}}</style>
+</head>
+<body>
+  <!-- TOP BAR -->
+  <div class="topbar"><div class="container"><div class="topbar__inner"><p class="topbar__tagline" data-i18n-html="topbar.tagline_about">GLOBAL SHIPPING EXPERTS - WITH OVER <strong data-i18n="project_logistics.50_years_d0d182da">50 YEARS</strong> EXPERIENCE</p><div class="topbar__links"><a href="about.html" class="topbar__link" data-i18n="nav.about">About Us</a><a href="contact.html" class="topbar__link" data-i18n="nav.contact">Contact Us</a><a href="tel:+33695724985" class="topbar__cta"><i class="fa-solid fa-phone"></i><span data-i18n="topbar.call_expert">Call an expert today</span></a></div></div></div></div>
+  <header class="navbar" id="navbar"><div class="container"><div class="navbar__inner">
+    <a href="../index.html" class="navbar__logo"><img src="../logo.png" alt="IdrisMans Transit" style="max-height: 80px; width: auto; object-fit: contain;"></a>
+    <nav class="navbar__nav">
+      <div class="nav-item"><a href="../index.html" class="nav-link" data-i18n="nav.home">Home</a></div>
+        <div class="nav-item"><a href="about.html" class="nav-link" data-i18n="nav.about">About Us</a></div>
+      <div class="nav-item"><a href="services.html" class="nav-link active" data-i18n="nav.services">Services <span/ class="arrow">▾</span></a><div class="dropdown"><a href="freight-forwarder.html" class="dropdown-link" data-i18n="nav.freight_forwarding">Freight Forwarding</a><a href="importing.html" class="dropdown-link" data-i18n="nav.importing">Importation vers la France / UE</a><a href="exporting.html" class="dropdown-link" data-i18n="nav.exporting">Exportation depuis la France / UE</a><a href="customs.html" class="dropdown-link" data-i18n="nav.customs">Custom Services &amp; Clearances</a><a href="warehousing.html" class="dropdown-link" data-i18n="nav.warehousing">Warehousing &amp; Transport</a><a href="project-logistics.html" class="dropdown-link" data-i18n="nav.project_logistics">Project Logistics &amp; Management</a></div></div>
+      <div class="nav-item"><a href="what-we-ship.html" class="nav-link" data-i18n="nav.what_we_ship">What We Ship <span/ class="arrow">▾</span></a><div class="dropdown"><a href="import-car.html" class="dropdown-link" data-i18n="nav.vehicles">Vehicles</a><a href="import-boat.html" class="dropdown-link" data-i18n="nav.boats">Boats</a><a href="import-motorcycle.html" class="dropdown-link" data-i18n="nav.motorcycles">Motorcycles</a><a href="import-motorhome.html" class="dropdown-link" data-i18n="nav.motorhomes">Motorhomes</a><a href="import-caravan.html" class="dropdown-link" data-i18n="nav.caravans">Caravans</a><a href="import-machinery.html" class="dropdown-link" data-i18n="nav.machinery">Machinery</a></div></div>
+      
+      <div class="nav-item"><a href="gallery.html" class="nav-link" data-i18n="nav.gallery">Gallery</a></div>
+      <div class="nav-item"><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact Us</a></div>
+    </nav>
+    <div class="navbar__cta"><a href="tel:+33695724985" class="navbar__phone"><span class="label" data-i18n="nav.call_label">Talk to us</span><span class="number">+33 6 95 72 49 85</span></a><a href="contact.html" class="btn btn--primary btn--sm" data-i18n="nav.quote">Request a Quote</a></div>
+    <button class="navbar__burger" id="navBurger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu"><span class="burger-line"></span><span class="burger-line"></span><span class="burger-line"></span></button>
+  </div></div>
+  <nav class="navbar__mobile" id="mobileMenu"><div class="mobile-nav-item"><a href="../index.html" class="mobile-nav-link" data-i18n="nav.home">Home</a></div><div class="mobile-nav-item"><a href="about.html" class="mobile-nav-link" data-i18n="nav.about">About Us</a></div><div class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link" data-i18n="nav.contact">Contact Us</a></div><div class="mobile-nav-cta"><a href="contact.html" class="btn btn--primary" style="width:100%;text-align:center;" data-i18n="nav.quote">Request a Quote</a></div></nav>
+  </header>
+  <main>
+    <section class="page-hero" style="background: linear-gradient(rgba(10,22,40,0.5), rgba(10,22,40,0.5)), url('../commercial%20freignt%20page/Project%20Logistics%20&%20Management.webp') center/cover no-repeat; padding: 7rem 0 4rem; text-align:center;"><div class="container"><h1 class="page-hero__title" data-i18n="project.hero_title">PROJECT LOGISTICS &amp; MANAGEMENT</h1>
+        <p class="hero__slogan" data-i18n="hero.slogan">Don't Ship Without Idrismans</p><nav class="breadcrumb"><a href="../index.html" class="breadcrumb__item" data-i18n="nav.home">Home</a><span class="breadcrumb__sep">›</span><a href="services.html" class="breadcrumb__item" data-i18n="nav.services">
+Services
+</a><span class="breadcrumb__sep">›</span><span class="breadcrumb__item" aria-current="page" data-i18n="project_logistics.project_logistics_amp_b08012e7">Project Logistics &amp; Management</span></nav></div></section>
+    <section class="section"><div class="container">
+      <div class="split">
+        <div data-aos="fade-right"><h2 class="section-title" data-i18n="project_logistics.project_logistics_amp_b08012e7">Project Logistics &amp; Management</h2><p data-i18n="project.intro_p">IdrisMans Transit specialises in project logistics for complex, oversized, and high-value cargo shipments. Our project team has experience managing large-scale logistics for mining, construction, energy, and industrial sectors.</p><p data-i18n="project_logistics.from_breakbulk_and_a30d90a6">From breakbulk and heavy lift to vessel chartering and multi-modal solutions, we provide end-to-end project logistics management with dedicated project managers who oversee every aspect of your cargo journey.</p><div style="margin-top:var(--space-6);display:flex;gap:var(--space-3);flex-wrap:wrap;"><a href="contact.html" class="btn btn--primary" data-i18n="nav.quote">Request a Quote</a><a href="freight-forwarder.html" class="btn btn--outline" data-i18n="services.commercial_cta">Learn More</a></div></div>
+        <div data-aos="fade-left"><img src="../commercial freignt page/Project Logistics & Management.webp" alt="Project Logistics and Management" width="600" height="440" loading="lazy" style="border-radius:var(--radius-lg);box-shadow:var(--shadow-xl);"></div>
+      </div>
+      <div class="feat">
+        <div class="fi" data-aos="fade-up" data-aos-delay="100"><i class="fa-solid fa-diagram-project" style="color:var(--color-primary);font-size:24px;margin-bottom:var(--space-3);display:block;"></i><h3 style="font-size:var(--text-base);font-weight:700;margin-bottom:var(--space-2);" data-i18n="project_logistics.dedicated_management_246cad7e">Dedicated Management</h3><p style="font-size:var(--text-sm);color:var(--color-text-muted);" data-i18n="project_logistics.dedicated_project_managers_910fb8cd">Dedicated project managers overseeing every aspect of your shipment.</p></div>
+        <div class="fi" data-aos="fade-up" data-aos-delay="150"><i class="fa-solid fa-truck-ramp-box" style="color:var(--color-primary);font-size:24px;margin-bottom:var(--space-3);display:block;"></i><h3 style="font-size:var(--text-base);font-weight:700;margin-bottom:var(--space-2);" data-i18n="project_logistics.heavy_amp_oversized_7c8e0295">Heavy &amp; Oversized</h3><p style="font-size:var(--text-sm);color:var(--color-text-muted);" data-i18n="project_logistics.specialists_in_breakbulk_184925b6">Specialists in breakbulk, heavy lift, and out-of-gauge cargo.</p></div>
+        <div class="fi" data-aos="fade-up" data-aos-delay="200"><i class="fa-solid fa-route" style="color:var(--color-primary);font-size:24px;margin-bottom:var(--space-3);display:block;"></i><h3 style="font-size:var(--text-base);font-weight:700;margin-bottom:var(--space-2);" data-i18n="project_logistics.multi_modal_8e2a77eb">Multi-Modal</h3><p style="font-size:var(--text-sm);color:var(--color-text-muted);" data-i18n="project_logistics.air_sea_road_6abf08f7">Air, sea, road and rail — co-ordinated across all transport modes.</p></div>
+      </div>
+    </div></section>
+    <section class="section" style="background:var(--color-primary);text-align:center;"><div class="container"><h2 style="color:white;margin-bottom:var(--space-3);text-transform:uppercase;" data-i18n="freight.questions_cta">HAVE ANY QUESTIONS? DROP US A LINE</h2><p style="color:rgba(255,255,255,0.85);margin-bottom:var(--space-6);" data-i18n="project_logistics.contact_our_project_625f5484">Contact our project logistics team today.</p><a href="contact.html" class="btn btn--white btn--lg" data-i18n="nav.contact">Contact Us</a></div></section>
+  </main>
+  <footer class="footer"><div class="container"><div class="footer__grid"><div class="footer__brand"><a href="../index.html" class="footer__logo"><img src="../logo.png" alt="IdrisMans Transit" style="max-height: 80px; width: auto; object-fit: contain;"></a><address class="footer__address" style="font-style:normal;">IdrisMans Transit<br>15 Rue Jules Guesde,<br>75014 Paris, France</address><div class="footer__contacts"><a href="tel:+33695724985" class="footer__contact-item"><i class="fa-solid fa-phone"></i> +33 6 95 72 49 85</a><a href="tel:+33695724985" class="footer__contact-item"><i class="fa-solid fa-phone"></i> +33 6 95 72 49 85</a><a href="mailto:commercial@IdrisMans.com.au" class="footer__contact-item"><i class="fa-solid fa-envelope"></i> commercial@IdrisMans.com.au</a></div></div><div class="footer__col"><h3 class="footer__col-title" data-i18n="footer.navigation">Navigation</h3><ul class="footer__links"><li><a href="about.html" class="footer__link" data-i18n="nav.about">About Us</a></li><li><a href="what-we-ship.html" class="footer__link" data-i18n="footer.what_we_ship">What We Ship</a></li><li><a href="gallery.html" class="footer__link" data-i18n="nav.gallery">Gallery</a></li><li><a href="contact.html" class="footer__link" data-i18n="nav.contact">Contact Us</a></li></ul></div><div class="footer__col"><h3 class="footer__col-title" data-i18n="nav.services">
+Services
+</h3><ul class="footer__links"><li><a href="importing.html" class="footer__link" data-i18n="nav.importing">
+Importation vers la France / UE
+</a></li><li><a href="exporting.html" class="footer__link" data-i18n="nav.exporting">
+Exportation depuis la France / UE
+</a></li><li></li><li><a href="freight-forwarder.html" class="footer__link" data-i18n="nav.freight_forwarding">Freight Forwarding</a></li><li><a href="customs.html" class="footer__link" data-i18n="nav.customs">Custom Services &amp; Clearances</a></li><li><a href="warehousing.html" class="footer__link" data-i18n="nav.warehousing">Warehousing &amp; Transport</a></li><li><a href="project-logistics.html" class="footer__link" data-i18n="nav.project_logistics">Project Logistics &amp; Management</a></li></ul></div><div class="footer__col"><h3 class="footer__col-title" data-i18n="footer.what_we_ship">What We Ship</h3><ul class="footer__links"><li><a href="import-car.html" class="footer__link" data-i18n="nav.vehicles">Vehicles</a></li><li><a href="import-boat.html" class="footer__link" data-i18n="nav.boats">Boats</a></li><li><a href="import-motorcycle.html" class="footer__link" data-i18n="nav.motorcycles">Motorcycles</a></li><li><a href="import-motorhome.html" class="footer__link" data-i18n="nav.motorhomes">Motorhomes</a></li><li><a href="import-caravan.html" class="footer__link" data-i18n="nav.caravans">Caravans</a></li><li><a href="import-machinery.html" class="footer__link" data-i18n="nav.machinery">Machinery</a></li></ul></div><div class="footer__col"><h3 class="footer__col-title" data-i18n="footer.quick_links">Quick Links</h3><ul class="footer__links"><li><a href="about.html" class="footer__link" data-i18n="footer.who_are_we">Who are we?</a></li><li><a href="contact.html" class="footer__link" data-i18n="nav.contact">Contact Us</a></li><li><a href="import-vehicle.html" class="footer__link" data-i18n="footer.get_quote">Get Instant Quote</a></li>
+            <li><a href="faq.html" class="footer__link" data-i18n="footer.blog">Blog</a></li></ul></div></div><div class="footer__bottom"><p class="footer__copyright" data-i18n="footer.copyright">© 2026 IdrisMans Transit. All Rights Reserved.</p><div class="footer__legal-links"><a href="terms.html" class="footer__legal-link" data-i18n="footer.terms">Terms</a><a href="privacy.html" class="footer__legal-link" data-i18n="footer.privacy">Privacy</a><a href="faq.html" class="footer__legal-link" data-i18n="footer.faqs">FAQs</a></div><div class="footer__dmca"><a href="https://www.dmca.com/Protection/Status.aspx" target="_blank" rel="noopener"><img src="https://images.dmca.com/Badges/dmca_protected_sml_120n.png" alt="DMCA.com Protection Status" width="120" height="24" loading="lazy"></a></div></div></div></footer>
+  <script src="../js/navbar.js" defer></script><script src="../js/animations.js" defer></script><script src="../js/main.js" defer></script>
+  <script src="../js/i18n.js" defer></script>
+</body>
+</html>

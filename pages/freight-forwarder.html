@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="IdrisMans Transit — your trusted l'Internationaln freight forwarder. International freight forwarding, customs clearance, warehousing and more.">
+  <title>Transitaire International | IdrisMans Transit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/typography.css">
+  <link rel="stylesheet" href="../css/buttons.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/hero.css">
+  <link rel="stylesheet" href="../css/cards.css">
+  <link rel="stylesheet" href="../css/forms.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/i18n.css">
+  <style>
+    .section { padding: 5rem 0; }
+    .section--light { background: #f8fafc; }
+    .section__header { text-align: center; max-width: 720px; margin: 0 auto 2.5rem; }
+    .section__eyebrow { display: inline-block; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-primary, #1a5f9e); margin-bottom: 0.5rem; }
+    .section__title { font-family: 'Montserrat', sans-serif; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: #1a2b3c; line-height: 1.2; }
+    .services-list { columns: 2; gap: 2rem; list-style: none; padding: 0; max-width: 800px; margin: 0 auto; }
+    @media (max-width: 576px) { .services-list { columns: 1; } }
+    .services-list li { display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.6rem 0; break-inside: avoid; color: #444; line-height: 1.5; }
+    .services-list li::before { content: ''; width: 20px; height: 20px; min-width: 20px; background: var(--color-primary, #1a5f9e); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+    .services-list li i { color: var(--color-primary, #1a5f9e); margin-top: 2px; min-width: 20px; text-align: center; }
+    .three-cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    @media (max-width: 768px) { .three-cards-grid { grid-template-columns: 1fr; } }
+    .value-card { background: #fff; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.07); text-align: center; border-top: 4px solid var(--color-primary, #1a5f9e); }
+    .value-card__icon { font-size: 2.5rem; color: var(--color-primary, #1a5f9e); margin-bottom: 1rem; }
+    .value-card__title { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.15rem; color: #1a2b3c; margin-bottom: 0.75rem; }
+    .value-card__text { color: #555; line-height: 1.6; font-size: 0.95rem; }
+    .countries-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; max-width: 900px; margin: 2rem auto 0; }
+    .country-badge { background: #fff; border: 2px solid #d0dce8; border-radius: 25px; padding: 0.5rem 1.25rem; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.85rem; color: #1a2b3c; transition: border-color 0.2s, color 0.2s; }
+    .country-badge:hover { border-color: var(--color-primary, #1a5f9e); color: var(--color-primary, #1a5f9e); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2.5rem; }
+    @media (max-width: 992px) { .testimonials-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 576px) { .testimonials-grid { grid-template-columns: 1fr; } }
+    .testimonial-card { background: #fff; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); position: relative; }
+    .testimonial-card::before { content: '\201C'; font-size: 4rem; color: var(--color-primary, #1a5f9e); opacity: 0.15; position: absolute; top: 0.5rem; left: 1rem; line-height: 1; font-family: Georgia, serif; }
+    .testimonial-card__text { color: #444; line-height: 1.7; margin-bottom: 1.25rem; font-style: italic; }
+    .testimonial-card__author { font-weight: 700; color: var(--color-primary, #1a5f9e); font-family: 'Montserrat', sans-serif; }
+    .stars { color: #f5a623; margin-bottom: 0.5rem; font-size: 0.9rem; }
+    .accordion { max-width: 800px; margin: 2rem auto 0; }
+    .accordion-item { border: 1px solid #e0e8f0; border-radius: 8px; margin-bottom: 0.75rem; overflow: hidden; }
+    .accordion-trigger { width: 100%; background: #fff; border: none; padding: 1.25rem 1.5rem; text-align: left; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1rem; color: #1a2b3c; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: background 0.2s; }
+    .accordion-trigger:hover { background: #f0f6ff; }
+    .accordion-trigger[aria-expanded="true"] { background: var(--color-primary, #1a5f9e); color: #fff; }
+    .accordion-trigger .icon { transition: transform 0.3s; font-size: 0.9rem; }
+    .accordion-trigger[aria-expanded="true"] .icon { transform: rotate(180deg); }
+    .accordion-content { display: none; padding: 1.25rem 1.5rem; background: #f8fafc; color: #555; line-height: 1.7; }
+    .accordion-content.is-open { display: block; }
+    .awards-section { background: var(--color-bg-dark, #1a2b3c); padding: 4rem 0; }
+    .awards-grid { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2rem; margin-top: 2rem; }
+    .award-badge { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 10px; padding: 1rem 1.5rem; text-align: center; color: #fff; min-width: 140px; }
+    .award-badge__icon { font-size: 1.8rem; color: #f5a623; margin-bottom: 0.5rem; }
+    .award-badge__label { font-size: 0.78rem; font-family: 'Montserrat', sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+    .intro-section { background: #f0f6ff; padding: 4rem 0; }
+    .breadcrumb { padding: 1rem 0; font-size: 0.85rem; color: #666; }
+    .breadcrumb a { color: var(--color-primary, #1a5f9e); text-decoration: none; }
+    .breadcrumb span { margin: 0 0.4rem; color: #999; }
+    .ph-img { background:#ccd9e8; display:flex; align-items:center; justify-content:center; color:#4a6f8a; font-size:0.78rem; font-style:italic; text-align:center; padding:10px; }
+    .ph-img::before { content: attr(data-label); }
+    .service-img-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:2.5rem; }
+    @media(max-width:768px){ .service-img-grid { grid-template-columns:1fr; } }
+    .service-img-card { border-radius:10px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.09); }
+    .service-img-card img { width:100%; height:200px; object-fit:cover; display:block; }
+    .service-img-card__label { padding:0.75rem 1rem; font-family:'Montserrat',sans-serif; font-weight:600; font-size:0.9rem; color:#1a2b3c; background:#fff; }
+  </style>
+</head>
+<body>
+  <!-- TOP BAR -->
+  <div class="topbar"><div class="container"><div class="topbar__inner"><p class="topbar__tagline" data-i18n-html="topbar.tagline_about">GLOBAL SHIPPING EXPERTS - WITH OVER <strong data-i18n="freight_forwarder.50_years_d0d182da">50 YEARS</strong> EXPERIENCE</p><div class="topbar__links"><a href="about.html" class="topbar__link" data-i18n="nav.about">About Us</a><a href="contact.html" class="topbar__link" data-i18n="nav.contact">Contact Us</a><a href="tel:+33695724985" class="topbar__cta"><i class="fa-solid fa-phone"></i><span data-i18n="topbar.call_expert">Call an expert today</span></a></div></div></div></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="container"><div class="navbar__inner">
+      <a href="../index.html" class="navbar__logo"><img src="../logo.png" alt="IdrisMans Transit" style="max-height: 80px; width: auto; object-fit: contain;"></a>
+      <nav class="navbar__nav">
+        <div class="nav-item"><a href="../index.html" class="nav-link" data-i18n="nav.home">Home</a></div>
+        <div class="nav-item"><a href="about.html" class="nav-link" data-i18n="nav.about">About Us</a></div>
+        <div class="nav-item"><a href="services.html" class="nav-link" data-i18n="nav.services">Services <span/ class="arrow">▾</span></a><div class="dropdown"><a href="freight-forwarder.html" class="dropdown-link" data-i18n="nav.freight_forwarding">Freight Forwarding</a><a href="importing.html" class="dropdown-link" data-i18n="nav.importing">Importation vers la France / UE</a><a href="exporting.html" class="dropdown-link" data-i18n="nav.exporting">Exportation depuis la France / UE</a><a href="customs.html" class="dropdown-link" data-i18n="nav.customs">Custom Services &amp; Clearances</a><a href="warehousing.html" class="dropdown-link" data-i18n="nav.warehousing">Warehousing &amp; Transport</a><a href="project-logistics.html" class="dropdown-link" data-i18n="nav.project_logistics">Project Logistics &amp; Management</a></div></div>
+        <div class="nav-item"><a href="what-we-ship.html" class="nav-link" data-i18n="nav.what_we_ship">What We Ship <span/ class="arrow">▾</span></a><div class="dropdown"><a href="import-car.html" class="dropdown-link" data-i18n="nav.vehicles">Vehicles</a><a href="import-boat.html" class="dropdown-link" data-i18n="nav.boats">Boats</a><a href="import-motorcycle.html" class="dropdown-link" data-i18n="nav.motorcycles">Motorcycles</a><a href="import-motorhome.html" class="dropdown-link" data-i18n="nav.motorhomes">Motorhomes</a><a href="import-caravan.html" class="dropdown-link" data-i18n="nav.caravans">Caravans</a><a href="import-machinery.html" class="dropdown-link" data-i18n="nav.machinery">Machinery</a></div></div>
+        
+        <div class="nav-item"><a href="gallery.html" class="nav-link" data-i18n="nav.gallery">Gallery</a></div>
+        <div class="nav-item"><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact Us</a></div>
+      </nav>
+      <div class="navbar__cta"><a href="tel:+33695724985" class="navbar__phone"><span class="label" data-i18n="nav.call_label">Talk to us</span><span class="number">+33 6 95 72 49 85</span></a><a href="contact.html" class="btn btn--primary btn--sm" data-i18n="nav.quote">Request a Quote</a></div>
+      <button class="navbar__burger" id="navBurger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu"><span class="burger-line"></span><span class="burger-line"></span><span class="burger-line"></span></button>
+    </div></div>
+    <nav class="navbar__mobile" id="mobileMenu">
+      <div class="mobile-nav-item"><a href="../index.html" class="mobile-nav-link" data-i18n="nav.home">Home</a></div>
+      <div class="mobile-nav-item"><a href="about.html" class="mobile-nav-link" data-i18n="nav.about">About Us</a></div>
+      
+      <div class="mobile-nav-item"><a href="gallery.html" class="mobile-nav-link" data-i18n="nav.gallery">Gallery</a></div>
+      <div class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link" data-i18n="nav.contact">Contact Us</a></div>
+      <div class="mobile-nav-cta"><a href="tel:+33695724985" class="btn btn--outline-white" style="width:100%;text-align:center;"><i class="fa-solid fa-phone"></i> +33 6 95 72 49 85</a><a href="contact.html" class="btn btn--primary" style="width:100%;text-align:center;" data-i18n="nav.quote">Request a Quote</a></div>
+    </nav>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero" style="position: relative; overflow: hidden; background: linear-gradient(135deg, #0a1628 0%, #0f2a45 40%, #152e4d 60%, #0a1628 100%); text-align:center; padding: 7rem 0 4rem;">
+  <video autoplay muted loop playsinline style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translateX(-50%) translateY(-50%); z-index: 0; object-fit: cover; opacity: 0.6;">
+    <source src="../General%20Freight%20%20Header%20Video.mp4" type="video/mp4">
+  </video>
+  
+
+    <div class="container" style="position: relative; z-index: 2;">
+      <p style="color:#7ec8f0; text-transform:uppercase; letter-spacing:0.15em; font-size:0.85rem; font-weight:700; margin-bottom:1rem;" data-i18n="freight_forwarder.idrismans_transit_d4f14870">IdrisMans Transit</p>
+      <h1 style="font-family:'Montserrat',sans-serif; font-size:clamp(1.8rem,4.5vw,3rem); font-weight:800; color:#fff; line-height:1.15; text-transform:uppercase; letter-spacing:0.03em;" data-i18n="freight_forwarder.hero_title">IdrisMans Transit<br>YOUR International FREIGHT FORWARDER</h1>
+      <p class="hero__slogan" data-i18n="hero.slogan">Don't Ship Without Idrismans</p>
+      <p style="color:rgba(255,255,255,0.8); font-size:1.1rem; margin-top:1.25rem; max-width:620px; margin-left:auto; margin-right:auto;" data-i18n="freight_forwarder.idrismans_is_trusted_532c63db">IdrisMans is trusted by some of l'International's leading brands to safely ship billions in cargo - every year.</p>
+      <a href="contact.html" class="btn btn--primary" style="margin-top:2rem;" data-i18n="welcome.cta">Get Started</a>
+    </div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html" data-i18n="nav.home">Home</a><span aria-hidden="true">›</span>
+      <a href="services.html" data-i18n="nav.services">
+Services
+</a><span aria-hidden="true">›</span>
+      <span aria-current="page" data-i18n="nav.freight_forwarding">Freight Forwarding</span>
+    </nav>
+  </div>
+
+  <!-- INTRO -->
+  <section class="intro-section" aria-labelledby="intro-heading">
+    <div class="container">
+      <div style="max-width:860px; margin:0 auto; text-align:center;" data-aos="fade-up">
+        <span class="section__eyebrow" data-i18n="nav.about">About Us</span>
+        <h2 id="intro-heading" style="font-family:'Montserrat',sans-serif; font-size:clamp(1.5rem,2.5vw,2rem); font-weight:800; color:#1a2b3c; margin:0.5rem 0 1.5rem;" data-i18n="freight.intro_title">IdrisMans is trusted by some of l'International's leading brands to safely ship billions in cargo — every year.</h2>
+        <p style="color:#444; line-height:1.8; font-size:1.05rem; margin-bottom:1rem;" data-i18n="freight.intro_p1">With over two decades of experience, IdrisMans Transit has built a reputation as one of l'International's most reliable and knowledgeable freight forwarders. We handle everything — from standard sea freight to complex project logistics — with the same level of care and precision our clients have come to expect.</p>
+        <p style="color:#444; line-height:1.8; font-size:1.05rem;" data-i18n="freight.intro_p2">Whether you're importing goods into l'International, exporting to global markets or managing regular commercial freight movements, our team has the expertise, relationships and systems to make it happen smoothly.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 SERVICE IMAGES -->
+  <section class="section" aria-labelledby="service-imgs-heading">
+    <div class="container">
+      <div class="section__header" data-aos="fade-up">
+        <h2 class="section__title" id="service-imgs-heading" data-i18n="services.title">
+Nos Services
+</h2>
+      </div>
+      <div class="service-img-grid">
+        <div class="service-img-card" data-aos="fade-up" data-aos-delay="100">
+          <img src="../commercial freignt page/International Freight Forwarding To Australia.webp" alt="International Freight Forwarding To l'International" loading="lazy">
+          <div class="service-img-card__label" data-i18n="freight_forwarder.freight_forwarding_to_85f3f84f">Freight Forwarding To l'International</div>
+        </div>
+        <div class="service-img-card" data-aos="fade-up" data-aos-delay="150">
+          <img src="../placeholder/freight-forwarding-from-australia.webp" alt="International Freight Forwarding From l'International" class="ph-img" data-label="Image : Fret international depuis l'Australie — export" loading="lazy">
+          <div class="service-img-card__label" data-i18n="freight_forwarder.freight_forwarding_from_db6318df">Freight Forwarding From l'International</div>
+        </div>
+        <div class="service-img-card" data-aos="fade-up" data-aos-delay="200">
+          <img src="../commercial freignt page/Customs Services  Clearances.webp" alt="Customs Services & Clearances" loading="lazy">
+          <div class="service-img-card__label" data-i18n="freight_forwarder.customs_services_amp_9bd4f509">Customs Services &amp; Clearances</div>
+        </div>
+        <div class="service-img-card" data-aos="fade-up" data-aos-delay="250">
+          <img src="../commercial freignt page/warehouse.webp" alt="Warehousing And Transport" loading="lazy">
+          <div class="service-img-card__label" data-i18n="freight_forwarder.warehousing_amp_transport_1579c1b0">Warehousing &amp; Transport</div>
+        </div>
+        <div class="service-img-card" data-aos="fade-up" data-aos-delay="300">
+          <img src="../commercial freignt page/Project Logistics & Management.webp" alt="Project Logistics & Management" loading="lazy">
+          <div class="service-img-card__label" data-i18n="freight_forwarder.project_logistics_amp_b08012e7">Project Logistics &amp; Management</div>
+        </div>
+        <div class="service-img-card" data-aos="fade-up" data-aos-delay="350">
+          <img src="../automotive/vehicle.webp" alt="Vehicle Shipping" loading="lazy">
+          <div class="service-img-card__label" data-i18n="freight_forwarder.vehicle_shipping_7ce26cfc">Vehicle Shipping</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR SERVICES -->
+  <section class="section" aria-labelledby="services-heading">
+    <div class="container">
+      <div class="section__header" data-aos="fade-up">
+        <span class="section__eyebrow" data-i18n="freight_forwarder.what_we_do_838f547a">What We Do</span>
+        <h2 class="section__title" id="services-heading" data-i18n="freight.services_heading">Our Services Include</h2>
+      </div>
+      <ul class="services-list" data-aos="fade-up" data-aos-delay="100">
+        <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> <span data-i18n="freight_forwarder.international_freight_forwarding_to">International Freight Forwarding To l'International</span></li>
+        <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> <span data-i18n="freight_forwarder.international_freight_forwarding_from">International Freight Forwarding From l'International</span></li>
+        <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> <span data-i18n="freight_forwarder.customs_services_clearances">Customs Services &amp; Clearances</span></li>
+        <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> <span data-i18n="freight_forwarder.warehousing_and_transport">Warehousing And Transport</span></li>
+        <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> <span data-i18n="freight_forwarder.project_logistics_management">Project Logistics &amp; Management</span></li>
+        <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> <span data-i18n="freight_forwarder.vehicle_shipping">Vehicle Shipping (RoRo and container)</span></li>
+        <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> <span data-i18n="freight_forwarder.air_freight_and_sea">Air Freight and Sea Freight Forwarding</span></li>
+        <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> <span data-i18n="freight_forwarder.track_and_trace">Track and Trace Services</span></li>
+        <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> <span data-i18n="missing.cargo insurance_fca69a23">Cargo Insurance</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- THREE CORE THINGS -->
+  <section class="section section--light" aria-labelledby="core-heading">
+    <div class="container">
+      <div class="section__header" data-aos="fade-up">
+        <h2 class="section__title" id="core-heading" data-i18n="freight.core_heading">There Are Three Core Things You Need From Your Freight Forwarder</h2>
+      </div>
+      <div style="max-width:700px; margin:0 auto;" data-aos="fade-up" data-aos-delay="100">
+        <ul style="display:flex; flex-direction:column; gap:var(--space-4); margin-bottom:var(--space-6);">
+          <li style="display:flex; align-items:center; gap:var(--space-3); font-size:var(--text-lg); font-weight:600; color:var(--color-heading);">
+            <i class="fa-solid fa-circle-check" style="color:var(--color-primary); font-size:22px; flex-shrink:0;" aria-hidden="true"></i>
+            <span data-i18n="missing.someone you can trust with your goods_abbb2e1d">Someone you can trust with your goods</span>
+          </li>
+          <li style="display:flex; align-items:center; gap:var(--space-3); font-size:var(--text-lg); font-weight:600; color:var(--color-heading);">
+            <i class="fa-solid fa-circle-check" style="color:var(--color-primary); font-size:22px; flex-shrink:0;" aria-hidden="true"></i>
+            <span data-i18n="missing.someone you can build a working relationship with_5c19de16">Someone you can build a working relationship with</span>
+          </li>
+          <li style="display:flex; align-items:center; gap:var(--space-3); font-size:var(--text-lg); font-weight:600; color:var(--color-heading);">
+            <i class="fa-solid fa-circle-check" style="color:var(--color-primary); font-size:22px; flex-shrink:0;" aria-hidden="true"></i>
+            <span data-i18n="missing.someone that can handle it all_2dfd513c">Someone that can handle it all</span>
+          </li>
+        </ul>
+        <p style="font-size:var(--text-base); color:var(--color-text); line-height:var(--leading-relaxed); margin-bottom:var(--space-6);" data-i18n="freight.core_p">As a leading l'Internationaln freight forwarder, we're committed to providing ongoing support, strategy, and solutions to ensure we establish the best long term working relationship with our clients.</p>
+        <a href="contact.html" class="btn btn--primary" data-i18n="freight_forwarder.request_a_quote_28366a10">Request A Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAFF + COMPUTER IMAGES -->
+  <section class="section section--light" aria-labelledby="team-visual-heading">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;">
+        <div data-aos="fade-right">
+          <img src="../commercial freignt page/staff.webp" alt="Équipe IdrisMans Transit" loading="lazy" style="width:100%;height:320px;object-fit:cover;border-radius:10px;box-shadow:0 4px 20px rgba(0,0,0,0.1);">
+        </div>
+        <div data-aos="fade-left">
+          <img src="../generated/air_freight.png" alt="Fret Aérien" loading="lazy" style="width:100%;height:320px;object-fit:cover;border-radius:10px;box-shadow:0 4px 20px rgba(0,0,0,0.1);">
+          <p style="margin-top:1rem;color:#555;font-size:0.95rem;line-height:1.7;" data-i18n="freight_forwarder.notre_service_de_c7d15ac5">Notre service de fret aérien rapide et sécurisé connecte vos marchandises avec le reste du monde en un temps record.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR EXPERTS HANDLE EVERYTHING -->
+  <section class="section" aria-labelledby="experts-heading">
+    <div class="container">
+      <div class="section__header" data-aos="fade-up">
+        <h2 class="section__title" id="experts-heading" data-i18n="freight.experts_heading">Our Experts Handle Everything From Start To Finish</h2>
+        <p style="color:#666; margin-top:1rem; line-height:1.7;" data-i18n="freight.experts_intro">Our experienced network can take care of the full range of air freight and sea freight forwarding services that will make your life easier:</p>
+      </div>
+      <ul class="services-list" style="max-width:800px; margin:0 auto;" data-aos="fade-up" data-aos-delay="100">
+        <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> <span data-i18n="missing.collection of cargo from the supplier_2f918cd1">Collection of cargo from the supplier</span></li>
+        <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> <span data-i18n="missing.international freight to and from l international_d71daf02">International Freight to and from l'International</span></li>
+        <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> <span data-i18n="missing.customs clearance at all ports within l international_21a82617">Customs clearance at all ports within l'International</span></li>
+        <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> <span data-i18n="missing.local transport from port to door via rail  truck or courier_91850a96">Local transport from port to door via rail, truck or courier</span></li>
+        <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> <span data-i18n="missing.track and trace for real time cargo location_d1373305">Track and trace for real time cargo location</span></li>
+        <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> <span data-i18n="missing.warehousing and distribution_523c3e11">Warehousing and Distribution</span></li>
+        <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> <span data-i18n="missing.cargo insurance_fca69a23">Cargo Insurance</span></li>
+        <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> <span data-i18n="missing.export air cargo clearance_f19b513a">Export Air Cargo Clearance</span></li>
+        <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> <span data-i18n="missing.export sea cargo clearance_0df66fd7">Export Sea Cargo Clearance</span></li>
+        <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> <span data-i18n="missing.export freight from l international to anywhere in the world_ba8262ca">Export Freight From l'International to anywhere in the world</span></li>
+      </ul>
+      <div style="max-width:800px; margin:var(--space-8) auto 0;" data-aos="fade-up">
+        <p style="font-size:var(--text-base); color:var(--color-text); line-height:var(--leading-relaxed); margin-bottom:var(--space-5);" data-i18n="freight.experts_p">At IdrisMans, we look at all options to find you the best possible international freight forwarding solution to move your goods. We will guide you through the process from start to finish, and offer up to date advice and recommendations to ensure the cargo is moved in the most effective and timely manner. We like to think of ourselves as logistics strategists first and foremost, and an international freight forwarder second. We're here to support you in running your business.</p>
+        <a href="contact.html" class="btn btn--primary" data-i18n="freight_forwarder.request_a_quote_28366a10">Request A Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE SHIP -->
+  <section class="section section--light" aria-labelledby="whatship-heading">
+    <div class="container">
+      <div class="section__header" data-aos="fade-up">
+        <h2 class="section__title" id="whatship-heading" data-i18n="footer.what_we_ship">What We Ship</h2>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; gap:var(--space-3); justify-content:center; max-width:900px; margin:0 auto;" data-aos="fade-up" data-aos-delay="100">
+        <span class="country-badge" data-i18n="freight_forwarder.valuables_b5217885">Valuables</span>
+        <span class="country-badge" data-i18n="freight_forwarder.food_products_2d04c244">Food Products</span>
+        <span class="country-badge" data-i18n="freight_forwarder.haberdashery_8a5f9cd7">Haberdashery</span>
+        <span class="country-badge" data-i18n="freight_forwarder.lighting_towers_e2f11522">Lighting Towers</span>
+        <span class="country-badge" data-i18n="nav.machinery">Machinery</span>
+        <span class="country-badge" data-i18n="freight_forwarder.tiles_a67f2c9d">Tiles</span>
+        <span class="country-badge" data-i18n="freight_forwarder.furniture_bb3a8b2e">Furniture</span>
+        <span class="country-badge" data-i18n="freight_forwarder.homewares_b952f796">Homewares</span>
+        <span class="country-badge" data-i18n="freight_forwarder.disability_and_aged_0f035a4c">Disability and aged care goods</span>
+        <span class="country-badge" data-i18n="freight_forwarder.transport_equipment_61d8a188">Transport Equipment</span>
+        <span class="country-badge" data-i18n="freight_forwarder.lighting_2e4b97fd">Lighting</span>
+        <span class="country-badge" data-i18n="freight_forwarder.medical_and_veterinary_faae8fc7">Medical and veterinary supplies</span>
+      </div>
+      <p style="text-align:center; margin-top:var(--space-5); color:var(--color-text);" data-aos="fade-up" data-i18n="freight_forwarder.plus_much_more_cac83e77">Plus much more! Get in touch with us for further information.</p>
+      <div style="text-align:center; margin-top:var(--space-6);" data-aos="fade-up">
+        <a href="contact.html" class="btn btn--primary" data-i18n="welcome.cta">Get Started</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- A SHIPPING NETWORK -->
+  <section class="section" aria-labelledby="network-heading">
+    <div class="container">
+      <div class="section__header" data-aos="fade-up">
+        <h2 class="section__title" id="network-heading" data-i18n="freight.network_heading">A Shipping Network That Spans The Globe</h2>
+      </div>
+      <div data-aos="fade-up" style="margin-bottom:2rem;">
+        <img src="../commercial%20freignt%20page/ship-cranes2.webp" alt="Réseau Mondial et Export" style="width:100%;height:400px;object-fit:cover;border-radius:10px;display:block;">
+      </div>
+      <div style="max-width:860px; margin:0 auto;" data-aos="fade-up" data-aos-delay="100">
+        <p style="font-size:var(--text-base); color:var(--color-text); line-height:var(--leading-relaxed); margin-bottom:var(--space-4);" data-i18n="freight.network_p1">IdrisMans is an l'Internationaln freight forwarder with a vast freight forwarding network truly spans the globe. There are, however, certain destinations where the safety of goods, and agents cannot be guaranteed. We therefore will not risk your goods or our reputation by servicing these locations.</p>
+        <p style="font-size:var(--text-base); color:var(--color-text); line-height:var(--leading-relaxed); margin-bottom:var(--space-6);" data-i18n="freight.network_p2">As for l'International and the rest of the world, we have daily contact with our worldwide team of over 125 experienced agents. They are there to determine the best possible rates and provide personalised service, offering proactive information and a wealth of experience.</p>
+        <a href="contact.html" class="btn btn--primary" data-i18n="freight_forwarder.request_a_quote_28366a10">Request A Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHERE WE SHIP -->
+  <section class="section section--light" aria-labelledby="whereship-heading">
+    <div class="container">
+      <div class="section__header" data-aos="fade-up">
+        <h2 class="section__title" id="whereship-heading" data-i18n="freight.whereship_heading">Where We Ship</h2>
+      </div>
+      <div style="max-width:860px; margin:0 auto;" data-aos="fade-up" data-aos-delay="100">
+        <p style="font-size:var(--text-base); color:var(--color-text); line-height:var(--leading-relaxed); margin-bottom:var(--space-4);" data-i18n="freight.whereship_p1">Our aim is to build a long-standing relationship with our customers and help them build their businesses. We like to think ourselves as more than just an international freight forwarder - freight consultants or logistics strategists would be a more accurate description of what we do. We work out effective solutions for individuals, families, and business's who are trying to navigate the complex world of international logistics. We look for ways we can make improvements in their current supply chains and we assist in cutting costs and lead times through effective freight management.</p>
+        <p style="font-size:var(--text-base); color:var(--color-text); line-height:var(--leading-relaxed); margin-bottom:var(--space-6);" data-i18n="freight.whereship_p2">With offices in l'International and l'Afrique, and a vast network of freight forwarding partners and agents all over the world, we can offer cargo services to and from China, Singapore, Hong Kong, Vietnam, Taiwan, Japan, South Korea, Malaysia, Indonesia, Italy, Spain, Poland, Portugal, Sweden, Switzerland, Slovenia, Austria, Germany, France, England, Ireland, Scotland, USA, Canada and many more.</p>
+        <a href="contact.html" class="btn btn--primary" data-i18n="freight_forwarder.request_a_quote_28366a10">Request A Quote</a>
+      </div>
+      <div class="countries-grid" style="margin-top:var(--space-8);" data-aos="fade-up" data-aos-delay="200">
+        <span class="country-badge" data-i18n="freight_forwarder.china_ae54a5c0">China</span><span class="country-badge" data-i18n="freight_forwarder.singapore_458e4cbc">Singapore</span><span class="country-badge" data-i18n="freight_forwarder.hong_kong_8b476ff7">Hong Kong</span><span class="country-badge" data-i18n="freight_forwarder.vietnam_fdef6daa">Vietnam</span><span class="country-badge" data-i18n="freight_forwarder.taiwan_551fe18e">Taiwan</span><span class="country-badge" data-i18n="freight_forwarder.japan_53a577bb">Japan</span><span class="country-badge" data-i18n="freight_forwarder.south_korea_4d4803b0">South Korea</span><span class="country-badge" data-i18n="freight_forwarder.malaysia_3f0e49c4">Malaysia</span><span class="country-badge" data-i18n="freight_forwarder.indonesia_4647d00c">Indonesia</span><span class="country-badge" data-i18n="freight_forwarder.italy_1007e1b7">Italy</span><span class="country-badge" data-i18n="freight_forwarder.spain_907eba32">Spain</span><span class="country-badge" data-i18n="freight_forwarder.poland_94880bda">Poland</span><span class="country-badge" data-i18n="freight_forwarder.portugal_ea71b362">Portugal</span><span class="country-badge" data-i18n="freight_forwarder.sweden_c8f4261f">Sweden</span><span class="country-badge" data-i18n="freight_forwarder.switzerland_3ad08396">Switzerland</span><span class="country-badge" data-i18n="freight_forwarder.slovenia_00247297">Slovenia</span><span class="country-badge" data-i18n="freight_forwarder.austria_98917390">Austria</span><span class="country-badge" data-i18n="freight_forwarder.germany_d8b00929">Germany</span><span class="country-badge" data-i18n="freight_forwarder.france_0309a6c6">France</span><span class="country-badge" data-i18n="freight_forwarder.england_64f60790">England</span><span class="country-badge" data-i18n="freight_forwarder.ireland_06e415f9">Ireland</span><span class="country-badge" data-i18n="freight_forwarder.scotland_da5dd6f0">Scotland</span><span class="country-badge" data-i18n="freight_forwarder.usa_f75d91cd">USA</span><span class="country-badge" data-i18n="freight_forwarder.canada_445d337b">Canada</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR GLOBAL NETWORKS ARE WORKING FOR YOU -->
+  <section class="section" aria-labelledby="globalnet-heading">
+    <div class="container">
+      <div class="section__header" data-aos="fade-up">
+        <h2 class="section__title" id="globalnet-heading" data-i18n="freight.globalnet_heading">Our Global Networks Are Working For You</h2>
+      </div>
+      <div style="max-width:860px; margin:0 auto;" data-aos="fade-up" data-aos-delay="100">
+        <p style="font-size:var(--text-base); color:var(--color-text); line-height:var(--leading-relaxed); margin-bottom:var(--space-4);" data-i18n="freight.globalnet_p1">In a global business it's all about the relationships you build. Our network of agents and service providers has been established over many years of mutual trust and co-operation.</p>
+        <p style="font-size:var(--text-base); color:var(--color-text); line-height:var(--leading-relaxed); margin-bottom:var(--space-6);" data-i18n="freight.globalnet_p2">In many parts of the world, strong relationships can mean preferential assistance. It's good to know that, if required, we have the ability to call upon our contacts for the benefit of our customers.</p>
+        <a href="contact.html" class="btn btn--primary" data-i18n="freight_forwarder.request_a_quote_28366a10">Request A Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FREQUENTLY ASKED QUESTIONS -->
+  <section class="section section--light" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="section__header" data-aos="fade-up">
+        <h2 class="section__title" id="faq-heading" data-i18n="freight_forwarder.frequently_asked_questions_df001dcc">FREQUENTLY ASKED QUESTIONS</h2>
+      </div>
+      <div class="accordion" role="list">
+        <div class="accordion-item" role="listitem">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq1" data-i18n="faq.q1">What is freight forwarding? <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></button>
+          <div class="accordion-content" id="faq1" role="region" data-i18n="freight_forwarder.freight_forwarding_is_34b72b4c">Freight forwarding is the process of organizing the shipment and transportation of goods from one location to another, ensuring they reach their destination efficiently and cost-effectively.</div>
+        </div>
+        <div class="accordion-item" role="listitem">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq2" data-i18n="faq.q2">Why should I use a freight forwarding service? <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></button>
+          <div class="accordion-content" id="faq2" role="region" data-i18n="freight_forwarder.freight_forwarding_services_83ea3da6">Freight forwarding services offer several benefits, including expertise in logistics, customs clearance, and documentation requirements. By using a freight forwarding service, you can save time, reduce costs, and ensure your goods are handled professionally throughout the shipping process.</div>
+        </div>
+        <div class="accordion-item" role="listitem">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq3" data-i18n="faq.q3">What modes of transportation do you offer for freight forwarding? <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></button>
+          <div class="accordion-content" id="faq3" role="region" data-i18n="freight_forwarder.we_offer_a_3fba876d">We offer a wide range of transportation modes to suit your specific needs, including air freight, ocean freight, road freight, and rail freight. Our team will work closely with you to determine the most suitable mode of transportation for your cargo.</div>
+        </div>
+        <div class="accordion-item" role="listitem">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq4" data-i18n="faq.q4">Do you provide international freight forwarding services? <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></button>
+          <div class="accordion-content" id="faq4" role="region" data-i18n="freight_forwarder.yes_we_specialize_60927b10">Yes, we specialize in international freight forwarding. Whether you need to ship your goods across the globe or just to a neighbouring country, we have the experience and network to handle your international shipments efficiently and securely.</div>
+        </div>
+        <div class="accordion-item" role="listitem">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq5" data-i18n="faq.q5">Can you handle customs clearance for my shipments? <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></button>
+          <div class="accordion-content" id="faq5" role="region" data-i18n="freight_forwarder.absolutely_we_have_77ffa5d9">Absolutely! We have a dedicated team of experts who are well-versed in customs regulations and procedures. We will ensure that all necessary documentation is prepared accurately and submitted on time to facilitate smooth customs clearance for your shipments.</div>
+        </div>
+        <div class="accordion-item" role="listitem">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq6" data-i18n="faq.q6">How do I track my shipments? <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></button>
+          <div class="accordion-content" id="faq6" role="region" data-i18n="freight_forwarder.we_provide_comprehensive_d7d2ccf1">We provide comprehensive shipment tracking services, allowing you to monitor the progress of your shipments from origin to destination. You can easily access real-time tracking information through our online tracking system or by contacting our customer service team.</div>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:var(--space-6);" data-aos="fade-up">
+        <a href="faq.html" class="btn btn--outline" data-i18n="freight_forwarder.show_all_faqs_ed81a4c2">SHOW ALL FAQS</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENT TESTIMONIALS -->
+  <section class="section" aria-labelledby="testimonials-heading">
+    <div class="container">
+      <div class="section__header" data-aos="fade-up">
+        <h2 class="section__title" id="testimonials-heading" data-i18n="freight.testimonials_heading">Client Testimonials</h2>
+        <p style="color:#666; margin-top:1rem; line-height:1.7;" data-i18n="freight.testimonials_intro">We have move tens of thousands of shipments in and out of l'International and all over the world. Our team has spent decades building long term successful relationships with our clients and fine tuning every aspect of our process to ensure our service offering to second to none. We are the international shipping partner you can depend on and our past and present clients can attest to our proven track record!</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="stars" aria-label="5 stars">★★★★★</div>
+          <p class="testimonial-card__text" data-i18n="freight_forwarder.very_professional_company_c35d3995">"very professional company. I felt comfortable and supported throughout the process especially efficient during this difficult time. communication was excellent. Well done. I will certainly recommend you to others. Thank you."</p>
+          <p class="testimonial-card__author" data-i18n="freight_forwarder.glenda_brown_c34a17d3">Glenda Brown</p>
+        </div>
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="stars" aria-label="5 stars">★★★★★</div>
+          <p class="testimonial-card__text" data-i18n="freight_forwarder.outstanding_customer_service_22bed3d7">"Outstanding customer service ! Fast reply's to any questions and constant contact through the process. No hidden costs or traps for the inexperienced. If I need a service like this again I will be using IdrisMans !!"</p>
+          <p class="testimonial-card__author" data-i18n="freight_forwarder.rachael_downs_a48c9c2e">Rachael Downs</p>
+        </div>
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="stars" aria-label="5 stars">★★★★★</div>
+          <p class="testimonial-card__text" data-i18n="freight_forwarder.great_company_to_865e16ac">"Great company to deal with. Emails are responded quickly and I am kept on to date. No hidden charges. Big ups to the team @IdrisMans"</p>
+          <p class="testimonial-card__author" data-i18n="freight_forwarder.doneel_maran_fec20304">Doneel Maran</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HAVE ANY QUESTIONS CTA -->
+  <section style="background:var(--color-primary); padding:var(--space-16) 0; text-align:center;">
+    <div class="container">
+      <h2 style="color:white; font-size:var(--text-2xl); text-transform:uppercase; margin-bottom:var(--space-5);" data-aos="fade-up" data-i18n="freight.questions_cta">HAVE ANY QUESTIONS? DROP US A LINE</h2>
+      <a href="contact.html" class="btn btn--white btn--lg" data-aos="fade-up" data-i18n="welcome.cta">Get Started</a>
+    </div>
+  </section>
+
+  <!-- AWARDS -->
+  <section class="awards-section" aria-labelledby="awards-heading">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:var(--space-10);" data-aos="fade-up">
+        <h2 id="awards-heading" style="font-family:'Montserrat',sans-serif; font-size:clamp(1.4rem,3vw,2rem); font-weight:800; color:#fff;" data-i18n="awards.title">Award Winning Industry Leader</h2>
+      </div>
+      <div class="awards-grid">
+        <div class="award-badge" data-aos="zoom-in" data-aos-delay="100">
+          <div class="award-badge__icon"><i class="fa-solid fa-trophy" style="color:#ffd700;"></i></div>
+          <div style="font-size:0.7rem; font-weight:700; text-transform:uppercase; color:#ffd700; margin:0.25rem 0;" data-i18n="freight_forwarder.winner_b5a15fdf">WINNER</div>
+          <div class="award-badge__label" data-i18n="freight_forwarder.best_international_automotive_fc300dc8">Best International Automotive Cargo Logistics Enterprise - 2021</div>
+        </div>
+        <div class="award-badge" data-aos="zoom-in" data-aos-delay="150">
+          <div class="award-badge__icon"><i class="fa-solid fa-trophy" style="color:#ffd700;"></i></div>
+          <div style="font-size:0.7rem; font-weight:700; text-transform:uppercase; color:#ffd700; margin:0.25rem 0;" data-i18n="freight_forwarder.winner_b5a15fdf">WINNER</div>
+          <div class="award-badge__label" data-i18n="freight_forwarder.award_for_innovation_b9e0268c">Award for Innovation in End-to-End Freight Transport - 2021</div>
+        </div>
+        <div class="award-badge" data-aos="zoom-in" data-aos-delay="200">
+          <div class="award-badge__icon"><i class="fa-solid fa-medal" style="color:#c0c0c0;"></i></div>
+          <div style="font-size:0.7rem; font-weight:700; text-transform:uppercase; color:#c0c0c0; margin:0.25rem 0;" data-i18n="freight_forwarder.finalist_b89b34c9">FINALIST</div>
+          <div class="award-badge__label" data-i18n="freight_forwarder.freight_forwarder_of_4fb1fb1a">Freight Forwarder of the Year Award - 2018</div>
+        </div>
+        <div class="award-badge" data-aos="zoom-in" data-aos-delay="250">
+          <div class="award-badge__icon"><i class="fa-solid fa-medal" style="color:#c0c0c0;"></i></div>
+          <div style="font-size:0.7rem; font-weight:700; text-transform:uppercase; color:#c0c0c0; margin:0.25rem 0;" data-i18n="freight_forwarder.finalist_b89b34c9">FINALIST</div>
+          <div class="award-badge__label" data-i18n="freight_forwarder.young_achievement_award_534feafc">Young Achievement Award 2018 (Nick Proctor)</div>
+        </div>
+        <div class="award-badge" data-aos="zoom-in" data-aos-delay="300">
+          <div class="award-badge__icon"><i class="fa-solid fa-medal" style="color:#c0c0c0;"></i></div>
+          <div style="font-size:0.7rem; font-weight:700; text-transform:uppercase; color:#c0c0c0; margin:0.25rem 0;" data-i18n="freight_forwarder.finalist_b89b34c9">FINALIST</div>
+          <div class="award-badge__label" data-i18n="freight_forwarder.young_achievement_award_7520195c">Young Achievement Award 2018 (Mel Mather)</div>
+        </div>
+        <div class="award-badge" data-aos="zoom-in" data-aos-delay="350">
+          <div class="award-badge__icon"><i class="fa-solid fa-medal" style="color:#c0c0c0;"></i></div>
+          <div style="font-size:0.7rem; font-weight:700; text-transform:uppercase; color:#c0c0c0; margin:0.25rem 0;" data-i18n="freight_forwarder.finalist_b89b34c9">FINALIST</div>
+          <div class="award-badge__label" data-i18n="freight_forwarder.freight_forwarder_of_f627ef26">Freight Forwarder of the Year Award - 2017</div>
+        </div>
+        <div class="award-badge" data-aos="zoom-in" data-aos-delay="400">
+          <div class="award-badge__icon"><i class="fa-solid fa-medal" style="color:#c0c0c0;"></i></div>
+          <div style="font-size:0.7rem; font-weight:700; text-transform:uppercase; color:#c0c0c0; margin:0.25rem 0;" data-i18n="freight_forwarder.finalist_b89b34c9">FINALIST</div>
+          <div class="award-badge__label" data-i18n="freight_forwarder.young_maritime_professional_02f68a85">Young Maritime Professional of the Year 2016</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand"><a href="../index.html" class="footer__logo"><img src="../logo.png" alt="IdrisMans Transit" style="max-height: 80px; width: auto; object-fit: contain;"></a><address class="footer__address" style="font-style:normal;">IdrisMans Transit<br>15 Rue Jules Guesde,<br>75014 Paris, France</address><div class="footer__contacts"><a href="tel:+33695724985" class="footer__contact-item"><i class="fa-solid fa-phone"></i> +33 6 95 72 49 85</a><a href="tel:+33695724985" class="footer__contact-item"><i class="fa-solid fa-phone"></i> +33 6 95 72 49 85</a><a href="mailto:commercial@IdrisMans.com.au" class="footer__contact-item"><i class="fa-solid fa-envelope"></i> commercial@IdrisMans.com.au</a></div></div>
+        <div class="footer__col"><h3 class="footer__col-title" data-i18n="footer.navigation">Navigation</h3><ul class="footer__links"><li><a href="about.html" class="footer__link" data-i18n="nav.about">About Us</a></li><li><a href="what-we-ship.html" class="footer__link" data-i18n="footer.what_we_ship">What We Ship</a></li><li><a href="gallery.html" class="footer__link" data-i18n="nav.gallery">Gallery</a></li><li><a href="contact.html" class="footer__link" data-i18n="nav.contact">Contact Us</a></li></ul></div>
+        <div class="footer__col"><h3 class="footer__col-title" data-i18n="nav.services">
+Services
+</h3><ul class="footer__links"><li><a href="importing.html" class="footer__link" data-i18n="nav.importing">
+Importation vers la France / UE
+</a></li><li><a href="exporting.html" class="footer__link" data-i18n="nav.exporting">
+Exportation depuis la France / UE
+</a></li><li></li><li><a href="freight-forwarder.html" class="footer__link" data-i18n="nav.freight_forwarding">Freight Forwarding</a></li><li><a href="customs.html" class="footer__link" data-i18n="nav.customs">Custom Services &amp; Clearances</a></li><li><a href="warehousing.html" class="footer__link" data-i18n="nav.warehousing">Warehousing &amp; Transport</a></li><li><a href="project-logistics.html" class="footer__link" data-i18n="nav.project_logistics">Project Logistics &amp; Management</a></li></ul></div>
+        <div class="footer__col"><h3 class="footer__col-title" data-i18n="footer.what_we_ship">What We Ship</h3><ul class="footer__links"><li><a href="import-car.html" class="footer__link" data-i18n="nav.vehicles">Vehicles</a></li><li><a href="import-boat.html" class="footer__link" data-i18n="nav.boats">Boats</a></li><li><a href="import-motorcycle.html" class="footer__link" data-i18n="nav.motorcycles">Motorcycles</a></li><li><a href="import-motorhome.html" class="footer__link" data-i18n="nav.motorhomes">Motorhomes</a></li><li><a href="import-caravan.html" class="footer__link" data-i18n="nav.caravans">Caravans</a></li><li><a href="import-machinery.html" class="footer__link" data-i18n="nav.machinery">Machinery</a></li></ul></div>
+        <div class="footer__col"><h3 class="footer__col-title" data-i18n="footer.quick_links">Quick Links</h3><ul class="footer__links"><li><a href="about.html" class="footer__link" data-i18n="footer.who_are_we">Who are we?</a></li><li><a href="contact.html" class="footer__link" data-i18n="nav.contact">Contact Us</a></li><li><a href="import-vehicle.html" class="footer__link" data-i18n="footer.get_quote">Get Instant Quote</a></li>
+            <li><a href="faq.html" class="footer__link" data-i18n="footer.blog">Blog</a></li></ul></div>
+      </div>
+      <div class="footer__bottom"><p class="footer__copyright" data-i18n="footer.copyright">© 2026 IdrisMans Transit. All Rights Reserved.</p><div class="footer__legal-links"><a href="terms.html" class="footer__legal-link" data-i18n="footer.terms">Terms</a><a href="privacy.html" class="footer__legal-link" data-i18n="footer.privacy">Privacy</a><a href="faq.html" class="footer__legal-link" data-i18n="footer.faqs">FAQs</a></div><div class="footer__dmca"><a href="https://www.dmca.com/Protection/Status.aspx" target="_blank" rel="noopener"><img src="https://images.dmca.com/Badges/dmca_protected_sml_120n.png" alt="DMCA.com Protection Status" width="120" height="24" loading="lazy"></a></div></div>
+    </div>
+  </footer>
+
+  <script src="../js/navbar.js" defer></script>
+  <script src="../js/animations.js" defer></script>
+  <script src="../js/forms.js" defer></script>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/i18n.js" defer></script>
+  <script>
+    document.querySelectorAll('.accordion-trigger').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        document.querySelectorAll('.accordion-trigger').forEach(b => b.setAttribute('aria-expanded', 'false'));
+        document.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('is-open'));
+        if (!expanded) {
+          btn.setAttribute('aria-expanded', 'true');
+          document.getElementById(btn.getAttribute('aria-controls')).classList.add('is-open');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

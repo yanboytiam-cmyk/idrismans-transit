@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="IdrisMans Transit Services — Commercial Freight Forwarding and Automotive Shipping solutions.">
+  <title>Services | IdrisMans Transit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/typography.css">
+  <link rel="stylesheet" href="../css/buttons.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/hero.css">
+  <link rel="stylesheet" href="../css/cards.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/i18n.css">
+  <style>
+    .services-main-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-8)}.service-block{background:var(--color-bg);border-radius:var(--radius-lg);padding:var(--space-10);box-shadow:var(--shadow-card);border-top:4px solid var(--color-primary)}.service-block__icon{font-size:40px;color:var(--color-primary);margin-bottom:var(--space-5)}.service-block__title{font-size:var(--text-2xl);font-weight:700;text-transform:uppercase;letter-spacing:var(--tracking-wide);margin-bottom:var(--space-5)}.service-block__list{margin-bottom:var(--space-6)}.service-block__list li{display:flex;align-items:flex-start;gap:var(--space-3);padding:var(--space-3) 0;border-bottom:1px solid var(--color-border-light);font-size:var(--text-sm)}.service-block__list li:last-child{border-bottom:none}.service-block__list li i{color:var(--color-primary);flex-shrink:0;margin-top:2px}.geo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-6)}.geo-card{background:var(--color-bg);border-radius:var(--radius-lg);padding:var(--space-8);box-shadow:var(--shadow-card);text-align:center;border-top:4px solid var(--color-primary);transition:all var(--transition-base);text-decoration:none;color:inherit}.geo-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}.geo-card__icon{font-size:36px;color:var(--color-primary);margin-bottom:var(--space-4)}.geo-card__title{font-size:var(--text-lg);font-weight:700;text-transform:uppercase;margin-bottom:var(--space-3)}
+    @media(max-width:1024px){.services-main-grid{grid-template-columns:1fr}.geo-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <!-- TOP BAR -->
+  <div class="topbar"><div class="container"><div class="topbar__inner"><p class="topbar__tagline" data-i18n-html="topbar.tagline_about">GLOBAL SHIPPING EXPERTS - WITH OVER <strong data-i18n="services.50_years_d0d182da">50 YEARS</strong> EXPERIENCE</p><div class="topbar__links"><a href="about.html" class="topbar__link" data-i18n="nav.about">About Us</a><a href="contact.html" class="topbar__link" data-i18n="nav.contact">Contact Us</a><a href="tel:+33695724985" class="topbar__cta"><i class="fa-solid fa-phone"></i><span data-i18n="topbar.call_expert">Call an expert today</span></a></div></div></div></div>
+  <header class="navbar" id="navbar"><div class="container"><div class="navbar__inner">
+    <a href="../index.html" class="navbar__logo"><img src="../logo.png" alt="IdrisMans Transit" style="max-height: 80px; width: auto; object-fit: contain;"></a>
+    <nav class="navbar__nav">
+      <div class="nav-item"><a href="../index.html" class="nav-link" data-i18n="nav.home">Home</a></div>
+        <div class="nav-item"><a href="about.html" class="nav-link" data-i18n="nav.about">About Us</a></div>
+      <div class="nav-item"><a href="services.html" class="nav-link active" data-i18n="nav.services">Services <span/ class="arrow">▾</span></a><div class="dropdown"><a href="freight-forwarder.html" class="dropdown-link" data-i18n="nav.freight_forwarding">Freight Forwarding</a><a href="importing.html" class="dropdown-link" data-i18n="nav.importing">Importation vers la France / UE</a><a href="exporting.html" class="dropdown-link" data-i18n="nav.exporting">Exportation depuis la France / UE</a><a href="customs.html" class="dropdown-link" data-i18n="nav.customs">Custom Services &amp; Clearances</a><a href="warehousing.html" class="dropdown-link" data-i18n="nav.warehousing">Warehousing &amp; Transport</a><a href="project-logistics.html" class="dropdown-link" data-i18n="nav.project_logistics">Project Logistics &amp; Management</a></div></div>
+      <div class="nav-item"><a href="what-we-ship.html" class="nav-link" data-i18n="nav.what_we_ship">What We Ship <span/ class="arrow">▾</span></a><div class="dropdown"><a href="import-car.html" class="dropdown-link" data-i18n="nav.vehicles">Vehicles</a><a href="import-boat.html" class="dropdown-link" data-i18n="nav.boats">Boats</a><a href="import-motorcycle.html" class="dropdown-link" data-i18n="nav.motorcycles">Motorcycles</a><a href="import-motorhome.html" class="dropdown-link" data-i18n="nav.motorhomes">Motorhomes</a><a href="import-caravan.html" class="dropdown-link" data-i18n="nav.caravans">Caravans</a><a href="import-machinery.html" class="dropdown-link" data-i18n="nav.machinery">Machinery</a></div></div>
+      
+      <div class="nav-item"><a href="gallery.html" class="nav-link" data-i18n="nav.gallery">Gallery</a></div>
+      <div class="nav-item"><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact Us</a></div>
+    </nav>
+    <div class="navbar__cta"><a href="tel:+33695724985" class="navbar__phone"><span class="label" data-i18n="nav.call_label">Talk to us</span><span class="number">+33 6 95 72 49 85</span></a><a href="contact.html" class="btn btn--primary btn--sm" data-i18n="nav.quote">Request a Quote</a></div>
+    <button class="navbar__burger" id="navBurger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu"><span class="burger-line"></span><span class="burger-line"></span><span class="burger-line"></span></button>
+  </div></div>
+  <nav class="navbar__mobile" id="mobileMenu"><div class="mobile-nav-item"><a href="../index.html" class="mobile-nav-link" data-i18n="nav.home">Home</a></div><div class="mobile-nav-item"><a href="about.html" class="mobile-nav-link" data-i18n="nav.about">About Us</a></div><div class="mobile-nav-item"><a href="#" class="mobile-nav-link mobile-toggle" data-target="mobServices" data-i18n="nav.services">
+Services
+<span class="chevron-toggle">▾</span></a><div class="mobile-dropdown" id="mobServices"><a href="freight-forwarder.html" class="mobile-dropdown-link" data-i18n="nav.freight_forwarding">Freight Forwarding</a><a href="importing.html" class="mobile-dropdown-link" data-i18n="nav.importing">
+Importation vers la France / UE
+</a><a href="customs.html" class="mobile-dropdown-link" data-i18n="services.custom_services_870f3b85">Custom Services</a></div></div><div class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link" data-i18n="nav.contact">Contact Us</a></div><div class="mobile-nav-cta"><a href="contact.html" class="btn btn--primary" style="width:100%;text-align:center;" data-i18n="nav.quote">Request a Quote</a></div></nav>
+  </header>
+
+  <main>
+    <section class="page-hero" style="background: linear-gradient(rgba(10,22,40,0.5), rgba(10,22,40,0.5)), url('../home%20page%20image/Commercial%20Freight.webp') center/cover no-repeat; padding: 7rem 0 4rem; text-align:center;"><div class="container"><h1 class="page-hero__title" data-i18n="services_page.hero_title">OUR SERVICES</h1>
+        <p class="hero__slogan" data-i18n="hero.slogan">Don't Ship Without Idrismans</p><nav class="breadcrumb"><a href="../index.html" class="breadcrumb__item" data-i18n="nav.home">Home</a><span class="breadcrumb__sep">›</span><span class="breadcrumb__item" aria-current="page" data-i18n="nav.services">
+Services
+</span></nav></div></section>
+
+    <!-- Main services grid -->
+    <section class="section"><div class="container">
+      <div class="services-main-grid">
+        <div class="service-block" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-block__icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+          <h2 class="service-block__title" data-i18n="services.commercial_title">Commercial Freight</h2>
+          <ul class="service-block__list">
+            <li><i class="fa-solid fa-check"></i> <span data-i18n="services.commercial_li1"> International Air Freight Services</span></li>
+            <li><i class="fa-solid fa-check"></i> <span data-i18n="missing4.international sea freight services  fcl lcl _4ca2b2bb">International Sea Freight Services (FCL/LCL)</span></li>
+            <li><i class="fa-solid fa-check"></i> <span data-i18n="services.commercial_li3"> Project Logistics</span></li>
+            <li><i class="fa-solid fa-check"></i> <span data-i18n="services.commercial_li4"> Customs Clearance</span></li>
+            <li><i class="fa-solid fa-check"></i> <span data-i18n="services.commercial_li5"> Quarantine Clearance</span></li>
+            <li><i class="fa-solid fa-check"></i> <span data-i18n="services.commercial_li6"> Order Tracking</span></li>
+            <li><i class="fa-solid fa-check"></i> <span data-i18n="services.commercial_li7"> Warehousing</span></li>
+            <li><i class="fa-solid fa-check"></i> <span data-i18n="services.commercial_li8"> Domestic Transportation</span></li>
+          </ul>
+          <a href="freight-forwarder.html" class="btn btn--primary" data-i18n="services.commercial_cta">Learn More</a>
+        </div>
+        <div class="service-block" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-block__icon"><i class="fa-solid fa-car-side"></i></div>
+          <h2 class="service-block__title" data-i18n="hero.automotive_title">
+AUTOMOTIVE
+</h2>
+          <ul class="service-block__list">
+            <li><i class="fa-solid fa-check"></i> <span data-i18n="missing4.door to door services for vehicles  motorcycles  caravans  motorhomes and trailer boats_0079dd0b">Door-to-door services for vehicles, motorcycles, caravans, motorhomes and trailer boats</span></li>
+            <li><i class="fa-solid fa-check"></i> <span data-i18n="missing4.compliance and registration guidance_8f0dcd01">Compliance and registration guidance</span></li>
+            <li><i class="fa-solid fa-check"></i> <span data-i18n="missing4.foreign import tax law expertise_af50a2fa">Foreign import tax law expertise</span></li>
+            <li><i class="fa-solid fa-check"></i> <span data-i18n="missing4.transit insurance assistance_4e594b5b">Transit insurance assistance</span></li>
+            <li><i class="fa-solid fa-check"></i> <span data-i18n="services.automotive_li5"> Breakbulk and RoRo specialized shipments</span></li>
+          </ul>
+          <a href="import-vehicle.html" class="btn btn--primary" data-i18n="services.commercial_cta">Learn More</a>
+        </div>
+      </div>
+    </div></section>
+
+    <!-- Geographic services -->
+    <section class="section section--alt"><div class="container">
+      <div class="text-center" style="margin-bottom:var(--space-10);" data-aos="fade-up"><h2 class="section-title" data-i18n="services.geographic_coverage_18d63cc3">Geographic Coverage</h2></div>
+      <div class="geo-grid">
+        <a href="importing.html" class="geo-card" data-aos="fade-up" data-aos-delay="100"><div class="geo-card__icon"><i class="fa-solid fa-ship"></i></div><h3 class="geo-card__title" data-i18n="nav.importing">
+Importation vers la France / UE
+</h3><p style="font-size:var(--text-sm);color:var(--color-text-muted);" data-i18n="services.importing_goods_from_cf79769a">Importing goods from any country to l'International — air freight, sea freight, customs clearance.</p></a>
+        <a href="exporting.html" class="geo-card" data-aos="fade-up" data-aos-delay="150"><div class="geo-card__icon"><i class="fa-solid fa-globe"></i></div><h3 class="geo-card__title" data-i18n="nav.exporting">
+Exportation depuis la France / UE
+</h3><p style="font-size:var(--text-sm);color:var(--color-text-muted);" data-i18n="services.exporting_l_internationaln_46453ae7">Exporting l'Internationaln goods to markets worldwide — all modes of transport available.</p></a>
+        <a href="china-to-international.html" class="geo-card" data-aos="fade-up" data-aos-delay="200"><div class="geo-card__icon"><i class="fa-solid fa-route"></i></div><h3 class="geo-card__title" data-i18n="services.corridors_internationaux_b25fa230">Corridors Internationaux</h3><p style="font-size:var(--text-sm);color:var(--color-text-muted);" data-i18n="services.specialist_china_l_e8c7ad25">Specialist China-l'International freight forwarding. Daily sailings, competitive rates.</p></a>
+      </div>
+    </div></section>
+
+    <!-- CTA -->
+    <section class="section" style="background:var(--color-primary);text-align:center;"><div class="container"><h2 style="color:white;margin-bottom:var(--space-3);text-transform:uppercase;" data-i18n="services.ready_to_get_af80803b">Ready to Get Started?</h2><p style="color:rgba(255,255,255,0.85);margin-bottom:var(--space-6);" data-i18n="services.contact_our_team_ddd87953">Contact our team for a customised freight solution.</p><a href="contact.html" class="btn btn--white btn--lg" data-i18n="nav.quote">Request a Quote</a></div></section>
+  </main>
+
+  <footer class="footer"><div class="container"><div class="footer__grid">
+    <div class="footer__brand"><a href="../index.html" class="footer__logo"><img src="../logo.png" alt="IdrisMans Transit" style="max-height: 80px; width: auto; object-fit: contain;"></a><address class="footer__address" style="font-style:normal;">IdrisMans Transit<br>15 Rue Jules Guesde,<br>75014 Paris, France</address><div class="footer__contacts"><a href="tel:+33695724985" class="footer__contact-item"><i class="fa-solid fa-phone"></i> +33 6 95 72 49 85</a><a href="tel:+33695724985" class="footer__contact-item"><i class="fa-solid fa-phone"></i> +33 6 95 72 49 85</a><a href="mailto:commercial@IdrisMans.com.au" class="footer__contact-item"><i class="fa-solid fa-envelope"></i> commercial@IdrisMans.com.au</a></div></div>
+    <div class="footer__col"><h3 class="footer__col-title" data-i18n="footer.navigation">Navigation</h3><ul class="footer__links"><li><a href="about.html" class="footer__link" data-i18n="nav.about">About Us</a></li><li><a href="what-we-ship.html" class="footer__link" data-i18n="footer.what_we_ship">What We Ship</a></li><li><a href="gallery.html" class="footer__link" data-i18n="nav.gallery">Gallery</a></li><li><a href="contact.html" class="footer__link" data-i18n="nav.contact">Contact Us</a></li></ul></div>
+    <div class="footer__col"><h3 class="footer__col-title" data-i18n="nav.services">
+Services
+</h3><ul class="footer__links"><li><a href="importing.html" class="footer__link" data-i18n="nav.importing">
+Importation vers la France / UE
+</a></li><li><a href="exporting.html" class="footer__link" data-i18n="nav.exporting">
+Exportation depuis la France / UE
+</a></li><li></li><li><a href="freight-forwarder.html" class="footer__link" data-i18n="nav.freight_forwarding">Freight Forwarding</a></li><li><a href="customs.html" class="footer__link" data-i18n="nav.customs">Custom Services &amp; Clearances</a></li><li><a href="warehousing.html" class="footer__link" data-i18n="nav.warehousing">Warehousing &amp; Transport</a></li><li><a href="project-logistics.html" class="footer__link" data-i18n="nav.project_logistics">Project Logistics &amp; Management</a></li></ul></div>
+    <div class="footer__col"><h3 class="footer__col-title" data-i18n="footer.what_we_ship">What We Ship</h3><ul class="footer__links"><li><a href="import-car.html" class="footer__link" data-i18n="nav.vehicles">Vehicles</a></li><li><a href="import-boat.html" class="footer__link" data-i18n="nav.boats">Boats</a></li><li><a href="import-motorcycle.html" class="footer__link" data-i18n="nav.motorcycles">Motorcycles</a></li><li><a href="import-motorhome.html" class="footer__link" data-i18n="nav.motorhomes">Motorhomes</a></li><li><a href="import-caravan.html" class="footer__link" data-i18n="nav.caravans">Caravans</a></li><li><a href="import-machinery.html" class="footer__link" data-i18n="nav.machinery">Machinery</a></li></ul></div>
+    <div class="footer__col"><h3 class="footer__col-title" data-i18n="footer.quick_links">Quick Links</h3><ul class="footer__links"><li><a href="about.html" class="footer__link" data-i18n="footer.who_are_we">Who are we?</a></li><li><a href="contact.html" class="footer__link" data-i18n="nav.contact">Contact Us</a></li><li><a href="import-vehicle.html" class="footer__link" data-i18n="footer.get_quote">Get Instant Quote</a></li>
+            <li><a href="faq.html" class="footer__link" data-i18n="footer.blog">Blog</a></li></ul></div>
+  </div><div class="footer__bottom"><p class="footer__copyright" data-i18n="footer.copyright">© 2026 IdrisMans Transit. All Rights Reserved.</p><div class="footer__legal-links"><a href="terms.html" class="footer__legal-link" data-i18n="footer.terms">Terms</a><a href="privacy.html" class="footer__legal-link" data-i18n="footer.privacy">Privacy</a><a href="faq.html" class="footer__legal-link" data-i18n="footer.faqs">FAQs</a></div><div class="footer__dmca"><a href="https://www.dmca.com/Protection/Status.aspx" target="_blank" rel="noopener"><img src="https://images.dmca.com/Badges/dmca_protected_sml_120n.png" alt="DMCA.com Protection Status" width="120" height="24" loading="lazy"></a></div></div></div></footer>
+  <script src="../js/navbar.js" defer></script>
+  <script src="../js/animations.js" defer></script>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/i18n.js" defer></script>
+</body>
+</html>

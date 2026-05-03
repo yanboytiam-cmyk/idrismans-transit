@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact IdrisMans Transit – Get in touch with our commercial freight or automotive shipping teams.">
+  <title>Contact Us | IdrisMans Transit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/typography.css">
+  <link rel="stylesheet" href="../css/buttons.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/hero.css">
+  <link rel="stylesheet" href="../css/cards.css">
+  <link rel="stylesheet" href="../css/forms.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/i18n.css">
+  <style>
+    .contact-columns { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-10); }
+    .contact-dept { background: var(--color-bg); border-radius: var(--radius-lg); padding: var(--space-8); box-shadow: var(--shadow-card); border-top: 4px solid var(--color-primary); }
+    .contact-dept__title { font-size: var(--text-xl); font-weight: 700; color: var(--color-heading); text-transform: uppercase; letter-spacing: var(--tracking-wide); margin-bottom: var(--space-5); }
+    .contact-info-list { display: flex; flex-direction: column; gap: var(--space-3); margin-bottom: var(--space-6); }
+    .contact-info-list a { display: flex; align-items: center; gap: var(--space-3); color: var(--color-text); font-size: var(--text-sm); text-decoration: none; transition: color var(--transition-fast); }
+    .contact-info-list a:hover { color: var(--color-primary); }
+    .contact-info-list a i { color: var(--color-primary); width: 18px; }
+    .contact-requirements { background: var(--color-bg-alt); border-radius: var(--radius-md); padding: var(--space-5); margin-top: var(--space-4); }
+    .contact-requirements h4 { font-size: var(--text-sm); font-weight: 700; color: var(--color-heading); margin-bottom: var(--space-3); }
+    .contact-requirements ul { display: flex; flex-direction: column; gap: var(--space-2); }
+    .contact-requirements li { font-size: var(--text-sm); color: var(--color-text-muted); display: flex; gap: var(--space-2); align-items: flex-start; }
+    .contact-requirements li::before { content: '•'; color: var(--color-primary); flex-shrink: 0; }
+    .map-section { background: var(--color-bg-alt); padding: var(--space-16) 0; }
+    .map-placeholder { width: 100%; height: 400px; background: linear-gradient(135deg, #d0dce8 0%, #b8cad8 100%); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: var(--space-3); color: var(--color-primary); }
+    @media (max-width: 768px) { .contact-columns { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <!-- TOP BAR -->
+  <div class="topbar"><div class="container"><div class="topbar__inner"><p class="topbar__tagline" data-i18n-html="topbar.tagline_about">GLOBAL SHIPPING EXPERTS - WITH OVER <strong data-i18n="contact.50_years_d0d182da">50 YEARS</strong> EXPERIENCE</p><div class="topbar__links"><a href="about.html" class="topbar__link" data-i18n="nav.about">About Us</a><a href="contact.html" class="topbar__link" data-i18n="nav.contact">Contact Us</a><a href="tel:+33695724985" class="topbar__cta"><i class="fa-solid fa-phone"></i><span data-i18n="topbar.call_expert">Call an expert today</span></a></div></div></div></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <div class="navbar__inner">
+        <a href="../index.html" class="navbar__logo"><img src="../logo.png" alt="IdrisMans Transit" style="max-height: 80px; width: auto; object-fit: contain;"></a>
+        <nav class="navbar__nav">
+          <div class="nav-item"><a href="../index.html" class="nav-link" data-i18n="nav.home">Home</a></div>
+        <div class="nav-item"><a href="about.html" class="nav-link" data-i18n="nav.about">About Us</a></div>
+          <div class="nav-item"><a href="services.html" class="nav-link" data-i18n="nav.services">Services <span/ class="arrow">▾</span></a><div class="dropdown"><a href="freight-forwarder.html" class="dropdown-link" data-i18n="nav.freight_forwarding">Freight Forwarding</a><a href="importing.html" class="dropdown-link" data-i18n="nav.importing">Importation vers la France / UE</a><a href="exporting.html" class="dropdown-link" data-i18n="nav.exporting">Exportation depuis la France / UE</a><a href="customs.html" class="dropdown-link" data-i18n="nav.customs">Custom Services &amp; Clearances</a><a href="warehousing.html" class="dropdown-link" data-i18n="nav.warehousing">Warehousing &amp; Transport</a><a href="project-logistics.html" class="dropdown-link" data-i18n="nav.project_logistics">Project Logistics &amp; Management</a></div></div>
+          <div class="nav-item"><a href="what-we-ship.html" class="nav-link" data-i18n="nav.what_we_ship">What We Ship <span/ class="arrow">▾</span></a><div class="dropdown"><a href="import-car.html" class="dropdown-link" data-i18n="nav.vehicles">Vehicles</a><a href="import-boat.html" class="dropdown-link" data-i18n="nav.boats">Boats</a><a href="import-motorcycle.html" class="dropdown-link" data-i18n="nav.motorcycles">Motorcycles</a><a href="import-motorhome.html" class="dropdown-link" data-i18n="nav.motorhomes">Motorhomes</a><a href="import-caravan.html" class="dropdown-link" data-i18n="nav.caravans">Caravans</a><a href="import-machinery.html" class="dropdown-link" data-i18n="nav.machinery">Machinery</a></div></div>
+          
+          <div class="nav-item"><a href="gallery.html" class="nav-link" data-i18n="nav.gallery">Gallery</a></div>
+          <div class="nav-item"><a href="contact.html" class="nav-link active" data-i18n="nav.contact">Contact Us</a></div>
+        </nav>
+        <div class="navbar__cta"><a href="tel:+33695724985" class="navbar__phone"><span class="label" data-i18n="nav.call_label">Talk to us</span><span class="number">+33 6 95 72 49 85</span></a><a href="contact.html" class="btn btn--primary btn--sm" data-i18n="nav.quote">Request a Quote</a></div>
+        <button class="navbar__burger" id="navBurger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu"><span class="burger-line"></span><span class="burger-line"></span><span class="burger-line"></span></button>
+      </div>
+    </div>
+    <nav class="navbar__mobile" id="mobileMenu">
+      <div class="mobile-nav-item"><a href="../index.html" class="mobile-nav-link" data-i18n="nav.home">Home</a></div>
+      <div class="mobile-nav-item"><a href="about.html" class="mobile-nav-link" data-i18n="nav.about">About Us</a></div>
+      
+      <div class="mobile-nav-item"><a href="gallery.html" class="mobile-nav-link" data-i18n="nav.gallery">Gallery</a></div>
+      <div class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link" data-i18n="nav.contact">Contact Us</a></div>
+      <div class="mobile-nav-cta"><a href="tel:+33695724985" class="btn btn--outline-white" style="width:100%;text-align:center;"><i class="fa-solid fa-phone"></i> +33 6 95 72 49 85</a><a href="contact.html" class="btn btn--primary" style="width:100%;text-align:center;" data-i18n="nav.quote">Request a Quote</a></div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero" style="position: relative; overflow: hidden; background: linear-gradient(135deg, #0a1628 0%, #0f2a45 40%, #152e4d 60%, #0a1628 100%); text-align:center; padding: 7rem 0 4rem;">
+  <video autoplay muted loop playsinline style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translateX(-50%) translateY(-50%); z-index: 0; object-fit: cover; opacity: 0.6;">
+    <source src="../commercial%20freignt%20page/Introducing%20the%20new%20Willship%20HQ!.mp4" type="video/mp4">
+  </video>
+  
+
+      <div class="container" style="position: relative; z-index: 2;">
+        <h1 class="page-hero__title" data-i18n="nav.contact">Contact Us</h1>
+        <p class="hero__slogan" data-i18n="hero.slogan">Don't Ship Without Idrismans</p>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html" class="breadcrumb__item" data-i18n="nav.home">Home</a>
+          <span class="breadcrumb__sep">›</span>
+          <span class="breadcrumb__item" aria-current="page" data-i18n="nav.contact">Contact Us</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTIONS -->
+    <section class="section">
+      <div class="container">
+        <div class="contact-columns">
+
+          <!-- Commercial Freight -->
+          <div class="contact-dept" data-aos="fade-up" data-aos-delay="100">
+            <h2 class="contact-dept__title" data-i18n="services.commercial_title">Commercial Freight</h2>
+            <div style="background:var(--color-bg-alt); border-radius:var(--radius-md); padding:var(--space-4); margin-bottom:var(--space-5); border-left:3px solid var(--color-primary);">
+              <p style="font-size:var(--text-sm); font-weight:700; color:var(--color-heading); margin-bottom:var(--space-2);" data-i18n="contact.help_faster">📩 Help Us Help You Faster</p>
+              <p style="font-size:var(--text-sm); color:var(--color-text-muted); margin-bottom:var(--space-3);" data-i18n="contact.form_intro_commercial">We have just launched our Smart Online Form is the quickest way for you to reach our team.</p>
+              <ul style="display:flex; flex-direction:column; gap:var(--space-1); margin-bottom:var(--space-3);">
+                <li style="font-size:var(--text-xs); color:var(--color-text-muted); display:flex; gap:var(--space-2);"><i class="fa-solid fa-check" style="color:var(--color-primary);"></i> <span data-i18n="contact.form_li1"> Complete in under 2 minutes</span></li>
+                <li style="font-size:var(--text-xs); color:var(--color-text-muted); display:flex; gap:var(--space-2);"><i class="fa-solid fa-check" style="color:var(--color-primary);"></i> <span data-i18n="contact.form_li2"> Priority response — faster than email</span></li>
+                <li style="font-size:var(--text-xs); color:var(--color-text-muted); display:flex; gap:var(--space-2);"><i class="fa-solid fa-check" style="color:var(--color-primary);"></i> <span data-i18n="contact.form_li3"> Lets us serve you better</span></li>
+              </ul>
+              <a href="freight-forwarder.html" class="btn btn--primary btn--sm" data-i18n="welcome.cta">Get Started</a>
+            </div>
+            <div class="contact-info-list">
+              <a href="mailto:contact@idrismans.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i> contact@idrismans.com</a>
+              <a href="tel:+33695724985"><i class="fa-solid fa-phone" aria-hidden="true"></i> +33 6 95 72 49 85</a>
+              <a href="#map"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> 15 Rue Jules Guesde, 75014 Paris</a>
+            </div>
+            <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-4);" data-i18n="contact.complete_in_under_e8f66170">Complete in under 2 minutes — Priority response, faster than email</p>
+            <div class="contact-requirements">
+              <h4 data-i18n="contact.when_emailing">When emailing, please include:</h4>
+              <ul>
+                <li data-i18n="contact.comm_req1">Shipment size, volume, and weight</li>
+                <li data-i18n="contact.comm_req2">Origin and destination (delivery address, unloading capabilities)</li>
+                <li data-i18n="contact.comm_req3">Commodity type</li>
+                <li data-i18n="contact.comm_req4">Incoterms (EXW/FOB)</li>
+                <li data-i18n="contact.comm_req5">Cargo value</li>
+                <li data-i18n="contact.comm_req6">Any other relevant details</li>
+              </ul>
+            </div>
+            <!-- Contact Form Commercial -->
+            <form class="form" data-validate style="margin-top: var(--space-6);" action="https://formsubmit.co/contact@idrismans.com" method="POST">
+              <input type="hidden" name="_subject" value="Nouveau contact Fret Commercial (IdrisMans Transit)">
+              <input type="hidden" name="_captcha" value="false">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="comm-name" data-i18n="contact.form_name">Name <span/ class="required">*</span></label>
+                  <input type="text" id="comm-name" name="name" class="form-control" placeholder="Your name" data-i18n-placeholder="contact.form_name_placeholder" required>
+                  <span class="form-feedback form-feedback--error"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="comm-email" data-i18n="contact.form_email">Email <span/ class="required">*</span></label>
+                  <input type="email" id="comm-email" name="email" class="form-control" placeholder="your@email.com" required>
+                  <span class="form-feedback form-feedback--error"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="comm-phone" data-i18n="contact.form_phone">Phone</label>
+                <input type="tel" id="comm-phone" name="phone" class="form-control" placeholder="+61 ...">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="comm-message" data-i18n="contact.form_message">Message <span/ class="required">*</span></label>
+                <textarea id="comm-message" name="message" class="form-control" placeholder="Describe your shipment requirements..." data-i18n-placeholder="contact.form_message_placeholder" required></textarea>
+                <span class="form-feedback form-feedback--error"></span>
+              </div>
+              <div class="form-success-message" data-i18n="contact.form_success">✅ Thank you! We'll get back to you shortly.</div>
+              <button type="submit" class="btn btn--primary" data-i18n="contact.form_submit">Send Message</button>
+            </form>
+          </div>
+
+          <!-- Automotive -->
+          <div class="contact-dept" data-aos="fade-up" data-aos-delay="200">
+            <h2 class="contact-dept__title" data-i18n="hero.automotive_title">
+AUTOMOTIVE
+</h2>
+            <div style="background:var(--color-bg-alt); border-radius:var(--radius-md); padding:var(--space-4); margin-bottom:var(--space-5); border-left:3px solid var(--color-primary);">
+              <p style="font-size:var(--text-sm); font-weight:700; color:var(--color-heading); margin-bottom:var(--space-2);" data-i18n="contact.help_us_help_63014a08">📩 Help Us Help You Faster</p>
+              <p style="font-size:var(--text-sm); color:var(--color-text-muted); margin-bottom:var(--space-3);" data-i18n="contact.form_intro_automotive">We've launched our new Smart Online Form — the fastest way to start your automotive shipping journey.</p>
+              <ul style="display:flex; flex-direction:column; gap:var(--space-1); margin-bottom:var(--space-3);">
+                <li style="font-size:var(--text-xs); color:var(--color-text-muted); display:flex; gap:var(--space-2);"><i class="fa-solid fa-check" style="color:var(--color-primary);"></i> Complete in under 2 minutes</li>
+                <li style="font-size:var(--text-xs); color:var(--color-text-muted); display:flex; gap:var(--space-2);"><i class="fa-solid fa-check" style="color:var(--color-primary);"></i> Priority response — faster than email</li>
+                <li style="font-size:var(--text-xs); color:var(--color-text-muted); display:flex; gap:var(--space-2);"><i class="fa-solid fa-check" style="color:var(--color-primary);"></i> Lets us serve you better</li>
+              </ul>
+              <a href="import-vehicle.html" class="btn btn--primary btn--sm" data-i18n="welcome.cta">Get Started</a>
+            </div>
+            <div class="contact-info-list">
+              <a href="mailto:contact@idrismans.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i> contact@idrismans.com</a>
+              <a href="tel:+33695724985"><i class="fa-solid fa-phone" aria-hidden="true"></i> +33 6 95 72 49 85</a>
+              <a href="#map"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> 15 Rue Jules Guesde, 75014 Paris</a>
+            </div>
+            <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-4);" data-i18n="contact.complete_in_under_e8f66170">Complete in under 2 minutes — Priority response, faster than email</p>
+            <div class="contact-requirements">
+              <h4 data-i18n="contact.when_emailing_please_1048f036">When emailing, please include:</h4>
+              <ul>
+                <li data-i18n="contact.auto_req1">Cargo type: car, caravan, trailer, motorbike, boat, machinery, etc.</li>
+                <li data-i18n="contact.auto_req2">Year/make/model where applicable</li>
+                <li data-i18n="contact.auto_req3">Origin &amp; destination with suburb/postcode</li>
+                <li data-i18n="contact.cargo_value_b4132c0a">Cargo value</li>
+                <li data-i18n="contact.auto_req5">Clear explanation of your request</li>
+                <li data-i18n="contact.auto_req6">Import Approval status (for l'Internationaln imports)</li>
+              </ul>
+            </div>
+            <!-- Contact Form Automotive -->
+            <form class="form" data-validate style="margin-top: var(--space-6);" action="https://formsubmit.co/contact@idrismans.com" method="POST">
+              <input type="hidden" name="_subject" value="Nouveau contact Transport Véhicule (IdrisMans Transit)">
+              <input type="hidden" name="_captcha" value="false">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="auto-name">Name <span class="required">*</span></label>
+                  <input type="text" id="auto-name" name="name" class="form-control" placeholder="Your name" data-i18n-placeholder="contact.form_name_placeholder" required>
+                  <span class="form-feedback form-feedback--error"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="auto-email" data-i18n="contact.form_email">
+Email
+<span class="required">*</span></label>
+                  <input type="email" id="auto-email" name="email" class="form-control" placeholder="your@email.com" required>
+                  <span class="form-feedback form-feedback--error"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="auto-cargo" data-i18n="contact.form_cargo_type">Cargo Type</label>
+                <select id="auto-cargo" name="cargo" class="form-control">
+                  <option value="" data-i18n="contact.form_cargo_placeholder">Select cargo type...</option>
+                  <option data-i18n="contact.form_cargo_vehicle">Vehicle / Car</option>
+                  <option>Motorcycle</option>
+                  <option>Caravan</option>
+                  <option>Motorhome</option>
+                  <option>Trailer Boat</option>
+                  <option>Machinery</option>
+                  <option data-i18n="contact.form_cargo_other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="auto-message" data-i18n="contact.form_message">
+Message
+<span class="required">*</span></label>
+                <textarea id="auto-message" name="message" class="form-control" placeholder="Year/make/model, origin &amp; destination..." data-i18n-placeholder="contact.form_message_auto_placeholder" required></textarea>
+                <span class="form-feedback form-feedback--error"></span>
+              </div>
+              <div class="form-success-message" data-i18n="contact.thank_you_we_c6aa0165">✅ Thank you! We'll get back to you shortly.</div>
+              <button type="submit" class="btn btn--primary" data-i18n="contact.send_message_1432f327">Send Message</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- MAP / LOCATION (MULTI-LOCATIONS) -->
+    <section class="map-section" id="map" style="background: var(--color-bg); padding: var(--space-12) 0;">
+      <div class="container">
+        <h2 class="section-title text-center" data-aos="fade-up" data-i18n="contact.offices_title">Nos Bureaux Internationaux</h2>
+        <p class="section-subtitle text-center" style="margin-bottom: var(--space-8);" data-aos="fade-up" data-i18n="contact.offices_subtitle">Présents dans les hubs logistiques majeurs</p>
+        
+        <div class="locations-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-6);" data-aos="fade-up">
+          
+          <!-- Siège Paris -->
+          <div class="location-card" style="background: var(--color-bg-alt); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-card);">
+            <div style="height: 250px;">
+              <iframe src="https://maps.google.com/maps?q=15%20Rue%20Jules%20Guesde,%2075014%20Paris,%20France&t=&z=14&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div style="padding: var(--space-5);">
+              <h3 style="font-size: var(--text-lg); margin-bottom: var(--space-2);" data-i18n="contact.paris_title">Paris (Siège Social)</h3>
+              <p style="color: var(--color-text-muted); font-size: var(--text-sm); margin-bottom: var(--space-3);"><i class="fa-solid fa-location-dot"></i> 15 Rue Jules Guesde, 75014 Paris, France</p>
+              <a href="tel:+33695724985" style="color: var(--color-primary); font-weight: 600;"><i class="fa-solid fa-phone"></i> +33 6 95 72 49 85</a>
+            </div>
+          </div>
+
+          <!-- Le Havre -->
+          <div class="location-card" style="background: var(--color-bg-alt); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-card);">
+            <div style="height: 250px;">
+              <iframe src="https://maps.google.com/maps?q=Port%20du%20Havre,%20France&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div style="padding: var(--space-5);">
+              <h3 style="font-size: var(--text-lg); margin-bottom: var(--space-2);" data-i18n="contact.havre_title">Le Havre (Port)</h3>
+              <p style="color: var(--color-text-muted); font-size: var(--text-sm); margin-bottom: var(--space-3);"><i class="fa-solid fa-location-dot"></i> Port du Havre, France</p>
+              <a href="mailto:contact@idrismans.com" style="color: var(--color-primary); font-weight: 600;"><i class="fa-solid fa-envelope"></i> contact@idrismans.com</a>
+            </div>
+          </div>
+
+          <!-- Marseille -->
+          <div class="location-card" style="background: var(--color-bg-alt); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-card);">
+            <div style="height: 250px;">
+              <iframe src="https://maps.google.com/maps?q=Port%20de%20Marseille,%20France&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div style="padding: var(--space-5);">
+              <h3 style="font-size: var(--text-lg); margin-bottom: var(--space-2);" data-i18n="contact.marseille_title">Marseille (Port)</h3>
+              <p style="color: var(--color-text-muted); font-size: var(--text-sm); margin-bottom: var(--space-3);"><i class="fa-solid fa-location-dot"></i> Port de Marseille, France</p>
+              <a href="mailto:contact@idrismans.com" style="color: var(--color-primary); font-weight: 600;"><i class="fa-solid fa-envelope"></i> contact@idrismans.com</a>
+            </div>
+          </div>
+
+          <!-- Londres -->
+          <div class="location-card" style="background: var(--color-bg-alt); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-card);">
+            <div style="height: 250px;">
+              <iframe src="https://maps.google.com/maps?q=London,%20UK&t=&z=12&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div style="padding: var(--space-5);">
+              <h3 style="font-size: var(--text-lg); margin-bottom: var(--space-2);" data-i18n="contact.london_title">Londres</h3>
+              <p style="color: var(--color-text-muted); font-size: var(--text-sm); margin-bottom: var(--space-3);"><i class="fa-solid fa-location-dot"></i> Londres, Royaume-Uni</p>
+              <a href="mailto:contact@idrismans.com" style="color: var(--color-primary); font-weight: 600;"><i class="fa-solid fa-envelope"></i> contact@idrismans.com</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand"><a href="../index.html" class="footer__logo"><img src="../logo.png" alt="IdrisMans Transit" style="max-height: 80px; width: auto; object-fit: contain;"></a><address class="footer__address" style="font-style:normal;">IdrisMans Transit<br>15 Rue Jules Guesde,<br>75014 Paris, France</address><div class="footer__contacts"><a href="tel:+33695724985" class="footer__contact-item"><i class="fa-solid fa-phone"></i> +33 6 95 72 49 85</a><a href="tel:+33695724985" class="footer__contact-item"><i class="fa-solid fa-phone"></i> +33 6 95 72 49 85</a><a href="mailto:commercial@IdrisMans.com.au" class="footer__contact-item"><i class="fa-solid fa-envelope"></i> commercial@IdrisMans.com.au</a></div></div>
+        <div class="footer__col"><h3 class="footer__col-title" data-i18n="footer.navigation">Navigation</h3><ul class="footer__links"><li><a href="about.html" class="footer__link" data-i18n="nav.about">About Us</a></li><li><a href="what-we-ship.html" class="footer__link" data-i18n="footer.what_we_ship">What We Ship</a></li><li><a href="gallery.html" class="footer__link" data-i18n="nav.gallery">Gallery</a></li><li><a href="contact.html" class="footer__link" data-i18n="nav.contact">Contact Us</a></li></ul></div>
+        <div class="footer__col"><h3 class="footer__col-title" data-i18n="nav.services">
+Services
+</h3><ul class="footer__links"><li><a href="importing.html" class="footer__link" data-i18n="nav.importing">
+Importation vers la France / UE
+</a></li><li><a href="exporting.html" class="footer__link" data-i18n="nav.exporting">
+Exportation depuis la France / UE
+</a></li><li></li><li><a href="freight-forwarder.html" class="footer__link" data-i18n="nav.freight_forwarding">Freight Forwarding</a></li><li><a href="customs.html" class="footer__link" data-i18n="nav.customs">Custom Services &amp; Clearances</a></li><li><a href="warehousing.html" class="footer__link" data-i18n="nav.warehousing">Warehousing &amp; Transport</a></li><li><a href="project-logistics.html" class="footer__link" data-i18n="nav.project_logistics">Project Logistics &amp; Management</a></li></ul></div>
+        <div class="footer__col"><h3 class="footer__col-title" data-i18n="footer.what_we_ship">What We Ship</h3><ul class="footer__links"><li><a href="import-car.html" class="footer__link" data-i18n="nav.vehicles">Vehicles</a></li><li><a href="import-boat.html" class="footer__link" data-i18n="nav.boats">Boats</a></li><li><a href="import-motorcycle.html" class="footer__link" data-i18n="nav.motorcycles">Motorcycles</a></li><li><a href="import-motorhome.html" class="footer__link" data-i18n="nav.motorhomes">Motorhomes</a></li><li><a href="import-caravan.html" class="footer__link" data-i18n="nav.caravans">Caravans</a></li><li><a href="import-machinery.html" class="footer__link" data-i18n="nav.machinery">Machinery</a></li></ul></div>
+        <div class="footer__col"><h3 class="footer__col-title" data-i18n="footer.quick_links">Quick Links</h3><ul class="footer__links"><li><a href="about.html" class="footer__link" data-i18n="footer.who_are_we">Who are we?</a></li><li><a href="contact.html" class="footer__link" data-i18n="nav.contact">Contact Us</a></li><li><a href="import-vehicle.html" class="footer__link" data-i18n="footer.get_quote">Get Instant Quote</a></li>
+            <li><a href="faq.html" class="footer__link" data-i18n="footer.blog">Blog</a></li></ul></div>
+      </div>
+      <div class="footer__bottom"><p class="footer__copyright" data-i18n="footer.copyright">© 2026 IdrisMans Transit. All Rights Reserved.</p><div class="footer__legal-links"><a href="terms.html" class="footer__legal-link" data-i18n="footer.terms">Terms</a><a href="privacy.html" class="footer__legal-link" data-i18n="footer.privacy">Privacy</a><a href="faq.html" class="footer__legal-link" data-i18n="footer.faqs">FAQs</a></div><div class="footer__dmca"><a href="https://www.dmca.com/Protection/Status.aspx" target="_blank" rel="noopener"><img src="https://images.dmca.com/Badges/dmca_protected_sml_120n.png" alt="DMCA.com Protection Status" width="120" height="24" loading="lazy"></a></div></div>
+    </div>
+  </footer>
+
+  <script src="../js/navbar.js" defer></script>
+  <script src="../js/animations.js" defer></script>
+  <script src="../js/forms.js" defer></script>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/i18n.js" defer></script>
+</body>
+</html>

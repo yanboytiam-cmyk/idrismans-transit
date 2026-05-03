@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Import a motorcycle to l'International or ship your bike internationally with IdrisMans Transit. Safe, affordable motorcycle shipping.">
+  <title>Import Motorcycle to l'International | IdrisMans Transit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/typography.css">
+  <link rel="stylesheet" href="../css/buttons.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/hero.css">
+  <link rel="stylesheet" href="../css/cards.css">
+  <link rel="stylesheet" href="../css/forms.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/i18n.css">
+  <style>
+    .section { padding: 5rem 0; }
+    .section--light { background: #f8fafc; }
+    .section__header { text-align: center; max-width: 720px; margin: 0 auto 2.5rem; }
+    .section__eyebrow { display: inline-block; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-primary, #1a5f9e); margin-bottom: 0.5rem; }
+    .section__title { font-family: 'Montserrat', sans-serif; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: #1a2b3c; line-height: 1.2; }
+    .benefits-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; max-width: 860px; margin: 2rem auto 0; }
+    @media (max-width: 576px) { .benefits-grid { grid-template-columns: 1fr; } }
+    .benefit-item { display: flex; align-items: flex-start; gap: 1rem; background: #fff; border-radius: 10px; padding: 1.5rem; box-shadow: 0 3px 14px rgba(0,0,0,0.06); }
+    .benefit-item__icon { font-size: 1.6rem; color: var(--color-primary, #1a5f9e); min-width: 36px; margin-top: 2px; }
+    .benefit-item__title { font-family: 'Montserrat', sans-serif; font-weight: 700; color: #1a2b3c; margin-bottom: 0.25rem; }
+    .benefit-item__text { color: #555; line-height: 1.6; font-size: 0.93rem; }
+    .options-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 740px; margin: 2rem auto 0; }
+    @media (max-width: 576px) { .options-grid { grid-template-columns: 1fr; } }
+    .option-card { background: #fff; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center; border-top: 4px solid var(--color-primary, #1a5f9e); }
+    .option-card__icon { font-size: 2.5rem; color: var(--color-primary, #1a5f9e); margin-bottom: 1rem; }
+    .option-card__title { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.1rem; color: #1a2b3c; margin-bottom: 0.75rem; }
+    .option-card__text { color: #555; line-height: 1.6; font-size: 0.95rem; }
+    .journey-steps { list-style: none; padding: 0; max-width: 700px; margin: 2rem auto 0; }
+    .journey-steps li { display: flex; align-items: flex-start; gap: 1.25rem; padding: 1.25rem 0; border-bottom: 1px solid #e8edf3; }
+    .journey-steps li:last-child { border-bottom: none; }
+    .step-num { width: 40px; height: 40px; min-width: 40px; border-radius: 50%; background: var(--color-primary, #1a5f9e); color: #fff; font-family: 'Montserrat', sans-serif; font-weight: 700; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; }
+    .step-content h4 { font-family: 'Montserrat', sans-serif; font-weight: 700; color: #1a2b3c; margin-bottom: 0.25rem; }
+    .step-content p { color: #666; font-size: 0.95rem; line-height: 1.6; }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2.5rem; }
+    @media (max-width: 992px) { .testimonials-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 576px) { .testimonials-grid { grid-template-columns: 1fr; } }
+    .testimonial-card { background: #fff; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); position: relative; }
+    .testimonial-card::before { content: '\201C'; font-size: 4rem; color: var(--color-primary, #1a5f9e); opacity: 0.15; position: absolute; top: 0.5rem; left: 1rem; line-height: 1; font-family: Georgia, serif; }
+    .testimonial-card__text { color: #444; line-height: 1.7; margin-bottom: 1.25rem; font-style: italic; }
+    .testimonial-card__author { font-weight: 700; color: var(--color-primary, #1a5f9e); font-family: 'Montserrat', sans-serif; }
+    .stars { color: #f5a623; margin-bottom: 0.5rem; }
+    .accordion { max-width: 800px; margin: 2rem auto 0; }
+    .accordion-item { border: 1px solid #e0e8f0; border-radius: 8px; margin-bottom: 0.75rem; overflow: hidden; }
+    .accordion-trigger { width: 100%; background: #fff; border: none; padding: 1.25rem 1.5rem; text-align: left; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.95rem; color: #1a2b3c; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: background 0.2s; gap: 1rem; }
+    .accordion-trigger:hover { background: #f0f6ff; }
+    .accordion-trigger[aria-expanded="true"] { background: var(--color-primary, #1a5f9e); color: #fff; }
+    .accordion-trigger .icon { transition: transform 0.3s; font-size: 0.9rem; flex-shrink: 0; }
+    .accordion-trigger[aria-expanded="true"] .icon { transform: rotate(180deg); }
+    .accordion-content { display: none; padding: 1.25rem 1.5rem; background: #f8fafc; color: #555; line-height: 1.7; }
+    .accordion-content.is-open { display: block; }
+    .awards-section { background: var(--color-bg-dark, #1a2b3c); padding: 4rem 0; }
+    .awards-grid { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2rem; margin-top: 2rem; }
+    .award-badge { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 10px; padding: 1rem 1.5rem; text-align: center; color: #fff; min-width: 140px; }
+    .award-badge__icon { font-size: 1.8rem; color: #f5a623; margin-bottom: 0.5rem; }
+    .award-badge__label { font-size: 0.78rem; font-family: 'Montserrat', sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+    .breadcrumb { padding: 1rem 0; font-size: 0.85rem; color: #666; }
+    .breadcrumb a { color: var(--color-primary, #1a5f9e); text-decoration: none; }
+    .breadcrumb span { margin: 0 0.4rem; color: #999; }
+  </style>
+</head>
+<body>
+  <!-- TOP BAR -->
+  <div class="topbar"><div class="container"><div class="topbar__inner"><p class="topbar__tagline" data-i18n-html="topbar.tagline_about">GLOBAL SHIPPING EXPERTS - WITH OVER <strong data-i18n="import_motorcycle.50_years_d0d182da">50 YEARS</strong> EXPERIENCE</p><div class="topbar__links"><a href="about.html" class="topbar__link" data-i18n="nav.about">About Us</a><a href="contact.html" class="topbar__link" data-i18n="nav.contact">Contact Us</a><a href="tel:+33695724985" class="topbar__cta"><i class="fa-solid fa-phone"></i><span data-i18n="topbar.call_expert">Call an expert today</span></a></div></div></div></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="container"><div class="navbar__inner">
+      <a href="../index.html" class="navbar__logo"><img src="../logo.png" alt="IdrisMans Transit" style="max-height: 80px; width: auto; object-fit: contain;"></a>
+      <nav class="navbar__nav">
+        <div class="nav-item"><a href="../index.html" class="nav-link" data-i18n="nav.home">Home</a></div>
+        <div class="nav-item"><a href="about.html" class="nav-link" data-i18n="nav.about">About Us</a></div>
+        <div class="nav-item"><a href="services.html" class="nav-link" data-i18n="nav.services">Services <span/ class="arrow">▾</span></a><div class="dropdown"><a href="freight-forwarder.html" class="dropdown-link" data-i18n="nav.freight_forwarding">Freight Forwarding</a><a href="importing.html" class="dropdown-link" data-i18n="nav.importing">Importation vers la France / UE</a><a href="exporting.html" class="dropdown-link" data-i18n="nav.exporting">Exportation depuis la France / UE</a><a href="customs.html" class="dropdown-link" data-i18n="nav.customs">Custom Services &amp; Clearances</a><a href="warehousing.html" class="dropdown-link" data-i18n="nav.warehousing">Warehousing &amp; Transport</a><a href="project-logistics.html" class="dropdown-link" data-i18n="nav.project_logistics">Project Logistics &amp; Management</a></div></div>
+        <div class="nav-item"><a href="what-we-ship.html" class="nav-link" data-i18n="nav.what_we_ship">What We Ship <span/ class="arrow">▾</span></a><div class="dropdown"><a href="import-car.html" class="dropdown-link" data-i18n="nav.vehicles">Vehicles</a><a href="import-boat.html" class="dropdown-link" data-i18n="nav.boats">Boats</a><a href="import-motorcycle.html" class="dropdown-link" data-i18n="nav.motorcycles">Motorcycles</a><a href="import-motorhome.html" class="dropdown-link" data-i18n="nav.motorhomes">Motorhomes</a><a href="import-caravan.html" class="dropdown-link" data-i18n="nav.caravans">Caravans</a><a href="import-machinery.html" class="dropdown-link" data-i18n="nav.machinery">Machinery</a></div></div>
+        
+        <div class="nav-item"><a href="gallery.html" class="nav-link" data-i18n="nav.gallery">Gallery</a></div>
+        <div class="nav-item"><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact Us</a></div>
+      </nav>
+      <div class="navbar__cta"><a href="tel:+33695724985" class="navbar__phone"><span class="label" data-i18n="nav.call_label">Talk to us</span><span class="number">+33 6 95 72 49 85</span></a><a href="contact.html" class="btn btn--primary btn--sm" data-i18n="nav.quote">Request a Quote</a></div>
+      <button class="navbar__burger" id="navBurger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu"><span class="burger-line"></span><span class="burger-line"></span><span class="burger-line"></span></button>
+    </div></div>
+    <nav class="navbar__mobile" id="mobileMenu">
+      <div class="mobile-nav-item"><a href="../index.html" class="mobile-nav-link" data-i18n="nav.home">Home</a></div>
+      <div class="mobile-nav-item"><a href="about.html" class="mobile-nav-link" data-i18n="nav.about">About Us</a></div>
+      
+      <div class="mobile-nav-item"><a href="gallery.html" class="mobile-nav-link" data-i18n="nav.gallery">Gallery</a></div>
+      <div class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link" data-i18n="nav.contact">Contact Us</a></div>
+      <div class="mobile-nav-cta"><a href="tel:+33695724985" class="btn btn--outline-white" style="width:100%;text-align:center;"><i class="fa-solid fa-phone"></i> +33 6 95 72 49 85</a><a href="contact.html" class="btn btn--primary" style="width:100%;text-align:center;" data-i18n="nav.quote">Request a Quote</a></div>
+    </nav>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero" style="background: linear-gradient(rgba(10,22,40,0.5), rgba(10,22,40,0.5)), url('../automotive/motorbike.webp') center/cover no-repeat; padding: 7rem 0 4rem; text-align:center;">
+    <div class="container">
+      <p style="color:#7ec8f0; text-transform:uppercase; letter-spacing:0.15em; font-size:0.85rem; font-weight:700; margin-bottom:1rem;" data-i18n="import_motorcycle.motorcycle_shipping_d5fe07ac">Motorcycle Shipping</p>
+      <h1 style="font-family:'Montserrat',sans-serif; font-size:clamp(1.8rem,4.5vw,3rem); font-weight:800; color:#fff; line-height:1.15; text-transform:uppercase;" data-i18n="import_moto.hero_title">SHIPPING YOUR MOTORCYCLE HAS NEVER BEEN EASIER</h1>
+      <p class="hero__slogan" data-i18n="hero.slogan">Don't Ship Without Idrismans</p>
+      <p style="color:rgba(255,255,255,0.8); font-size:1.1rem; margin-top:1.25rem; max-width:620px; margin-left:auto; margin-right:auto;" data-i18n="import_moto.hero_sub">Your bike deserves expert care. We handle everything — from your garage to your destination.</p>
+      <a href="contact.html" class="btn btn--primary" style="margin-top:2rem;" data-i18n="import_motorcycle.get_a_free_6197d40b">Get a Free Quote</a>
+    </div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html" data-i18n="nav.home">Home</a><span aria-hidden="true">›</span>
+      <a href="what-we-ship.html" data-i18n="footer.what_we_ship">What We Ship</a><span aria-hidden="true">›</span>
+      <span aria-current="page" data-i18n="nav.motorcycles">Motorcycles</span>
+    </nav>
+  </div>
+
+  <!-- BENEFITS -->
+  <section class="section section--light" aria-labelledby="benefits-heading">
+    <div class="container">
+      <div class="section__header" data-aos="fade-up">
+        <span class="section__eyebrow" data-i18n="import_motorcycle.why_ship_your_b842b983">Why Ship Your Motorcycle?</span>
+        <h2 class="section__title" id="benefits-heading" data-i18n="import_motorcycle.motorcycle_shipping_why_25e6f461">Motorcycle Shipping — Why It Makes Perfect Sense</h2>
+        <p style="color:#666; margin-top:1rem; line-height:1.7;" data-i18n="import_motorcycle.whether_you_re_c79a3973">Whether you're relocating, moving temporarily or importing to sell, shipping your motorcycle internationally has real financial and practical benefits.</p>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="benefit-item__icon"><i class="fa-solid fa-tag" aria-hidden="true"></i></div>
+          <div>
+            <h3 class="benefit-item__title" data-i18n="import_motorcycle.motorcycles_are_more_5d257300">Motorcycles Are More Expensive in NZ &amp; UK</h3>
+            <p class="benefit-item__text" data-i18n="import_motorcycle.popular_motorcycle_models_5793d2cd">Popular motorcycle models often cost significantly more in l'Afrique and the United Kingdom than in l'International. Shipping your existing bike can save you thousands compared to selling and re-purchasing.</p>
+          </div>
+        </div>
+        <div class="benefit-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="benefit-item__icon"><i class="fa-solid fa-percent" aria-hidden="true"></i></div>
+          <div>
+            <h3 class="benefit-item__title" data-i18n="import_motorcycle.no_import_tax_1d26e173">No Import Tax If Owned 12+ Months</h3>
+            <p class="benefit-item__text" data-i18n="import_motorcycle.motorcycles_owned_for_6f942413">Motorcycles owned for 12 months or more are typically eligible for GST and duty exemptions when importing to l'Afrique as personal effects. Our team will confirm your eligibility when you enquire.</p>
+          </div>
+        </div>
+        <div class="benefit-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="benefit-item__icon"><i class="fa-solid fa-clock" aria-hidden="true"></i></div>
+          <div>
+            <h3 class="benefit-item__title" data-i18n="import_motorcycle.transit_as_little_b81b08fc">Transit as Little as 2 Weeks Total</h3>
+            <p class="benefit-item__text" data-i18n="import_motorcycle.from_collection_to_38de3603">From collection to delivery, the total door-to-door journey for motorcycle shipping between l'International and l'Afrique is typically just 2–3 weeks — meaning minimal time without your bike.</p>
+          </div>
+        </div>
+        <div class="benefit-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="benefit-item__icon"><i class="fa-solid fa-wallet" aria-hidden="true"></i></div>
+          <div>
+            <h3 class="benefit-item__title" data-i18n="import_motorcycle.shipping_costs_are_399ae0d4">Shipping Costs Are Far Cheaper Than You Think</h3>
+            <p class="benefit-item__text" data-i18n="import_motorcycle.motorcycle_shipping_rates_8c0334f5">Motorcycle shipping rates are very competitive — especially when shared container options are used. When you factor in the price difference between markets, shipping almost always makes strong financial sense.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHIPPING OPTIONS -->
+  <section class="section" aria-labelledby="options-heading">
+    <div class="container">
+      <div class="section__header" data-aos="fade-up">
+        <span class="section__eyebrow" data-i18n="import_motorcycle.how_we_ship_ef9d6022">How We Ship</span>
+        <h2 class="section__title" id="options-heading" data-i18n="import_motorcycle.your_shipping_options_14427840">Your Shipping Options</h2>
+        <p style="color:#666; margin-top:1rem; line-height:1.7;" data-i18n="import_motorcycle.we_offer_two_5edfd006">We offer two proven methods for motorcycle shipping — choose the one that best suits your needs and budget.</p>
+      </div>
+      <div class="options-grid">
+        <div class="option-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="option-card__icon"><i class="fa-solid fa-ship" aria-hidden="true"></i></div>
+          <h3 class="option-card__title" data-i18n="import_motorcycle.roll_on_roll_a88b12ae">Roll On Roll Off (RoRo)</h3>
+          <p class="option-card__text" data-i18n="import_motorcycle.your_motorcycle_is_c6aa5ca8">Your motorcycle is professionally crated or loaded onto a pallet and secured on the RoRo vessel deck. This is the most affordable option for most bikes and the most commonly used method. Fuel must be drained to under 5% capacity and the battery disconnected before loading.</p>
+        </div>
+        <div class="option-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="option-card__icon"><i class="fa-solid fa-box-open" aria-hidden="true"></i></div>
+          <h3 class="option-card__title" data-i18n="import_motorcycle.shared_container_lcl_2e8cb51a">Shared Container (LCL)</h3>
+          <p class="option-card__text" data-i18n="import_motorcycle.your_motorcycle_shares_3aa02361">Your motorcycle shares a container with other motorcycles or vehicles. Provides excellent protection from the elements and is a popular choice for higher-value or classic motorcycles. Allows small personal accessories to be packed with the bike.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section section--light" aria-labelledby="process-heading">
+    <div class="container">
+      <div class="section__header" data-aos="fade-up">
+        <span class="section__eyebrow" data-i18n="import_motorcycle.our_process_a8750a3f">Our Process</span>
+        <h2 class="section__title" id="process-heading" data-i18n="import_motorcycle.we_take_care_2e322190">We Take Care Of The Entire Journey</h2>
+      </div>
+      <ul class="journey-steps" aria-label="Motorcycle shipping journey steps">
+        <li data-aos="fade-up" data-aos-delay="50">
+          <div class="step-num" aria-hidden="true">1</div>
+          <div class="step-content"><h4 data-i18n="import_motorcycle.collection_from_your_5fca0d05">Collection from Your Address</h4><p data-i18n="import_motorcycle.we_arrange_collection_aa06a398">We arrange collection of your motorcycle from your nominated address using a specialist motorcycle transport service.</p></div>
+        </li>
+        <li data-aos="fade-up" data-aos-delay="100">
+          <div class="step-num" aria-hidden="true">2</div>
+          <div class="step-content"><h4 data-i18n="import_motorcycle.port_delivery_amp_6df00eba">Port Delivery &amp; Condition Report</h4><p data-i18n="import_motorcycle.your_bike_is_b4197d78">Your bike is delivered to port, photographed and a full condition report is completed before terminal entry.</p></div>
+        </li>
+        <li data-aos="fade-up" data-aos-delay="150">
+          <div class="step-num" aria-hidden="true">3</div>
+          <div class="step-content"><h4 data-i18n="import_motorcycle.vessel_loading_amp_72d935f3">Vessel Loading &amp; Ocean Transit</h4><p data-i18n="import_motorcycle.your_motorcycle_is_057526d5">Your motorcycle is secured on the vessel for the ocean voyage and tracked throughout transit.</p></div>
+        </li>
+        <li data-aos="fade-up" data-aos-delay="200">
+          <div class="step-num" aria-hidden="true">4</div>
+          <div class="step-content"><h4 data-i18n="import_motorcycle.customs_clearance_amp_d3b2b583">Customs Clearance &amp; Final Delivery</h4><p data-i18n="import_motorcycle.we_manage_all_fe725276">We manage all customs and quarantine at destination, then arrange delivery to your door or depot collection.</p></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section" aria-labelledby="testimonials-heading">
+    <div class="container">
+      <div class="section__header" data-aos="fade-up">
+        <span class="section__eyebrow" data-i18n="import_motorcycle.customer_stories_a8ef5ee4">Customer Stories</span>
+        <h2 class="section__title" id="testimonials-heading" data-i18n="import_motorcycle.what_our_customers_02a5a15e">What Our Customers Say</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="stars" aria-label="5 stars">★★★★★</div>
+          <p class="testimonial-card__text" data-i18n="import_motorcycle.a_big_thanks_d73b7d0a">"A big thanks to the Team at IdrisMans Transit. They've just shipped my bike from Perth. If you want a totally Stress free, reliable company these guys are the ones to use. Fantastic Price and I was always kept up to date."</p>
+          <p class="testimonial-card__author" data-i18n="import_motorcycle.paul_webster_a9a5dbbc">— Paul Webster</p>
+        </div>
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="stars" aria-label="5 stars">★★★★★</div>
+          <p class="testimonial-card__text" data-i18n="import_motorcycle.highly_professional_company_2eb3e5f9">"Highly professional company who do what they say they will. I was extremely happy with their efforts to assist me in importing my motorcycle recently. Highly recommended!"</p>
+          <p class="testimonial-card__author" data-i18n="import_motorcycle.stuart_kath_04515f21">— Stuart Kath</p>
+        </div>
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="stars" aria-label="5 stars">★★★★★</div>
+          <p class="testimonial-card__text" data-i18n="import_motorcycle.the_process_was_ba22d358">"The process was a total breeze. The whole team was fantastic to deal with. Prompt communication, forwarded all necessary information and very pleasant to deal with."</p>
+          <p class="testimonial-card__author" data-i18n="import_motorcycle.terry_mun_7160efbb">— Terry Mun</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--light" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="section__header" data-aos="fade-up">
+        <span class="section__eyebrow" data-i18n="import_motorcycle.got_questions_300df813">Got Questions?</span>
+        <h2 class="section__title" id="faq-heading" data-i18n="import_motorcycle.frequently_asked_questions_5405d8a9">Frequently Asked Questions</h2>
+      </div>
+      <div class="accordion" role="list">
+        <div class="accordion-item" role="listitem">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq1"><span data-i18n="missing3.does my motorcycle need to be crated before shipping _c330137c">Does my motorcycle need to be crated before shipping?</span> <span class="icon"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></span></button>
+          <div class="accordion-content" id="faq1" data-i18n="import_motorcycle.for_roro_shipping_95902044">For RoRo shipping, motorcycles are typically secured on a purpose-built pallet or frame — full wooden crating is not usually required. For shared container (LCL) shipping, your motorcycle will be professionally strapped and secured inside the container using ratchet straps and frame supports. Our logistics team will confirm the specific requirements when you book.</div>
+        </div>
+        <div class="accordion-item" role="listitem">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq2"><span data-i18n="missing3.how should i prepare my motorcycle for shipping _1fad4b8e">How should I prepare my motorcycle for shipping?</span> <span class="icon"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></span></button>
+          <div class="accordion-content" id="faq2" data-i18n="import_motorcycle.key_preparation_steps_8e2adc9c">Key preparation steps include: drain fuel to under 5% capacity or remove entirely; disconnect the battery; ensure tyres are inflated to normal pressure; remove any loose accessories (GPS, phone mounts, aftermarket seats); give the bike a thorough clean, particularly underneath, to minimise quarantine inspection risk. Our team will provide a full checklist when you book.</div>
+        </div>
+        <div class="accordion-item" role="listitem">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq3"><span data-i18n="missing3.how long does motorcycle shipping take _66ad78b5">How long does motorcycle shipping take?</span> <span class="icon"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></span></button>
+          <div class="accordion-content" id="faq3" data-i18n="import_motorcycle.total_door_to_3acddaa5">Total door-to-door transit for motorcycle shipping between l'International and l'Afrique is typically 2–3 weeks. The ocean voyage itself is 4–10 days, with the remaining time covering collection, port processing, and destination customs clearance and delivery. We will provide a more precise timeline when you request a quote based on your specific origin and destination.</div>
+        </div>
+        <div class="accordion-item" role="listitem">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq4"><span data-i18n="missing3.can i import a motorcycle that is still registered in l international _98dbc1dd">Can I import a motorcycle that is still registered in l'International?</span> <span class="icon"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></span></button>
+          <div class="accordion-content" id="faq4" data-i18n="import_motorcycle.yes_your_motorcycle_4fb699f0">Yes, your motorcycle can be imported while still registered in l'International. You will need to provide a copy of the current registration certificate as part of your export documentation. Once imported to your destination country, you will need to re-register the motorcycle with local authorities. Our team can advise on the re-registration process for your destination.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AWARDS -->
+  <section class="awards-section" aria-labelledby="awards-heading">
+    <div class="container">
+      <div style="text-align:center;" data-aos="fade-up">
+        <span style="display:inline-block; font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; color:#7ec8f0; margin-bottom:0.5rem;" data-i18n="import_motorcycle.recognition_a0da8edd">Recognition</span>
+        <h2 id="awards-heading" style="font-family:'Montserrat',sans-serif; font-size:clamp(1.4rem,3vw,2rem); font-weight:800; color:#fff; margin-bottom:0.5rem;" data-i18n="import_motorcycle.our_awards_amp_4209b7af">Our Awards &amp; Accreditations</h2>
+      </div>
+      <div class="awards-grid">
+        <div class="award-badge" data-aos="fade-up" data-aos-delay="100"><div class="award-badge__icon"><i class="fa-solid fa-trophy"></i></div><div class="award-badge__label" data-i18n="import_motorcycle.afif_member_efcd00f3">AFIF Member</div></div>
+        <div class="award-badge" data-aos="fade-up" data-aos-delay="150"><div class="award-badge__icon"><i class="fa-solid fa-star"></i></div><div class="award-badge__label" data-i18n="import_motorcycle.fiata_member_ee0f49f0">FIATA Member</div></div>
+        <div class="award-badge" data-aos="fade-up" data-aos-delay="200"><div class="award-badge__icon"><i class="fa-solid fa-shield-halved"></i></div><div class="award-badge__label" data-i18n="import_motorcycle.customs_broker_ebef457d">Customs Broker</div></div>
+        <div class="award-badge" data-aos="fade-up" data-aos-delay="250"><div class="award-badge__icon"><i class="fa-solid fa-globe"></i></div><div class="award-badge__label" data-i18n="import_motorcycle.wca_member_20c20b77">WCA Member</div></div>
+        <div class="award-badge" data-aos="fade-up" data-aos-delay="300"><div class="award-badge__icon"><i class="fa-solid fa-award"></i></div><div class="award-badge__label" data-i18n="import_motorcycle.iso_certified_4f03bc7f">ISO Certified</div></div>
+        <div class="award-badge" data-aos="fade-up" data-aos-delay="350"><div class="award-badge__icon"><i class="fa-solid fa-certificate"></i></div><div class="award-badge__label" data-i18n="import_motorcycle.iata_accredited_90e08a28">IATA Accredited</div></div>
+        <div class="award-badge" data-aos="fade-up" data-aos-delay="400"><div class="award-badge__icon"><i class="fa-solid fa-handshake"></i></div><div class="award-badge__label" data-i18n="import_motorcycle.10_000_clients_b0b42cd9">10,000+ Clients</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand"><a href="../index.html" class="footer__logo"><img src="../logo.png" alt="IdrisMans Transit" style="max-height: 80px; width: auto; object-fit: contain;"></a><address class="footer__address" style="font-style:normal;">IdrisMans Transit<br>15 Rue Jules Guesde,<br>75014 Paris, France</address><div class="footer__contacts"><a href="tel:+33695724985" class="footer__contact-item"><i class="fa-solid fa-phone"></i> +33 6 95 72 49 85</a><a href="tel:+33695724985" class="footer__contact-item"><i class="fa-solid fa-phone"></i> +33 6 95 72 49 85</a><a href="mailto:commercial@IdrisMans.com.au" class="footer__contact-item"><i class="fa-solid fa-envelope"></i> commercial@IdrisMans.com.au</a></div></div>
+        <div class="footer__col"><h3 class="footer__col-title" data-i18n="footer.navigation">Navigation</h3><ul class="footer__links"><li><a href="about.html" class="footer__link" data-i18n="nav.about">About Us</a></li><li><a href="what-we-ship.html" class="footer__link" data-i18n="footer.what_we_ship">What We Ship</a></li><li><a href="gallery.html" class="footer__link" data-i18n="nav.gallery">Gallery</a></li><li><a href="contact.html" class="footer__link" data-i18n="nav.contact">Contact Us</a></li></ul></div>
+        <div class="footer__col"><h3 class="footer__col-title" data-i18n="nav.services">
+Services
+</h3><ul class="footer__links"><li><a href="importing.html" class="footer__link" data-i18n="nav.importing">
+Importation vers la France / UE
+</a></li><li><a href="exporting.html" class="footer__link" data-i18n="nav.exporting">
+Exportation depuis la France / UE
+</a></li><li></li><li><a href="freight-forwarder.html" class="footer__link" data-i18n="nav.freight_forwarding">Freight Forwarding</a></li><li><a href="customs.html" class="footer__link" data-i18n="nav.customs">Custom Services &amp; Clearances</a></li><li><a href="warehousing.html" class="footer__link" data-i18n="nav.warehousing">Warehousing &amp; Transport</a></li><li><a href="project-logistics.html" class="footer__link" data-i18n="nav.project_logistics">Project Logistics &amp; Management</a></li></ul></div>
+        <div class="footer__col"><h3 class="footer__col-title" data-i18n="footer.what_we_ship">What We Ship</h3><ul class="footer__links"><li><a href="import-car.html" class="footer__link" data-i18n="nav.vehicles">Vehicles</a></li><li><a href="import-boat.html" class="footer__link" data-i18n="nav.boats">Boats</a></li><li><a href="import-motorcycle.html" class="footer__link" data-i18n="nav.motorcycles">Motorcycles</a></li><li><a href="import-motorhome.html" class="footer__link" data-i18n="nav.motorhomes">Motorhomes</a></li><li><a href="import-caravan.html" class="footer__link" data-i18n="nav.caravans">Caravans</a></li><li><a href="import-machinery.html" class="footer__link" data-i18n="nav.machinery">Machinery</a></li></ul></div>
+        <div class="footer__col"><h3 class="footer__col-title" data-i18n="footer.quick_links">Quick Links</h3><ul class="footer__links"><li><a href="about.html" class="footer__link" data-i18n="footer.who_are_we">Who are we?</a></li><li><a href="contact.html" class="footer__link" data-i18n="nav.contact">Contact Us</a></li><li><a href="import-vehicle.html" class="footer__link" data-i18n="footer.get_quote">Get Instant Quote</a></li>
+            <li><a href="faq.html" class="footer__link" data-i18n="footer.blog">Blog</a></li></ul></div>
+      </div>
+      <div class="footer__bottom"><p class="footer__copyright" data-i18n="footer.copyright">© 2026 IdrisMans Transit. All Rights Reserved.</p><div class="footer__legal-links"><a href="terms.html" class="footer__legal-link" data-i18n="footer.terms">Terms</a><a href="privacy.html" class="footer__legal-link" data-i18n="footer.privacy">Privacy</a><a href="faq.html" class="footer__legal-link" data-i18n="footer.faqs">FAQs</a></div><div class="footer__dmca"><a href="https://www.dmca.com/Protection/Status.aspx" target="_blank" rel="noopener"><img src="https://images.dmca.com/Badges/dmca_protected_sml_120n.png" alt="DMCA.com Protection Status" width="120" height="24" loading="lazy"></a></div></div>
+    </div>
+  </footer>
+
+  <script src="../js/navbar.js" defer></script>
+  <script src="../js/animations.js" defer></script>
+  <script src="../js/forms.js" defer></script>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/i18n.js" defer></script>
+  <script>
+    document.querySelectorAll('.accordion-trigger').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        document.querySelectorAll('.accordion-trigger').forEach(b => b.setAttribute('aria-expanded', 'false'));
+        document.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('is-open'));
+        if (!expanded) {
+          btn.setAttribute('aria-expanded', 'true');
+          document.getElementById(btn.getAttribute('aria-controls')).classList.add('is-open');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

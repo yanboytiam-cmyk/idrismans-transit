@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 58" role="img" aria-label="Willship International">
+  <!--
+    Logo Willship International — approximé d'après les screenshots
+    Structure: texte "WILLSHIP" bold + "INTERNATIONAL" petit + chevron orange à droite
+  -->
+
+  <!-- Bloc texte principal -->
+  <text x="0" y="34" font-family="Montserrat,Arial,sans-serif" font-size="30" font-weight="800" fill="#ffffff" letter-spacing="1.5">WILLSHIP</text>
+
+  <!-- Sous-titre INTERNATIONAL -->
+  <text x="1" y="52" font-family="Montserrat,Arial,sans-serif" font-size="10.5" font-weight="500" fill="rgba(255,255,255,0.7)" letter-spacing="4">INTERNATIONAL</text>
+
+  <!-- Chevron/flèche orange — identique au logo original (forme triangulaire) -->
+  <!-- Rectangle orange vertical -->
+  <rect x="192" y="4" width="16" height="50" rx="1" fill="#e8481c"/>
+  <!-- Triangle pointe droite -->
+  <polygon points="208,4 230,29 208,54" fill="#e8481c"/>
+  <!-- Ombre légère triangle intérieur -->
+  <polygon points="208,15 224,29 208,43" fill="rgba(0,0,0,0.15)"/>
+</svg>

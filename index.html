@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="IdrisMans Transit – Société Franco-Britannique de Transport Maritime & Multimodal, Transitaire et Commissionnaire de Transport International.">
+  <title>IdrisMans Transit – Commissionnaire de Transport International</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/i18n.css">
+
+  <style>
+    /* ─── Homepage specific styles ─── */
+
+    /* Welcome section */
+    .welcome-section { padding: var(--space-20) 0; background: #fff; }
+    .welcome-split { display: grid; grid-template-columns: 1fr 1fr; gap: 0; align-items: stretch; min-height: 520px; }
+    .welcome-split__content { padding: var(--space-16) var(--space-12); display: flex; flex-direction: column; justify-content: center; }
+    .welcome-split__content .section-title { font-size: var(--text-2xl); margin-bottom: var(--space-5); color: var(--color-heading); }
+    .welcome-split__image { overflow: hidden; }
+    .welcome-split__image img,
+    .welcome-split__image .img-placeholder { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .welcome-split__image .img-placeholder { background: linear-gradient(135deg, #c5d5e8 0%, #8fa8cc 100%); display: flex; align-items: center; justify-content: center; min-height: 400px; }
+
+    /* Our Breadth split */
+    .breadth-section { padding: 0; background: #fff; }
+    .breadth-split { display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; min-height: 480px; }
+    .breadth-image { overflow: hidden; }
+    .breadth-image img,
+    .breadth-image .img-placeholder { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 420px; }
+    .breadth-image .img-placeholder { background: linear-gradient(135deg, #1a4a7a 0%, #0d2a50 50%, #1a6a8a 100%); display: flex; align-items: center; justify-content: center; }
+    .breadth-content { padding: var(--space-16) var(--space-12); background: #fff; display: flex; flex-direction: column; justify-content: center; }
+    .breadth-content h2 { font-size: var(--text-3xl); font-weight: 800; color: var(--color-heading); margin-bottom: var(--space-6); line-height: 1.2; }
+    .breadth-list { list-style: disc; padding-left: var(--space-5); margin-bottom: var(--space-5); }
+    .breadth-list li { font-size: var(--text-base); color: var(--color-text); line-height: var(--leading-relaxed); margin-bottom: var(--space-2); }
+    .breadth-text { font-size: var(--text-base); color: var(--color-text); line-height: var(--leading-relaxed); margin-bottom: var(--space-8); }
+
+    /* Here at IdrisMans split */
+    .philosophy-section { padding: 0; background: #fff; }
+    .philosophy-split { display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; min-height: 480px; }
+    .philosophy-content { padding: var(--space-16) var(--space-12); background: #fff; display: flex; flex-direction: column; justify-content: center; }
+    .philosophy-image { overflow: hidden; }
+    .philosophy-image .img-placeholder { width: 100%; height: 100%; min-height: 420px; background: linear-gradient(135deg, #d0dce8 0%, #b8cad8 100%); display: flex; align-items: center; justify-content: center; }
+
+    /* Services section */
+    .services-section { padding: var(--space-16) 0; background: var(--color-bg-alt); }
+    .services-header { text-align: center; margin-bottom: var(--space-10); }
+    .services-split { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-8); }
+    .services-block { background: #fff; border-radius: var(--radius-lg); padding: var(--space-10); box-shadow: var(--shadow-card); border-top: 4px solid var(--color-primary); }
+    .services-block__title { font-size: var(--text-xl); font-weight: 700; text-transform: uppercase; letter-spacing: var(--tracking-wide); color: var(--color-heading); margin-bottom: var(--space-5); padding-bottom: var(--space-4); border-bottom: 2px solid var(--color-border-light); }
+    .services-block__list { margin-bottom: var(--space-6); }
+    .services-block__list li { display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-2) 0; border-bottom: 1px solid var(--color-border-light); font-size: var(--text-sm); color: var(--color-text); }
+    .services-block__list li:last-child { border-bottom: none; }
+    .services-block__list li i { color: var(--color-primary); flex-shrink: 0; margin-top: 2px; }
+
+    /* Why section */
+    .why-section { padding: var(--space-20) 0; background: var(--color-bg-dark); }
+
+    /* Testimonials carousel */
+    .testimonials-section { padding: var(--space-20) 0; background: #fff; }
+    .testimonials-header { text-align: center; margin-bottom: var(--space-10); }
+    .testimonials-header h2 { font-size: var(--text-3xl); font-weight: 700; color: var(--color-heading); margin-bottom: var(--space-4); }
+    .testimonials-carousel { max-width: 720px; margin: 0 auto; position: relative; overflow: hidden; }
+    .testimonial-slide { display: none; text-align: center; animation: fadeSlide 0.4s ease; }
+    .testimonial-slide.active { display: block; }
+    @keyframes fadeSlide { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+    .testimonial-slide__text { font-size: var(--text-base); color: var(--color-text); line-height: var(--leading-relaxed); margin-bottom: var(--space-6); font-style: normal; }
+    .testimonial-slide__avatar { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; margin: 0 auto var(--space-3); display: block; background: var(--color-bg-alt); }
+    .testimonial-slide__name { font-weight: 700; color: var(--color-primary); font-size: var(--text-base); font-family: var(--font-heading); }
+    .testimonial-dots { display: flex; justify-content: center; gap: var(--space-2); margin-top: var(--space-8); }
+    .testimonial-dot { width: 32px; height: 3px; background: var(--color-border); cursor: pointer; transition: background var(--transition-fast); border-radius: 2px; }
+    .testimonial-dot.active { background: var(--color-heading); }
+
+    /* Contact CTA */
+    .contact-cta-section { padding: var(--space-16) 0; background: var(--color-bg-dark); text-align: center; }
+    .contact-cta-section h2 { color: white; font-size: var(--text-2xl); margin-bottom: var(--space-6); text-transform: uppercase; letter-spacing: var(--tracking-wide); font-weight: 700; }
+
+    /* Map section */
+    .map-section { height: 320px; position: relative; overflow: hidden; }
+    .map-placeholder { width: 100%; height: 100%; background: #e8edf2; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: var(--space-3); }
+    .map-info-card { position: absolute; top: 50%; left: 2rem; transform: translateY(-50%); background: white; border-radius: var(--radius-md); padding: var(--space-4) var(--space-5); box-shadow: var(--shadow-lg); display: flex; align-items: flex-start; gap: var(--space-3); min-width: 240px; }
+    .map-info-card__logo { width: 32px; height: 32px; object-fit: contain; flex-shrink: 0; }
+    .map-info-card__name { font-weight: 700; font-size: var(--text-sm); color: var(--color-heading); margin-bottom: 2px; }
+    .map-info-card__addr { font-size: var(--text-xs); color: var(--color-text-muted); }
+    .map-info-card__addr i { color: var(--color-primary); margin-right: 4px; }
+
+    /* Awards */
+    .awards-section { padding: var(--space-16) 0; background: var(--color-bg); }
+    .awards-header { text-align: center; margin-bottom: var(--space-10); }
+    .awards-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: var(--space-4); }
+
+    /* Award icon FA */
+    .award-card__icon-fa { width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-3); font-size: 28px; }
+    .award-card__icon-fa--winner { background: linear-gradient(135deg, #ffd700, #f5a623); color: #5a4200; box-shadow: 0 4px 12px rgba(245, 166, 35, 0.4); }
+    .award-card__icon-fa--finalist { background: linear-gradient(135deg, #d0d8e4, #b0beca); color: #4a5568; box-shadow: 0 4px 12px rgba(0,0,0,0.12); }
+
+    /* Placeholder images */
+    .ph-img { background: #ccd9e8; display:flex; align-items:center; justify-content:center; color:#4a6f8a; font-size:0.78rem; font-style:italic; text-align:center; padding:10px; }
+    .ph-img::before { content: attr(data-label); }
+
+    /* Google Reviews badge */
+    .google-reviews-badge { position: fixed; bottom: var(--space-5); left: var(--space-5); background: white; border-radius: var(--radius-md); padding: var(--space-3) var(--space-4); box-shadow: var(--shadow-lg); display: flex; align-items: center; gap: var(--space-3); z-index: 50; text-decoration: none; border: 1px solid var(--color-border); min-width: 160px; }
+    .google-reviews-badge__icon { width: 24px; height: 24px; flex-shrink: 0; }
+    .google-reviews-badge__score { font-size: var(--text-lg); font-weight: 800; color: var(--color-heading); line-height: 1; }
+    .google-reviews-badge__stars { display: flex; gap: 2px; color: #f5a623; font-size: 12px; margin: 2px 0; }
+    .google-reviews-badge__count { font-size: var(--text-xs); color: var(--color-text-muted); }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .welcome-split, .breadth-split, .philosophy-split, .services-split { grid-template-columns: 1fr; }
+      .welcome-split__content, .breadth-content, .philosophy-content { padding: var(--space-10) var(--space-8); }
+      .awards-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .awards-grid { grid-template-columns: repeat(3, 1fr); }
+      .map-section { height: 260px; }
+      .map-info-card { display: none; }
+      .google-reviews-badge { bottom: var(--space-3); left: var(--space-3); }
+    }
+    @media (max-width: 480px) {
+      .awards-grid { grid-template-columns: repeat(2, 1fr); }
+      .welcome-split__content, .breadth-content, .philosophy-content { padding: var(--space-8) var(--space-5); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       TOP BAR
+  ═══════════════════════════════════════════ -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar__inner">
+        <p class="topbar__tagline" data-i18n-html="topbar.tagline">
+LE TRANSITAIRE DU MONDE - DEPUIS <strong>2011</strong>
+</p>
+        <div class="topbar__links">
+          <a href="pages/about.html" class="topbar__link" data-i18n="nav.about">À Propos</a>
+          <a href="pages/contact.html" class="topbar__link" data-i18n="nav.contact">Contactez-nous</a>
+          <a href="tel:+33695724985" class="topbar__cta">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+            <span data-i18n="topbar.call_expert">Appelez un expert</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════ -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <div class="navbar__inner">
+
+        <!-- Logo -->
+        <a href="index.html" class="navbar__logo">
+          <img src="logo.png" alt="IdrisMans Transit" width="180" height="46">
+        </a>
+
+        <!-- Navigation 4 items (conforme screenshot) -->
+        <nav class="navbar__nav" aria-label="Main navigation">
+          <div class="nav-item">
+            <a href="index.html" class="nav-link active" data-i18n="nav.home">Home</a>
+          </div>
+          <div class="nav-item">
+            <a href="pages/freight-forwarder.html" class="nav-link" data-i18n="services.commercial_title">Commercial Freight</a>
+          </div>
+          <div class="nav-item">
+            <a href="pages/import-vehicle.html" class="nav-link" data-i18n="hero.automotive_title">
+AUTOMOTIVE
+</a>
+          </div>
+          <div class="nav-item">
+            <a href="pages/services.html" class="nav-link" data-i18n="index.crates_fd8eb8ca">Crates</a>
+          </div>
+        </nav>
+
+        <!-- Burger -->
+        <button class="navbar__burger" id="navBurger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <nav class="navbar__mobile" id="mobileMenu" aria-label="Mobile navigation">
+      <div class="mobile-nav-item"><a href="pages/freight-forwarder.html" class="mobile-nav-link" data-i18n="index.commercial_freight_f85253f0">Commercial Freight</a></div>
+      <div class="mobile-nav-item"><a href="pages/import-vehicle.html" class="mobile-nav-link" data-i18n="hero.automotive_title">
+AUTOMOTIVE
+</a></div>
+      <div class="mobile-nav-item"><a href="pages/services.html" class="mobile-nav-link" data-i18n="index.crates_fd8eb8ca">Crates</a></div>
+      <div class="mobile-nav-item"><a href="pages/about.html" class="mobile-nav-link" data-i18n="nav.about">About Us</a></div>
+      <div class="mobile-nav-item"><a href="pages/contact.html" class="mobile-nav-link" data-i18n="nav.contact">Contact Us</a></div>
+      <div class="mobile-nav-cta">
+        <a href="tel:+33695724985" class="btn btn--primary" style="width:100%;text-align:center;">
+          <i class="fa-solid fa-phone"></i> Appelez un expert
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════
+         HERO — 2 colonnes : COMMERCIAL / AUTOMOTIVE
+    ═══════════════════════════════════════════ -->
+    <section class="hero" aria-label="Hero section" style="position: relative; overflow: hidden;">
+      <video autoplay muted loop playsinline style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translateX(-50%) translateY(-50%); z-index: 0; object-fit: cover; opacity: 0.6;">
+        <source src="General Freight  Header Video.mp4" type="video/mp4">
+      </video>
+      <div class="container" style="position: relative; z-index: 1;">
+        <p class="hero__headline" data-aos="fade-up" data-i18n="hero.headline">
+Sélectionnez une option ci-dessous pour commencer
+</p>
+        <p class="hero__slogan" data-i18n="hero.slogan">Don't Ship Without Idrismans</p>
+        <div class="hero__options">
+
+          <!-- Commercial — bouton blanc outline -->
+          <div class="hero__card" data-aos="fade-up" data-aos-delay="100">
+            <h2 class="hero__card-title" data-i18n="hero.commercial_title">FRET COMMERCIAL</h2>
+            <p class="hero__card-text" data-i18n="hero.commercial_text">
+Spécialiste des corridors France ↔ Reste du monde et UE ↔ Reste du monde. Conteneur complet (FCL), groupage (LCL), fret aérien, maritime et dédouanement.
+</p>
+            <a href="pages/freight-forwarder.html" class="btn btn--hero-commercial" data-i18n="hero.commercial_cta">En savoir plus</a>
+          </div>
+
+          <!-- Automotive — bouton orange-rouge -->
+          <div class="hero__card" data-aos="fade-up" data-aos-delay="200">
+            <h2 class="hero__card-title" data-i18n="hero.automotive_title">AUTOMOTIVE</h2>
+            <p class="hero__card-text" data-i18n="hero.automotive_text">
+Spécialisé dans le transport de véhicules entre l'Afrique et l'UE. (Voitures, camions, remorques). Autres corridors sur demande spéciale.
+</p>
+            <a href="pages/import-vehicle.html" class="btn btn--hero-automotive" data-i18n="hero.commercial_cta">
+En savoir plus
+</a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Scroll indicator (visible dans le screenshot original) -->
+      <div class="hero__scroll" aria-hidden="true">
+        <div class="hero__scroll-icon">
+          <div class="hero__scroll-dot"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         WELCOME SECTION — texte + image split
+    ═══════════════════════════════════════════ -->
+    <section class="welcome-section">
+      <div class="welcome-split">
+        <div class="welcome-split__content" data-aos="fade-right">
+          <h2 class="section-title" data-i18n="welcome.title">
+Bienvenue chez IdrisMans Transit – Le Transitaire du Monde
+</h2>
+          <p data-i18n="welcome.p1">
+IdrisMans a été fondée en 2011 et a son siège social en Île-de-France. Dans les dernières années, notre société a développé et élargi sa gamme de services pour couvrir tous les aspects de l'industrie du fret. Aujourd'hui, IdrisMans est un prestataire mondial de services proposant un portefeuille complet de formalités d'expédition et de logistique.
+</p>
+          <p data-i18n="welcome.p2">
+IdrisMans est un transitaire international spécialisé dans les services de transports multimodaux et combinés. Aussi dans l'organisation de déménagement international de marchandises, d'effets personnels, de tous types de véhicules roulants tels des cargaisons motorisées ou statiques, des frets lourds «hors gabarit» en vrac et semi-vrac.
+</p>
+          <p data-i18n="welcome.p3">
+Grâce à notre réseau d'agents correspondants implantés dans les 5 continents, qu'il s'agisse d'un transport maritime, ferroviaire, terrestre ou aérien, nous sommes en mesure de gérer pour vous des départs et arrivées à votre convenance avec les meilleures compagnies mondiales. IdrisMans vous offre un service personnalisé et une information concrète et continue tout au long du trajet parcouru du départ à l'arrivée.
+</p>
+          <p data-i18n="welcome.p4">
+De plus, IdrisMans surveille minutieusement tout le processus de transport de votre fret. L'établissement de toutes les formalités douanières requises et l'assistance au dédouanement de votre marchandise sont pris en charge par IdrisMans.
+</p>
+          <div style="margin-top: var(--space-6);">
+            <a href="pages/freight-forwarder.html" class="btn btn--primary" data-i18n="welcome.cta">Get Started</a>
+          </div>
+        </div>
+        <div class="welcome-split__image" data-aos="fade-left">
+          <img src="home%20page%20image/International%20Shipping.webp" alt="International Shipping" width="800" height="600" style="width: 100%; height: 100%; object-fit: cover; display: block; min-height: 400px;">
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         HERE AT IdrisMans — split image droite / texte gauche
+    ═══════════════════════════════════════════ -->
+    <section class="philosophy-section" style="background: var(--color-bg-alt);">
+      <div class="philosophy-split">
+        <div class="philosophy-image" data-aos="fade-right">
+          <img src="home%20page%20image/%C3%89quipe%20IdrisMans.webp" alt="Équipe IdrisMans" width="800" height="600" style="width: 100%; height: 100%; object-fit: cover; display: block; min-height: 420px;">
+        </div>
+        <div class="philosophy-content" data-aos="fade-left">
+          <h2 class="section-title" data-i18n="philosophy.title">Chez IdrisMans</h2>
+          <p data-i18n="philosophy.p1">
+Nous offrons une présence virtuelle, avec des services disponibles exclusivement en ligne. Nous garantissons la qualité de notre travail à distance, et aucun rendez-vous physique n'est nécessaire. De plus, grâce à notre vaste réseau d'agents qui nous représentent, nous sommes présents dans tous les ports et aéroports du monde.
+</p>
+          <p data-i18n="philosophy.p2">
+Nous nous efforçons constamment d'être reconnus comme des leaders dans l'excellence des services d'expédition internationale. Notre mission est d'offrir à nos clients le meilleur service possible, avec un large éventail de destinations directes.
+</p>
+          <p data-i18n="philosophy.p3">
+Demandez-nous des conseils, nous sommes là pour vous aider à chaque étape. Contactez-nous facilement et laissez-nous dépasser vos attentes grâce à notre expertise inégalée.
+</p>
+          <div style="margin-top: var(--space-6);">
+            <a href="pages/contact.html" class="btn btn--primary" data-i18n="topbar.contact">
+Contactez-nous
+</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         CAR IN CONTAINER — illustration processus
+    ═══════════════════════════════════════════ -->
+    <section style="padding:0; background:#fff;">
+      <div style="display:grid; grid-template-columns:1fr 1fr; align-items:stretch; min-height:420px;">
+        <div style="padding:4rem 3rem; background:var(--color-bg-alt); display:flex; flex-direction:column; justify-content:center;">
+          <h2 style="font-family:'Montserrat',sans-serif; font-size:1.8rem; font-weight:800; color:var(--color-heading); margin-bottom:1.25rem;" data-i18n="vehicle_section.title">Votre Véhicule, Suivi à Chaque Étape</h2>
+          <p style="color:var(--color-text); line-height:1.8; margin-bottom:1rem;" data-i18n="vehicle_section.text">Que ce soit en RoRo ou en conteneur complet, chaque véhicule est sécurisé, assuré et tracé en temps réel tout au long du transport international.</p>
+          <a href="pages/import-vehicle.html" class="btn btn--primary" style="align-self:flex-start;" data-i18n="hero.commercial_cta">
+En savoir plus
+</a>
+        </div>
+        <div style="overflow:hidden;">
+          <img src="placeholder/car-in-container.webp" alt="Voiture chargée dans un conteneur maritime" class="ph-img" data-label="Image : Voiture dans conteneur — processus de chargement RoRo/FCL" style="width:100%;height:100%;min-height:420px;object-fit:cover;display:block;">
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         OUR BREADTH OF EXPERIENCE — split image/texte (comme screenshot)
+    ═══════════════════════════════════════════ -->
+    <section class="breadth-section">
+      <div class="breadth-split">
+
+        <!-- Image gauche : vue aérienne cargo ship -->
+        <div class="breadth-image" data-aos="fade-right">
+          <img src="home%20page%20image/Cargo%20Ship%20%E2%80%94%20Aerial%20View.webp" alt="Cargo Ship — Aerial View" width="800" height="600" style="width: 100%; height: 100%; object-fit: cover; display: block; min-height: 420px;">
+        </div>
+
+        <!-- Contenu droit : bullets + texte + bouton -->
+        <div class="breadth-content" data-aos="fade-left">
+          <h2 data-i18n="breadth.title">Notre Expérience</h2>
+          <ul class="breadth-list">
+            <li data-i18n="breadth.li1">Des formalités douanières à l'import et à l'export maîtrisées</li>
+            <li data-i18n="breadth.li2">Réseau mondial de correspondants sur les 5 continents</li>
+            <li data-i18n="breadth.li3">Solutions d'entreposage sous douane sécurisées et flexibles</li>
+            <li data-i18n="breadth.li4">Spécialistes du transport multimodal et combiné</li>
+          </ul>
+          <p class="breadth-text" data-i18n="breadth.text">
+IdrisMans offre un service complet de gestion et d'organisation du commerce international et du fret. Que ce soit pour l'expédition et la réception de fret aérien, maritime, terrestre ou ferroviaire, nous avons l'expertise pour acheminer vos marchandises en toute sécurité.
+</p>
+          <a href="pages/freight-forwarder.html" class="btn btn--primary" data-i18n="breadth.cta">Découvrir nos services</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         OUR SERVICES
+    ═══════════════════════════════════════════ -->
+    <section class="services-section" aria-label="Our services">
+      <div class="container">
+        <div class="services-header" data-aos="fade-up">
+          <h2 class="section-title" data-i18n="services.title">Our Services</h2>
+        </div>
+        <div class="services-split">
+
+          <!-- Commercial Freight -->
+          <div class="services-block" data-aos="fade-up" data-aos-delay="100">
+            <img src="generated/service_commercial_new.png" alt="Commercial freight shipping — containers and cargo" class="ph-img" data-label="Image : Fret Commercial — conteneurs & cargo" style="width:100%;height:240px;object-fit:cover;border-radius:var(--radius-md);margin-bottom:var(--space-5);">
+            <h3 class="services-block__title" data-i18n="index.commercial_freight_f85253f0">Commercial Freight</h3>
+            <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-4);" data-i18n="services.commercial_intro">Our commercial freight division provides:</p>
+            <ul class="services-block__list">
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span data-i18n="services.commercial_li1"> International Air Freight Services</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span data-i18n="services.commercial_li2"> International Sea Freight Services - both full and partial container loads</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span data-i18n="services.commercial_li3"> Project Logistics</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span data-i18n="services.commercial_li4"> Customs Clearance</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span data-i18n="services.commercial_li5"> Quarantine Clearance</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span data-i18n="services.commercial_li6"> Order Tracking</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span data-i18n="services.commercial_li7"> Warehousing</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span data-i18n="services.commercial_li8"> Domestic Transportation</span></li>
+            </ul>
+            <a href="pages/freight-forwarder.html" class="btn btn--primary" data-i18n="services.commercial_cta">Learn More</a>
+          </div>
+
+          <!-- Automotive -->
+          <div class="services-block" data-aos="fade-up" data-aos-delay="200">
+            <img src="generated/service_automotive_new.png" alt="Automotive shipping — voitures et véhicules sur RoRo" class="ph-img" data-label="Image : Transport Automobile — voitures RoRo" style="width:100%;height:240px;object-fit:cover;border-radius:var(--radius-md);margin-bottom:var(--space-5);">
+            <h3 class="services-block__title" data-i18n="hero.automotive_title">
+AUTOMOTIVE
+</h3>
+            <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-4);" data-i18n="services.automotive_intro">Our automotive freight division provides:</p>
+            <ul class="services-block__list">
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span data-i18n="services.automotive_li1"> International door to door services for all automotive cargo - vehicles, motorcycles, caravans, motorhomes, trailer boats, and much more</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span data-i18n="services.automotive_li2"> Guidance on all compliance and registration issues</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span data-i18n="services.automotive_li3"> Expertise on foreign import tax laws tailored to your personal situation</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span data-i18n="services.automotive_li4"> Full assistance with transit insurance</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span data-i18n="services.automotive_li5"> Breakbulk and RoRo specialized shipments</span></li>
+            </ul>
+            <div style="display:flex; gap: var(--space-3); flex-wrap: wrap; margin-top: var(--space-2);">
+              <a href="pages/import-vehicle.html" class="btn btn--primary" data-i18n="footer.get_quote">Get Instant Quote</a>
+              <a href="pages/what-we-ship.html" class="btn btn--outline" data-i18n="services.commercial_cta">Learn More</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         POURQUOI CHOISIR IDRISMANS
+    ═══════════════════════════════════════════ -->
+    <section class="why-section" aria-label="Pourquoi choisir IdrisMans">
+      <div class="container">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;" data-aos="fade-up">
+          <h2 class="section-title section-title--white" data-i18n="why.title">Pourquoi choisir IdrisMans Transit ?</h2>
+          <p style="color: rgba(255,255,255,0.9); font-size: var(--text-lg); font-weight: 600; margin-bottom: var(--space-5);" data-i18n="why.subtitle">
+Expérience, intégrité et accompagnement sur mesure.
+</p>
+          <p style="color: rgba(255,255,255,0.8); font-size: var(--text-md); line-height: var(--leading-relaxed); margin-bottom: var(--space-8);" data-i18n="why.text">
+Si vous êtes intéressé par nos services de transport maritime, aérien, routier ou par nos prestations de formalités douanières, nous sommes là pour vous. Nous plaçons les besoins de nos clients au premier plan. De l'importation de votre premier véhicule à la gestion complète de votre chaîne logistique, nous serons à vos côtés à chaque étape. Choisissez IdrisMans Transit aujourd'hui.
+</p>
+          <a href="pages/contact.html" class="btn btn--primary btn--lg" data-i18n="nav.quote">Demander un devis</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         CLIENT TESTIMONIALS — CAROUSEL (comme screenshot)
+    ═══════════════════════════════════════════ -->
+    <section class="testimonials-section" aria-label="Client testimonials">
+      <div class="container">
+        <div class="testimonials-header" data-aos="fade-up">
+          <h2 data-i18n="testimonials.title">Avis de nos clients</h2>
+          <p style="max-width: 720px; margin: 0 auto; color: var(--color-text); line-height: var(--leading-relaxed);" data-i18n="testimonials.subtitle">
+IdrisMans a bâti sa réputation sur l'excellence de son service et sa fiabilité. Nos clients apprécient particulièrement notre réactivité, notre professionnalisme et notre transparence. Avec une note de 4.3/5 sur Google Maps, découvrez ce qu'ils disent de nous !
+</p>
+        </div>
+
+        <div class="testimonials-carousel" data-aos="fade-up">
+          <!-- Slide 1 -->
+          <div class="testimonial-slide active">
+            <div style="color: #f5a623; font-size: 18px; margin-bottom: 15px;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="testimonial-slide__text" data-i18n="index.agence_tr_s_63765dcc">
+              "Agence très sérieuse, réactive, à l'écoute. Je recommande vivement pour tous vos transports internationaux !"
+            </p>
+            <img src="placeholder/reviewer-lahcen.webp" alt="Lahcen M." class="testimonial-slide__avatar ph-img" data-label="Photo client : Lahcen M." style="background:#ccd9e8;">
+            <p class="testimonial-slide__name" data-i18n="index.lahcen_m_7b97af54">Lahcen M.</p>
+          </div>
+          <!-- Slide 2 -->
+          <div class="testimonial-slide">
+            <div style="color: #f5a623; font-size: 18px; margin-bottom: 15px;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="testimonial-slide__text" data-i18n="index.un_professionnel_qui_73d9145e">
+              "Un professionnel qui maîtrise bien son métier. Le processus de dédouanement a été d'une fluidité incroyable. Merci à toute l'équipe."
+            </p>
+            <img src="placeholder/reviewer-sci-napoleon.webp" alt="SCI Napoléon" class="testimonial-slide__avatar ph-img" data-label="Photo client : SCI Napoléon" style="background:#ccd9e8;">
+            <p class="testimonial-slide__name" data-i18n="index.sci_napol_on_78ee24a2">SCI Napoléon</p>
+          </div>
+          <!-- Slide 3 -->
+          <div class="testimonial-slide">
+            <div style="color: #f5a623; font-size: 18px; margin-bottom: 15px;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="testimonial-slide__text" data-i18n="index.service_client_exceptionnel_369f7df1">
+              "Service client exceptionnel. Mon véhicule est arrivé à destination sans la moindre égratignure et dans les délais prévus."
+            </p>
+            <img src="placeholder/reviewer-david.webp" alt="David L." class="testimonial-slide__avatar ph-img" data-label="Photo client : David L." style="background:#ccd9e8;">
+            <p class="testimonial-slide__name" data-i18n="index.david_l_ef2fb83e">David L.</p>
+          </div>
+          <!-- Slide 4 -->
+          <div class="testimonial-slide">
+            <div style="color: #f5a623; font-size: 18px; margin-bottom: 15px;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="testimonial-slide__text" data-i18n="index.je_travaille_avec_b73000f1">
+              "Je travaille avec IdrisMans depuis des années pour mes exports. Toujours carrés, toujours pros. Je ne changerais de transitaire pour rien au monde."
+            </p>
+            <img src="placeholder/reviewer-marc.webp" alt="Marc A." class="testimonial-slide__avatar ph-img" data-label="Photo client : Marc A." style="background:#ccd9e8;">
+            <p class="testimonial-slide__name" data-i18n="index.marc_a_e5de2851">Marc A.</p>
+          </div>
+        </div>
+
+        <!-- Dots de navigation -->
+        <div class="testimonial-dots" aria-label="Testimonial navigation">
+          <button class="testimonial-dot active" aria-label="Testimonial 1" data-index="0"></button>
+          <button class="testimonial-dot" aria-label="Testimonial 2" data-index="1"></button>
+          <button class="testimonial-dot" aria-label="Testimonial 3" data-index="2"></button>
+          <button class="testimonial-dot" aria-label="Testimonial 4" data-index="3"></button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         HAVE ANY QUESTIONS? + GOOGLE MAPS
+    ═══════════════════════════════════════════ -->
+    <section class="contact-cta-section">
+      <div class="container">
+        <h2 data-i18n="cta.questions">DES QUESTIONS ? CONTACTEZ-NOUS</h2>
+        <a href="pages/contact.html" class="btn btn--primary btn--lg" data-i18n="cta.contact_btn">
+Nous Contacter
+</a>
+      </div>
+    </section>
+
+    <!-- Google Maps iframe for Paris HQ -->
+    <div class="map-section" aria-label="Office location map">
+      <iframe 
+        src="https://maps.google.com/maps?q=15%20Rue%20Jules%20Guesde,%2075014%20Paris,%20France&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+        width="100%" 
+        height="100%" 
+        style="border:0; position: absolute; top:0; left:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+      <!-- Info card -->
+      <div class="map-info-card" style="z-index: 10;">
+        <img src="logo.png" alt="IdrisMans Transit" class="map-info-card__logo" width="32" height="32">
+        <div>
+          <p class="map-info-card__name" data-i18n="index.idrismans_transit_d4f14870">IdrisMans Transit</p>
+          <p class="map-info-card__addr"><i class="fa-solid fa-location-dot"></i> 15 Rue Jules Guesde, 75014 Paris</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         AWARD WINNING INDUSTRY LEADER
+    ═══════════════════════════════════════════ -->
+    <section class="awards-section" aria-label="Awards and recognition">
+      <div class="container">
+        <div class="awards-header" data-aos="fade-up">
+          <h2 class="section-title" data-i18n="awards.title">Award Winning Industry Leader</h2>
+        </div>
+        <div class="awards-grid">
+          <div class="award-card" data-aos="zoom-in" data-aos-delay="100">
+            <div class="award-card__icon-fa award-card__icon-fa--winner"><i class="fa-solid fa-trophy" aria-hidden="true"></i></div>
+            <span class="award-card__badge award-card__badge--winner" data-i18n="index.winner_b5a15fdf">WINNER</span>
+            <p class="award-card__year">2021</p>
+            <p class="award-card__title" data-i18n="index.best_international_automotive_94060262">Best International Automotive Cargo Logistics Enterprise</p>
+          </div>
+          <div class="award-card" data-aos="zoom-in" data-aos-delay="150">
+            <div class="award-card__icon-fa award-card__icon-fa--winner"><i class="fa-solid fa-trophy" aria-hidden="true"></i></div>
+            <span class="award-card__badge award-card__badge--winner" data-i18n="index.winner_b5a15fdf">WINNER</span>
+            <p class="award-card__year">2021</p>
+            <p class="award-card__title" data-i18n="index.award_for_innovation_04d51962">Award for Innovation in End-to-End Freight Transport</p>
+          </div>
+          <div class="award-card" data-aos="zoom-in" data-aos-delay="200">
+            <div class="award-card__icon-fa award-card__icon-fa--finalist"><i class="fa-solid fa-medal" aria-hidden="true"></i></div>
+            <span class="award-card__badge award-card__badge--finalist" data-i18n="index.finalist_b89b34c9">FINALIST</span>
+            <p class="award-card__year">2018</p>
+            <p class="award-card__title" data-i18n="index.freight_forwarder_of_7f2a1fbc">Freight Forwarder of the Year Award</p>
+          </div>
+          <div class="award-card" data-aos="zoom-in" data-aos-delay="250">
+            <div class="award-card__icon-fa award-card__icon-fa--finalist"><i class="fa-solid fa-medal" aria-hidden="true"></i></div>
+            <span class="award-card__badge award-card__badge--finalist" data-i18n="index.finalist_b89b34c9">FINALIST</span>
+            <p class="award-card__year">2018</p>
+            <p class="award-card__title" data-i18n="index.young_achievement_award_bb287b77">Young Achievement Award (Nick Proctor)</p>
+          </div>
+          <div class="award-card" data-aos="zoom-in" data-aos-delay="300">
+            <div class="award-card__icon-fa award-card__icon-fa--finalist"><i class="fa-solid fa-medal" aria-hidden="true"></i></div>
+            <span class="award-card__badge award-card__badge--finalist" data-i18n="index.finalist_b89b34c9">FINALIST</span>
+            <p class="award-card__year">2018</p>
+            <p class="award-card__title" data-i18n="index.young_achievement_award_521884e1">Young Achievement Award (Mel Mather)</p>
+          </div>
+          <div class="award-card" data-aos="zoom-in" data-aos-delay="350">
+            <div class="award-card__icon-fa award-card__icon-fa--finalist"><i class="fa-solid fa-medal" aria-hidden="true"></i></div>
+            <span class="award-card__badge award-card__badge--finalist" data-i18n="index.finalist_b89b34c9">FINALIST</span>
+            <p class="award-card__year">2017</p>
+            <p class="award-card__title" data-i18n="index.freight_forwarder_of_7f2a1fbc">Freight Forwarder of the Year Award</p>
+          </div>
+          <div class="award-card" data-aos="zoom-in" data-aos-delay="400">
+            <div class="award-card__icon-fa award-card__icon-fa--finalist"><i class="fa-solid fa-medal" aria-hidden="true"></i></div>
+            <span class="award-card__badge award-card__badge--finalist" data-i18n="index.finalist_b89b34c9">FINALIST</span>
+            <p class="award-card__year">2016</p>
+            <p class="award-card__title" data-i18n="index.young_maritime_professional_721bb86d">Young Maritime Professional of the Year</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo">
+            <img src="logo.png" alt="IdrisMans Transit" style="max-height: 80px; width: auto; object-fit: contain;">
+          </a>
+          <address class="footer__address" style="font-style:normal;">
+            IdrisMans Transit<br>15 Rue Jules Guesde,<br>75014 Paris, France
+          </address>
+          <div class="footer__contacts">
+            <a href="tel:+33695724985" class="footer__contact-item">
+              <i class="fa-solid fa-phone" aria-hidden="true"></i> +33 6 95 72 49 85
+            </a>
+            <a href="mailto:contact@idrismans.com" class="footer__contact-item">
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i> contact@idrismans.com
+            </a>
+            <div style="display:flex; gap:10px; margin-top:10px;">
+              <a href="https://www.facebook.com/IdrisMansTransport" target="_blank" style="color:var(--color-primary); font-size:20px;"><i class="fa-brands fa-facebook"></i></a>
+              <a href="https://www.instagram.com/idrismans/" target="_blank" style="color:var(--color-primary); font-size:20px;"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://wa.me/33695724985" target="_blank" style="color:var(--color-primary); font-size:20px;"><i class="fa-brands fa-whatsapp"></i></a>
+              <a href="https://t.me/Idris_Mans" target="_blank" style="color:var(--color-primary); font-size:20px;"><i class="fa-brands fa-telegram"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__col-title" data-i18n="footer.navigation">Navigation</h3>
+          <ul class="footer__links">
+            <li><a href="pages/about.html" class="footer__link" data-i18n="nav.about">About Us</a></li>
+            <li><a href="pages/what-we-ship.html" class="footer__link" data-i18n="footer.what_we_ship">What We Ship</a></li>
+            
+            <li><a href="pages/gallery.html" class="footer__link" data-i18n="nav.gallery">Gallery</a></li>
+            <li><a href="pages/contact.html" class="footer__link" data-i18n="nav.contact">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__col-title" data-i18n="nav.services">
+Services
+</h3>
+          <ul class="footer__links">
+            <li><a href="pages/importing.html" class="footer__link" data-i18n="nav.importing">Importation vers la France / UE</a></li>
+            <li><a href="pages/exporting.html" class="footer__link" data-i18n="nav.exporting">Exportation depuis la France / UE</a></li>
+            <li></li>
+            <li><a href="pages/freight-forwarder.html" class="footer__link" data-i18n="nav.freight_forwarding">Freight Forwarding</a></li>
+            <li><a href="pages/customs.html" class="footer__link" data-i18n="nav.customs">Custom Services &amp; Clearances</a></li>
+            <li><a href="pages/warehousing.html" class="footer__link" data-i18n="nav.warehousing">Warehousing &amp; Transport</a></li>
+            <li><a href="pages/project-logistics.html" class="footer__link" data-i18n="nav.project_logistics">Project Logistics &amp; Management</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__col-title" data-i18n="footer.what_we_ship">What We Ship</h3>
+          <ul class="footer__links">
+            <li><a href="pages/import-car.html" class="footer__link" data-i18n="nav.vehicles">Vehicles</a></li>
+            <li><a href="pages/import-boat.html" class="footer__link" data-i18n="nav.boats">Boats</a></li>
+            <li><a href="pages/import-motorcycle.html" class="footer__link" data-i18n="nav.motorcycles">Motorcycles</a></li>
+            <li><a href="pages/import-motorhome.html" class="footer__link" data-i18n="nav.motorhomes">Motorhomes</a></li>
+            <li><a href="pages/import-caravan.html" class="footer__link" data-i18n="nav.caravans">Caravans</a></li>
+            <li><a href="pages/import-machinery.html" class="footer__link" data-i18n="nav.machinery">Machinery</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__col-title" data-i18n="footer.quick_links">Quick Links</h3>
+          <ul class="footer__links">
+            <li><a href="pages/about.html" class="footer__link" data-i18n="footer.who_are_we">Who are we?</a></li>
+            <li><a href="pages/contact.html" class="footer__link" data-i18n="nav.contact">Contact Us</a></li>
+            <li><a href="pages/import-vehicle.html" class="footer__link" data-i18n="footer.get_quote">Get Instant Quote</a></li>
+            <li><a href="pages/faq.html" class="footer__link" data-i18n="footer.blog">Blog</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright" data-i18n="footer.copyright">© 2026 IdrisMans Transit. Tous droits réservés.</p>
+        <div class="footer__legal-links">
+          <a href="pages/terms.html" class="footer__legal-link" data-i18n="footer.terms">Terms</a>
+          <a href="pages/privacy.html" class="footer__legal-link" data-i18n="footer.privacy">Privacy</a>
+          <a href="pages/faq.html" class="footer__legal-link" data-i18n="footer.faqs">FAQs</a>
+        </div>
+        <div class="footer__dmca">
+          <a href="https://www.dmca.com/Protection/Status.aspx" title="DMCA.com Protection Status" target="_blank" rel="noopener noreferrer">
+            <img src="https://images.dmca.com/Badges/dmca_protected_sml_120n.png" alt="DMCA.com Protection Status" width="120" height="24" loading="lazy">
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Google Reviews Badge fixe -->
+  <a href="https://www.google.com/maps/search/IdrisMans+Transit" target="_blank" rel="noopener" class="google-reviews-badge" aria-label="Google Reviews: 4.3 stars, 166 reviews">
+    <svg class="google-reviews-badge__icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+      <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+      <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+      <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+    </svg>
+    <div>
+      <div style="display:flex; align-items:center; gap:4px;">
+        <span class="google-reviews-badge__score">4.3</span>
+        <div class="google-reviews-badge__stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star-half-stroke"></i>
+        </div>
+      </div>
+      <p class="google-reviews-badge__count" data-i18n="google_reviews.count">
+166 avis
+</p>
+    </div>
+  </a>
+
+  <!-- Scripts -->
+  <script src="js/navbar.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/i18n.js" defer></script>
+
+  <!-- Testimonials Carousel -->
+  <script>
+    (function() {
+      var slides = document.querySelectorAll('.testimonial-slide');
+      var dots   = document.querySelectorAll('.testimonial-dot');
+      var current = 0;
+      var timer;
+
+      function show(index) {
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        current = (index + slides.length) % slides.length;
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+      }
+
+      function autoPlay() {
+        timer = setInterval(function() { show(current + 1); }, 5000);
+      }
+
+      dots.forEach(function(dot) {
+        dot.addEventListener('click', function() {
+          clearInterval(timer);
+          show(parseInt(this.getAttribute('data-index')));
+          autoPlay();
+        });
+      });
+
+      autoPlay();
+    })();
+  </script>
+
+</body>
+</html>
