@@ -190,6 +190,6 @@ const i18nJs = `/**
 })();
 `;
 
-fs.writeFileSync(path.join('assets', 'js', 'i18n.js'), i18nJs);
+fs.writeFileSync(path.join('js', 'i18n.js'), i18nJs);
 const size = (Buffer.byteLength(i18nJs) / 1024).toFixed(1);
 console.log('i18n.js rebuilt with embedded translations. Size: ' + size + ' KB');

@@ -1,5 +1,5 @@
 /*
- * forms.js — Willship International Clone
+ * forms.js — IdrisMans Transit
  * Validation et soumission des formulaires de contact
  */
 

@@ -1,5 +1,5 @@
 /*
- * typography.css — Willship International Clone
+ * typography.css — IdrisMans Transit
  * Styles globaux pour les titres, paragraphes, liens et textes
  */
 
@@ -58,7 +58,7 @@ a:hover {
   color: var(--color-primary-dark);
 }
 
-/* ─── Section headings avec style Willship ─── */
+/* ─── Section headings IdrisMans ─── */
 
 .section-label {
   display: inline-block;

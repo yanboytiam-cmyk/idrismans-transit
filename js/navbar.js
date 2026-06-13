@@ -1,5 +1,5 @@
 /*
- * navbar.js — Willship International Clone
+ * navbar.js — IdrisMans Transit
  * Comportements navbar : sticky scroll, burger menu, dropdowns mobile
  */
 

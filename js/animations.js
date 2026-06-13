@@ -1,5 +1,5 @@
 /*
- * animations.js — Willship International Clone
+ * animations.js — IdrisMans Transit
  * Intersection Observer pour animations au scroll (data-aos)
  * Compteurs animés pour les statistiques
  */

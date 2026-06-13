@@ -1,14 +1,14 @@
 /*
- * variables.css — Willship International Clone
+ * variables.css — IdrisMans Transit
  * Toutes les variables CSS globales : couleurs, typographies, espacements, ombres
  * ⚠️ Couleurs estimées depuis l'analyse visuelle — vérifier avec DevTools sur le site original
  */
 
 :root {
   /* ─── Couleurs principales (extraites des screenshots) ─── */
-  --color-primary:        #e8481c;    /* Orange-rouge Willship — boutons CTA */
-  --color-primary-dark:   #c93c14;    /* Orange-rouge foncé — hover */
-  --color-primary-light:  #f05a2e;    /* Orange-rouge clair */
+  --color-primary:        #e10600;    /* Rouge vif — boutons CTA */
+  --color-primary-dark:   #b00500;    /* Rouge vif foncé — hover */
+  --color-primary-light:  #ff2a1a;    /* Rouge vif clair */
   --color-secondary:      #22a95a;    /* Vert — bouton "Call an expert" */
   --color-secondary-dark: #1a8a48;    /* Vert foncé — hover */
 

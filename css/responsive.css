@@ -1,5 +1,5 @@
 /*
- * responsive.css — Willship International Clone
+ * responsive.css — IdrisMans Transit
  * Media queries centralisées — Breakpoints : 480 / 768 / 1024 / 1280px
  * Organisation : mobile-first overrides, desktop-first adjustments
  */
@@ -225,4 +225,62 @@
     display: flex;
     align-items: center;
   }
+}
+
+/* ════════════════════════════════════════════════════════════
+   MOBILE HARDENING — couche globale qui s'applique à TOUTES les
+   pages (y compris les blocs <style> inline) pour un rendu propre
+   sur smartphone. Forçage des grilles multi-colonnes en 1 colonne,
+   anti-débordement horizontal, tailles de titres et médias.
+   ════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  /* Pas de scroll horizontal parasite */
+  html, body { overflow-x: hidden; max-width: 100%; }
+  *, *::before, *::after { min-width: 0; }
+
+  /* Médias toujours contenus */
+  img { max-width: 100%; height: auto; }
+  video, iframe, table, pre { max-width: 100%; }
+
+  /* Toute grille de contenu passe en 1 colonne (n'affecte que les grids) */
+  .welcome-split, .breadth-split, .breadth-grid, .philosophy-split, .about-split,
+  .services-split, .services-main-grid, .split, .feat, .features-grid,
+  .three-cards-grid, .geo-grid, .service-img-grid, .values-grid, .why-work-grid,
+  .about-intro, .about-cta-grid, .cards-grid, .benefit-grid, .benefits-grid,
+  .process-grid, .steps-grid, .step-grid, .info-grid, .two-col, .grid-2, .grid-3,
+  .testimonials-grid, .hero__options, .footer__grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Les splits ne gardent pas une hauteur mini desktop */
+  .welcome-split, .philosophy-split, .breadth-split, .about-split {
+    min-height: 0 !important;
+  }
+
+  /* Hero : espacements et titres adaptés */
+  .hero { min-height: auto; }
+  .page-hero { padding: 4.5rem 0 2.5rem !important; }
+  .hero__headline { font-size: var(--text-md); }
+  .hero__card-title { font-size: 1.5rem; }
+  .page-hero__title { font-size: clamp(1.5rem, 6.5vw, 2rem); }
+  .section-title, h1 { font-size: clamp(1.5rem, 6.5vw, 2rem); line-height: 1.2; }
+  h2 { font-size: clamp(1.3rem, 5.5vw, 1.8rem); line-height: 1.25; }
+
+  /* Tableaux scrollables horizontalement */
+  table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+  /* Modale devis et sections : éviter les bugs de fond fixe iOS */
+  section { background-attachment: scroll !important; }
+
+  /* Padding intérieur des blocs split réduit */
+  .welcome-split__content, .philosophy-content, .breadth-content {
+    padding: var(--space-8) var(--space-5) !important;
+  }
+}
+
+/* Très petits écrans : police de base un cran plus lisible */
+@media (max-width: 400px) {
+  .hero__card-title { font-size: 1.3rem; }
+  .btn { font-size: var(--text-sm); }
 }

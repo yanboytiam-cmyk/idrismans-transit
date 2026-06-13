@@ -1,0 +1,14 @@
+# Dependencies / build & test artifacts (the site itself is plain static files)
+node_modules/
+package.json
+package-lock.json
+
+# Local tooling scratch
+_m/
+_tmp*
+_pwtest/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db

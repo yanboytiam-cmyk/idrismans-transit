@@ -1,730 +1,728 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <head>
-  <meta charset="UTF-8">
-  <link rel="icon" type="image/x-icon" href="../favicon.ico">
-  <link rel="icon" type="image/png" href="../favicon.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="International vehicle shipping — cars, motorcycles, boats, caravans. Door-to-door service by IdrisMans Transit.">
-  <title>Shipping Your Vehicle Internationally | IdrisMans Transit</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="../css/variables.css">
-  <link rel="stylesheet" href="../css/reset.css">
-  <link rel="stylesheet" href="../css/typography.css">
-  <link rel="stylesheet" href="../css/buttons.css">
-  <link rel="stylesheet" href="../css/navbar.css">
-  <link rel="stylesheet" href="../css/hero.css">
-  <link rel="stylesheet" href="../css/cards.css">
-  <link rel="stylesheet" href="../css/forms.css">
-  <link rel="stylesheet" href="../css/footer.css">
-  <link rel="stylesheet" href="../css/animations.css">
-  <link rel="stylesheet" href="../css/responsive.css">
-  <link rel="stylesheet" href="../css/i18n.css">
-  <style>
-    .section { padding: 5rem 0; }
-    .section--light { background: #f8fafc; }
-    .section__header { text-align: center; max-width: 700px; margin: 0 auto 2rem; }
-    .section__eyebrow { display: inline-block; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-primary, #1a5f9e); margin-bottom: 0.5rem; }
-    .section__title { font-family: 'Montserrat', sans-serif; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: #1a2b3c; line-height: 1.2; }
-    .options-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2rem; }
-    @media (max-width: 768px) { .options-grid { grid-template-columns: 1fr; } }
-    .option-card { background: #fff; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center; border-top: 4px solid var(--color-primary, #1a5f9e); }
-    .option-card__icon { font-size: 2.5rem; color: var(--color-primary, #1a5f9e); margin-bottom: 1rem; }
-    .option-card__title { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.1rem; color: #1a2b3c; margin-bottom: 0.75rem; }
-    .option-card__text { color: #555; line-height: 1.6; font-size: 0.95rem; }
-    .journey-steps { list-style: none; padding: 0; counter-reset: step-counter; max-width: 700px; margin: 2rem auto 0; }
-    .journey-steps li { display: flex; align-items: flex-start; gap: 1.25rem; padding: 1.25rem 0; border-bottom: 1px solid #e8edf3; counter-increment: step-counter; }
-    .journey-steps li:last-child { border-bottom: none; }
-    .step-num { width: 40px; height: 40px; min-width: 40px; border-radius: 50%; background: var(--color-primary, #1a5f9e); color: #fff; font-family: 'Montserrat', sans-serif; font-weight: 700; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; }
-    .step-content h4 { font-family: 'Montserrat', sans-serif; font-weight: 700; color: #1a2b3c; margin-bottom: 0.25rem; }
-    .step-content p { color: #666; font-size: 0.95rem; line-height: 1.6; }
-    .ship-cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2.5rem; }
-    @media (max-width: 992px) { .ship-cards-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 576px) { .ship-cards-grid { grid-template-columns: 1fr; } }
-    .ship-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; }
-    .ship-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.14); }
-    .ship-card__img { width: 100%; height: 200px; object-fit: cover; }
-    .ship-card__body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
-    .ship-card__title { font-family: 'Montserrat', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--color-primary, #1a5f9e); margin-bottom: 0.75rem; }
-    .ship-card__text { color: #555; line-height: 1.6; flex: 1; margin-bottom: 1.25rem; font-size: 0.95rem; }
-    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2.5rem; }
-    @media (max-width: 992px) { .testimonials-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 576px) { .testimonials-grid { grid-template-columns: 1fr; } }
-    .testimonial-card { background: #fff; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); position: relative; }
-    .testimonial-card::before { content: '\201C'; font-size: 4rem; color: var(--color-primary, #1a5f9e); opacity: 0.15; position: absolute; top: 0.5rem; left: 1rem; line-height: 1; font-family: Georgia, serif; }
-    .testimonial-card__text { color: #444; line-height: 1.7; margin-bottom: 1.25rem; font-style: italic; }
-    .testimonial-card__author { font-weight: 700; color: var(--color-primary, #1a5f9e); font-family: 'Montserrat', sans-serif; }
-    .stars { color: #f5a623; margin-bottom: 0.5rem; font-size: 0.9rem; }
-    .accordion { max-width: 800px; margin: 2rem auto 0; }
-    .accordion-item { border: 1px solid #e0e8f0; border-radius: 8px; margin-bottom: 0.75rem; overflow: hidden; }
-    .accordion-trigger { width: 100%; background: #fff; border: none; padding: 1.25rem 1.5rem; text-align: left; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1rem; color: #1a2b3c; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: background 0.2s; }
-    .accordion-trigger:hover { background: #f0f6ff; }
-    .accordion-trigger[aria-expanded="true"] { background: var(--color-primary, #1a5f9e); color: #fff; }
-    .accordion-trigger .icon { transition: transform 0.3s; font-size: 0.9rem; }
-    .accordion-trigger[aria-expanded="true"] .icon { transform: rotate(180deg); }
-    .accordion-content { display: none; padding: 1.25rem 1.5rem; background: #f8fafc; color: #555; line-height: 1.7; }
-    .accordion-content.is-open { display: block; }
-    .awards-section { background: var(--color-bg-dark, #1a2b3c); padding: 4rem 0; }
-    .awards-grid { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2rem; margin-top: 2rem; }
-    .award-badge { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 10px; padding: 1rem 1.5rem; text-align: center; color: #fff; min-width: 140px; }
-    .award-badge__icon { font-size: 1.8rem; color: #f5a623; margin-bottom: 0.5rem; }
-    .award-badge__label { font-size: 0.78rem; font-family: 'Montserrat', sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
-    .cta-section { background: linear-gradient(135deg, #1a5f9e 0%, #0e3d6e 100%); padding: 5rem 0; text-align: center; }
-    .ph-img { background:#ccd9e8; display:flex; align-items:center; justify-content:center; color:#4a6f8a; font-size:0.78rem; font-style:italic; text-align:center; padding:10px; }
-    .ph-img::before { content: attr(data-label); }
-    .breadcrumb { padding: 1rem 0; font-size: 0.85rem; color: #666; }
-    .breadcrumb a { color: var(--color-primary, #1a5f9e); text-decoration: none; }
-    .breadcrumb a:hover { text-decoration: underline; }
-    .breadcrumb span { margin: 0 0.4rem; color: #999; }
-  
-    .testimonials-carousel { max-width: 800px; margin: 0 auto; position: relative; overflow: hidden; padding: 1rem; }
-    .testimonial-slide { display: none; text-align: center; animation: fadeSlide 0.4s ease; }
-    .testimonial-slide.active { display: block; }
-    @keyframes fadeSlide { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
-    .testimonial-dots { display: flex; justify-content: center; gap: var(--space-2); margin-top: var(--space-6); }
-    .testimonial-dot { width: 32px; height: 3px; background: #e0e8f0; cursor: pointer; transition: background 0.3s; border-radius: 2px; }
-    .testimonial-dot.active { background: var(--color-primary); }
+ <meta charset="UTF-8">
+ <link rel="icon" type="image/x-icon" href="../favicon.ico">
+ <link rel="icon" type="image/png" href="../favicon.png">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="International vehicle shipping — cars, motorcycles, boats, caravans. Door-to-door service by IdrisMans Transit.">
+ <title>Shipping Your Vehicle Internationally | IdrisMans Transit</title>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+ <link rel="stylesheet" href="../css/variables.css">
+ <link rel="stylesheet" href="../css/reset.css">
+ <link rel="stylesheet" href="../css/typography.css">
+ <link rel="stylesheet" href="../css/buttons.css">
+ <link rel="stylesheet" href="../css/navbar.css">
+ <link rel="stylesheet" href="../css/hero.css">
+ <link rel="stylesheet" href="../css/cards.css">
+ <link rel="stylesheet" href="../css/forms.css">
+ <link rel="stylesheet" href="../css/footer.css">
+ <link rel="stylesheet" href="../css/animations.css">
+ <link rel="stylesheet" href="../css/responsive.css">
+ <link rel="stylesheet" href="../css/i18n.css">
+ <style>
+ .section { padding: 5rem 0; }
+ .section--light { background: #f8fafc; }
+ .section__header { text-align: center; max-width: 700px; margin: 0 auto 2rem; }
+ .section__eyebrow { display: inline-block; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-primary, #1a5f9e); margin-bottom: 0.5rem; }
+ .section__title { font-family: 'Montserrat', sans-serif; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: #1a2b3c; line-height: 1.2; }
+ .options-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2rem; }
+ @media (max-width: 768px) { .options-grid { grid-template-columns: 1fr; } }
+ .option-card { background: #fff; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center; border-top: 4px solid var(--color-primary, #1a5f9e); }
+ .option-card__icon { font-size: 2.5rem; color: var(--color-primary, #1a5f9e); margin-bottom: 1rem; }
+ .option-card__title { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.1rem; color: #1a2b3c; margin-bottom: 0.75rem; }
+ .option-card__text { color: #555; line-height: 1.6; font-size: 0.95rem; }
+ .journey-steps { list-style: none; padding: 0; counter-reset: step-counter; max-width: 700px; margin: 2rem auto 0; }
+ .journey-steps li { display: flex; align-items: flex-start; gap: 1.25rem; padding: 1.25rem 0; border-bottom: 1px solid #e8edf3; counter-increment: step-counter; }
+ .journey-steps li:last-child { border-bottom: none; }
+ .step-num { width: 40px; height: 40px; min-width: 40px; border-radius: 50%; background: var(--color-primary, #1a5f9e); color: #fff; font-family: 'Montserrat', sans-serif; font-weight: 700; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; }
+ .step-content h4 { font-family: 'Montserrat', sans-serif; font-weight: 700; color: #1a2b3c; margin-bottom: 0.25rem; }
+ .step-content p { color: #666; font-size: 0.95rem; line-height: 1.6; }
+ .ship-cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2.5rem; }
+ @media (max-width: 992px) { .ship-cards-grid { grid-template-columns: repeat(2, 1fr); } }
+ @media (max-width: 576px) { .ship-cards-grid { grid-template-columns: 1fr; } }
+ .ship-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; }
+ .ship-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.14); }
+ .ship-card__img { width: 100%; height: 200px; object-fit: cover; }
+ .ship-card__body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+ .ship-card__title { font-family: 'Montserrat', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--color-primary, #1a5f9e); margin-bottom: 0.75rem; }
+ .ship-card__text { color: #555; line-height: 1.6; flex: 1; margin-bottom: 1.25rem; font-size: 0.95rem; }
+ .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2.5rem; }
+ @media (max-width: 992px) { .testimonials-grid { grid-template-columns: repeat(2, 1fr); } }
+ @media (max-width: 576px) { .testimonials-grid { grid-template-columns: 1fr; } }
+ .testimonial-card { background: #fff; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); position: relative; }
+ .testimonial-card::before { content: '\201C'; font-size: 4rem; color: var(--color-primary, #1a5f9e); opacity: 0.15; position: absolute; top: 0.5rem; left: 1rem; line-height: 1; font-family: Georgia, serif; }
+ .testimonial-card__text { color: #444; line-height: 1.7; margin-bottom: 1.25rem; font-style: italic; }
+ .testimonial-card__author { font-weight: 700; color: var(--color-primary, #1a5f9e); font-family: 'Montserrat', sans-serif; }
+ .stars { color: #f5a623; margin-bottom: 0.5rem; font-size: 0.9rem; }
+ .accordion { max-width: 800px; margin: 2rem auto 0; }
+ .accordion-item { border: 1px solid #e0e8f0; border-radius: 8px; margin-bottom: 0.75rem; overflow: hidden; }
+ .accordion-trigger { width: 100%; background: #fff; border: none; padding: 1.25rem 1.5rem; text-align: left; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1rem; color: #1a2b3c; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: background 0.2s; }
+ .accordion-trigger:hover { background: #f0f6ff; }
+ .accordion-trigger[aria-expanded="true"] { background: var(--color-primary, #1a5f9e); color: #fff; }
+ .accordion-trigger .icon { transition: transform 0.3s; font-size: 0.9rem; }
+ .accordion-trigger[aria-expanded="true"] .icon { transform: rotate(180deg); }
+ .accordion-content { display: none; padding: 1.25rem 1.5rem; background: #f8fafc; color: #555; line-height: 1.7; }
+ .accordion-content.is-open { display: block; }
+ .awards-section { background: var(--color-bg-dark, #1a2b3c); padding: 4rem 0; }
+ .awards-grid { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2rem; margin-top: 2rem; }
+ .award-badge { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 10px; padding: 1rem 1.5rem; text-align: center; color: #fff; min-width: 140px; }
+ .award-badge__icon { font-size: 1.8rem; color: #f5a623; margin-bottom: 0.5rem; }
+ .award-badge__label { font-size: 0.78rem; font-family: 'Montserrat', sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+ .cta-section { background: linear-gradient(135deg, #1a5f9e 0%, #0e3d6e 100%); padding: 5rem 0; text-align: center; }
+ .ph-img { background:#ccd9e8; display:flex; align-items:center; justify-content:center; color:#4a6f8a; font-size:0.78rem; font-style:italic; text-align:center; padding:10px; }
+ .ph-img::before { content: attr(data-label); }
+ .breadcrumb { padding: 1rem 0; font-size: 0.85rem; color: #666; }
+ .breadcrumb a { color: var(--color-primary, #1a5f9e); text-decoration: none; }
+ .breadcrumb a:hover { text-decoration: underline; }
+ .breadcrumb span { margin: 0 0.4rem; color: #999; }
+ 
+ .testimonials-carousel { max-width: 800px; margin: 0 auto; position: relative; overflow: hidden; padding: 1rem; }
+ .testimonial-slide { display: none; text-align: center; animation: fadeSlide 0.4s ease; }
+ .testimonial-slide.active { display: block; }
+ @keyframes fadeSlide { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+ .testimonial-dots { display: flex; justify-content: center; gap: var(--space-2); margin-top: var(--space-6); }
+ .testimonial-dot { width: 32px; height: 3px; background: #e0e8f0; cursor: pointer; transition: background 0.3s; border-radius: 2px; }
+ .testimonial-dot.active { background: var(--color-primary); }
 
-  </style>
+ </style>
 </head>
 <body>
-  <!-- TOP BAR -->
-  <div class="topbar"><div class="container"><div class="topbar__inner"><p class="topbar__tagline" data-i18n-html="topbar.tagline_about">GLOBAL SHIPPING EXPERTS - WITH OVER <strong data-i18n="import_vehicle.50_years_d0d182da">50 YEARS</strong> EXPERIENCE</p><div class="topbar__links"><a href="about.html" class="topbar__link" data-i18n="nav.about">About Us</a><a href="contact.html" class="topbar__link" data-i18n="nav.contact">Contact Us</a><a href="tel:+33695724985" class="topbar__cta"><i class="fa-solid fa-phone"></i><span data-i18n="topbar.call_expert">Call an expert today</span></a></div></div></div></div>
+ <!-- TOP BAR -->
+ <div class="topbar"><div class="container"><div class="topbar__inner"><p class="topbar__tagline" data-i18n-html="topbar.tagline_about">GLOBAL SHIPPING EXPERTS — SINCE <strong data-i18n="import_vehicle.50_years_d0d182da">2011</strong></p><div class="topbar__links"><a href="about.html" class="topbar__link" data-i18n="nav.about">About Us</a><a href="contact.html" class="topbar__link" data-i18n="nav.contact">Contact Us</a><a href="tel:+33695724985" class="topbar__cta"><i class="fa-solid fa-phone"></i><span data-i18n="topbar.call_expert">Call an expert today</span></a></div></div></div></div>
 
-  <!-- NAVBAR -->
-  <header class="navbar" id="navbar">
-    <div class="container"><div class="navbar__inner">
-      <a href="../index.html" class="navbar__logo"><img src="../logo.png" alt="IdrisMans Transit" style="max-height: 80px; width: auto; object-fit: contain;"></a>
-      <nav class="navbar__nav">
-        <div class="nav-item"><a href="../index.html" class="nav-link" data-i18n="nav.home">Home</a></div>
-        <div class="nav-item"><a href="about.html" class="nav-link" data-i18n="nav.about">About Us</a></div>
-        <div class="nav-item"><a href="services.html" class="nav-link" data-i18n="nav.services">Services <span/ class="arrow">▾</span></a><div class="dropdown"><a href="freight-forwarder.html" class="dropdown-link" data-i18n="nav.freight_forwarding">Freight Forwarding</a><a href="importing.html" class="dropdown-link" data-i18n="nav.importing">Importation vers la France / UE</a><a href="exporting.html" class="dropdown-link" data-i18n="nav.exporting">Exportation depuis la France / UE</a><a href="customs.html" class="dropdown-link" data-i18n="nav.customs">Custom Services &amp; Clearances</a><a href="warehousing.html" class="dropdown-link" data-i18n="nav.warehousing">Warehousing &amp; Transport</a><a href="project-logistics.html" class="dropdown-link" data-i18n="nav.project_logistics">Project Logistics &amp; Management</a></div></div>
-        <div class="nav-item"><a href="what-we-ship.html" class="nav-link" data-i18n="nav.what_we_ship">What We Ship <span/ class="arrow">▾</span></a><div class="dropdown"><a href="import-car.html" class="dropdown-link" data-i18n="nav.vehicles">Vehicles</a><a href="import-boat.html" class="dropdown-link" data-i18n="nav.boats">Boats</a><a href="import-motorcycle.html" class="dropdown-link" data-i18n="nav.motorcycles">Motorcycles</a><a href="import-motorhome.html" class="dropdown-link" data-i18n="nav.motorhomes">Motorhomes</a><a href="import-caravan.html" class="dropdown-link" data-i18n="nav.caravans">Caravans</a><a href="import-machinery.html" class="dropdown-link" data-i18n="nav.machinery">Machinery</a></div></div>
-        
-        <div class="nav-item"><a href="gallery.html" class="nav-link" data-i18n="nav.gallery">Gallery</a></div>
-        <div class="nav-item"><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact Us</a></div>
-      </nav>
-      <div class="navbar__cta"><a href="tel:+33695724985" class="navbar__phone"><span class="label" data-i18n="nav.call_label">Talk to us</span><span class="number">+33 6 95 72 49 85</span></a><a href="contact.html" class="btn btn--primary btn--sm" data-i18n="nav.quote">Request a Quote</a></div>
-      <button class="navbar__burger" id="navBurger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu"><span class="burger-line"></span><span class="burger-line"></span><span class="burger-line"></span></button>
-    </div></div>
-    <nav class="navbar__mobile" id="mobileMenu">
-      <div class="mobile-nav-item"><a href="../index.html" class="mobile-nav-link" data-i18n="nav.home">Home</a></div>
-      <div class="mobile-nav-item"><a href="about.html" class="mobile-nav-link" data-i18n="nav.about">About Us</a></div>
-      
-      <div class="mobile-nav-item"><a href="gallery.html" class="mobile-nav-link" data-i18n="nav.gallery">Gallery</a></div>
-      <div class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link" data-i18n="nav.contact">Contact Us</a></div>
-      <div class="mobile-nav-cta"><a href="tel:+33695724985" class="btn btn--outline-white" style="width:100%;text-align:center;"><i class="fa-solid fa-phone"></i> +33 6 95 72 49 85</a><a href="contact.html" class="btn btn--primary" style="width:100%;text-align:center;" data-i18n="nav.quote">Request a Quote</a></div>
-    </nav>
-  </header>
+ <!-- NAVBAR -->
+ <header class="navbar" id="navbar">
+ <div class="container"><div class="navbar__inner">
+ <a href="../index.html" class="navbar__logo"><img src="../logo.png" alt="IdrisMans Transit" style="max-height: 80px; width: auto; object-fit: contain;"></a>
+ <nav class="navbar__nav">
+ <div class="nav-item"><a href="../index.html" class="nav-link" data-i18n="nav.home">Home</a></div>
+ <div class="nav-item"><a href="about.html" class="nav-link" data-i18n="nav.about">About Us</a></div>
+ <div class="nav-item"><a href="services.html" class="nav-link" data-i18n="nav.services">Services <span/ class="arrow">▾</span></a><div class="dropdown"><a href="freight-forwarder.html" class="dropdown-link" data-i18n="nav.freight_forwarding">Freight Forwarding</a><a href="importing.html" class="dropdown-link" data-i18n="nav.importing">Importation vers la France / UE</a><a href="exporting.html" class="dropdown-link" data-i18n="nav.exporting">Exportation depuis la France / UE</a><a href="customs.html" class="dropdown-link" data-i18n="nav.customs">Custom Services &amp; Clearances</a><a href="warehousing.html" class="dropdown-link" data-i18n="nav.warehousing">Warehousing &amp; Transport</a><a href="project-logistics.html" class="dropdown-link" data-i18n="nav.project_logistics">Project Logistics &amp; Management</a><a href="crates.html" class="dropdown-link" data-i18n="nav.crates">Caisses &amp; Emballage</a><a href="roro-shipping-schedule.html" class="dropdown-link" data-i18n="nav.roro">Calendrier RoRo</a></div></div><div class="nav-item"><a href="china-to-europe.html" class="nav-link" data-i18n="nav.corridors">Corridors <span/ class="arrow">▾</span></a><div class="dropdown"><a href="china-to-europe.html" class="dropdown-link" data-i18n="nav.china_europe">Chine → Europe</a><a href="africa-europe-freight.html" class="dropdown-link" data-i18n="nav.africa_europe">Afrique ↔ Europe</a><a href="asia-europe-freight.html" class="dropdown-link" data-i18n="nav.asia_europe">Asie → Europe</a><a href="vehicles-africa-europe.html" class="dropdown-link" data-i18n="nav.veh_africa_europe">Véhicules Afrique ↔ Europe</a><a href="hub-paris.html" class="dropdown-link" data-i18n="nav.hub_paris">Hub Paris</a><a href="hub-le-havre.html" class="dropdown-link" data-i18n="nav.hub_le_havre">Hub Le Havre</a><a href="hub-marseille.html" class="dropdown-link" data-i18n="nav.hub_marseille">Hub Marseille</a></div></div>
+ <div class="nav-item"><a href="what-we-ship.html" class="nav-link" data-i18n="nav.what_we_ship">What We Ship <span/ class="arrow">▾</span></a><div class="dropdown"><a href="import-car.html" class="dropdown-link" data-i18n="nav.vehicles">Vehicles</a><a href="import-boat.html" class="dropdown-link" data-i18n="nav.boats">Boats</a><a href="import-motorcycle.html" class="dropdown-link" data-i18n="nav.motorcycles">Motorcycles</a><a href="import-motorhome.html" class="dropdown-link" data-i18n="nav.motorhomes">Motorhomes</a><a href="import-caravan.html" class="dropdown-link" data-i18n="nav.caravans">Caravans</a><a href="import-machinery.html" class="dropdown-link" data-i18n="nav.machinery">Machinery</a></div></div>
+ 
+ <div class="nav-item"><a href="gallery.html" class="nav-link" data-i18n="nav.gallery">Gallery</a></div>
+ <div class="nav-item"><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact Us</a></div>
+ </nav>
+ <div class="navbar__cta"><a href="tel:+33695724985" class="navbar__phone"><span class="label" data-i18n="nav.call_label">Talk to us</span><span class="number">+33 6 95 72 49 85</span></a><a href="contact.html" class="btn btn--primary btn--sm" data-i18n="nav.quote">Request a Quote</a></div>
+ <button class="navbar__burger" id="navBurger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu"><span class="burger-line"></span><span class="burger-line"></span><span class="burger-line"></span></button>
+ </div></div>
+ <nav class="navbar__mobile" id="mobileMenu">
+ <div class="mobile-nav-item"><a href="../index.html" class="mobile-nav-link" data-i18n="nav.home">Home</a></div>
+ <div class="mobile-nav-item"><a href="about.html" class="mobile-nav-link" data-i18n="nav.about">About Us</a></div>
+ 
+ <div class="mobile-nav-item"><a href="gallery.html" class="mobile-nav-link" data-i18n="nav.gallery">Gallery</a></div>
+ <div class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link" data-i18n="nav.contact">Contact Us</a></div>
+ <div class="mobile-nav-cta"><a href="tel:+33695724985" class="btn btn--outline-white" style="width:100%;text-align:center;"><i class="fa-solid fa-phone"></i> +33 6 95 72 49 85</a><a href="contact.html" class="btn btn--primary" style="width:100%;text-align:center;" data-i18n="nav.quote">Request a Quote</a></div>
+ </nav>
+ </header>
 
-  <!-- PAGE HERO -->
-  <section class="page-hero" style="position: relative; overflow: hidden; background: linear-gradient(135deg, #0a1628 0%, #0f2a45 40%, #152e4d 60%, #0a1628 100%); text-align:center; padding: 7rem 0 4rem;">
-  <video autoplay muted loop playsinline style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translateX(-50%) translateY(-50%); z-index: 0; object-fit: cover; opacity: 0.6;">
-    <source src="../automotive/Willship%20Australia.mp4" type="video/mp4">
-  </video>
-  
+ <!-- PAGE HERO -->
+ <section class="page-hero" style="position: relative; overflow: hidden; background: linear-gradient(135deg, #0a1628 0%, #0f2a45 40%, #152e4d 60%, #0a1628 100%); text-align:center; padding: 7rem 0 4rem;">
+ <img src="../authentic/cars-roro-quay.webp" alt="Véhicules sur le quai devant un navire RoRo — IdrisMans Transit" style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translateX(-50%) translateY(-50%); z-index: 0; object-fit: cover; opacity: 0.6;">
+ 
 
-    <div class="container" style="position: relative; z-index: 2;">
-      <p class="hero__eyebrow" style="color:#7ec8f0; text-transform:uppercase; letter-spacing:0.15em; font-size:0.85rem; font-weight:700; margin-bottom:1rem;" data-i18n="import_vehicle.idrismans_transit_d4f14870">IdrisMans Transit</p>
-      <h1 style="font-family:'Montserrat',sans-serif; font-size:clamp(1.8rem,4.5vw,3rem); font-weight:800; color:#fff; line-height:1.15; text-transform:uppercase; letter-spacing:0.03em;" data-i18n="import_vehicle.hero_title">SHIPPING YOUR VEHICLE INTERNATIONALLY HAS NEVER BEEN EASIER</h1>
-      <p class="hero__slogan" data-i18n="hero.slogan">Don't Ship Without Idrismans</p>
-      <p style="color:rgba(255,255,255,0.8); font-size:1.1rem; margin-top:1.25rem; max-width:600px; margin-left:auto; margin-right:auto;" data-i18n="import_vehicle.we_ve_helped_cd336db9">We've helped thousands of happy customers during our 50+ years in the business, and we'd love to help you too.</p>
-      <a href="contact.html" class="btn btn--primary" style="margin-top:2rem;" data-i18n="welcome.cta">Get Started</a>
-    </div>
-  </section>
+ <div class="container" style="position: relative; z-index: 2;">
+ <p class="hero__eyebrow" style="color:#7ec8f0; text-transform:uppercase; letter-spacing:0.15em; font-size:0.85rem; font-weight:700; margin-bottom:1rem;" data-i18n="import_vehicle.idrismans_transit_d4f14870">IdrisMans Transit</p>
+ <h1 style="font-family:'Montserrat',sans-serif; font-size:clamp(1.8rem,4.5vw,3rem); font-weight:800; color:#fff; line-height:1.15; text-transform:uppercase; letter-spacing:0.03em;" data-i18n="import_vehicle.hero_title">SHIPPING YOUR VEHICLE INTERNATIONALLY HAS NEVER BEEN EASIER</h1>
+ <p class="hero__slogan" data-i18n="hero.slogan">Don't Ship Without Idrismans</p>
+ <p style="color:rgba(255,255,255,0.8); font-size:1.1rem; margin-top:1.25rem; max-width:600px; margin-left:auto; margin-right:auto;" data-i18n="import_vehicle.we_ve_helped_cd336db9">We've helped thousands of happy customers during our 50+ years in the business, and we'd love to help you too.</p>
+ <a href="contact.html" class="btn btn--primary" style="margin-top:2rem;" data-i18n="welcome.cta">Get Started</a>
+ </div>
+ </section>
 
-  <!-- BREADCRUMB -->
-  <div class="container">
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="../index.html" data-i18n="nav.home">Home</a><span aria-hidden="true">›</span>
-      <a href="what-we-ship.html" data-i18n="footer.what_we_ship">What We Ship</a><span aria-hidden="true">›</span>
-      <span aria-current="page" data-i18n="import_vehicle.shipping_your_vehicle_a348c888">Shipping Your Vehicle</span>
-    </nav>
-  </div>
+ <!-- BREADCRUMB -->
+ <div class="container">
+ <nav class="breadcrumb" aria-label="Breadcrumb">
+ <a href="../index.html" data-i18n="nav.home">Home</a><span aria-hidden="true">›</span>
+ <a href="what-we-ship.html" data-i18n="footer.what_we_ship">What We Ship</a><span aria-hidden="true">›</span>
+ <span aria-current="page" data-i18n="import_vehicle.shipping_your_vehicle_a348c888">Shipping Your Vehicle</span>
+ </nav>
+ </div>
 
-  <!-- 5 KEY REASONS -->
-  <section class="section" aria-labelledby="reasons-heading">
-    <div class="container">
-      <div class="section__header" data-aos="fade-up">
-        <h2 class="section__title" id="reasons-heading" data-i18n="import_vehicle.5_key_reasons_117e4bf0">5 Key Reasons Our Customers Choose To Ship Their Cars</h2>
-      </div>
-      <ul style="max-width:700px; margin: var(--space-8) auto 0; display:flex; flex-direction:column; gap:var(--space-4);">
-        <li style="display:flex; gap:var(--space-4); align-items:flex-start;" data-aos="fade-up" data-aos-delay="100">
-          <span style="width:32px; height:32px; min-width:32px; border-radius:50%; background:var(--color-primary); color:white; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:var(--text-sm);">1</span>
-          <span style="font-size:var(--text-base); color:var(--color-text); line-height:var(--leading-relaxed);" data-i18n="import_vehicle.vehicles_are_often_698ed51e">Vehicles are often worth more in the destination country, shipping your car can make good economic sense</span>
-        </li>
-        <li style="display:flex; gap:var(--space-4); align-items:flex-start;" data-aos="fade-up" data-aos-delay="150">
-          <span style="width:32px; height:32px; min-width:32px; border-radius:50%; background:var(--color-primary); color:white; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:var(--text-sm);">2</span>
-          <span style="font-size:var(--text-base); color:var(--color-text); line-height:var(--leading-relaxed);" data-i18n="import_vehicle.there_are_great_c44c4b0b">There are great import tax exemptions for immigrants and returning residents</span>
-        </li>
-        <li style="display:flex; gap:var(--space-4); align-items:flex-start;" data-aos="fade-up" data-aos-delay="200">
-          <span style="width:32px; height:32px; min-width:32px; border-radius:50%; background:var(--color-primary); color:white; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:var(--text-sm);">3</span>
-          <span style="font-size:var(--text-base); color:var(--color-text); line-height:var(--leading-relaxed);" data-i18n="import_vehicle.they_don_t_e056b4c2">They don't have to deal with the hassle of selling the vehicle privately for a huge loss</span>
-        </li>
-        <li style="display:flex; gap:var(--space-4); align-items:flex-start;" data-aos="fade-up" data-aos-delay="250">
-          <span style="width:32px; height:32px; min-width:32px; border-radius:50%; background:var(--color-primary); color:white; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:var(--text-sm);">4</span>
-          <span style="font-size:var(--text-base); color:var(--color-text); line-height:var(--leading-relaxed);" data-i18n="import_vehicle.some_car_models_7ded34bf">Some car models are simply too rare or unique to attempt to buy again</span>
-        </li>
-        <li style="display:flex; gap:var(--space-4); align-items:flex-start;" data-aos="fade-up" data-aos-delay="300">
-          <span style="width:32px; height:32px; min-width:32px; border-radius:50%; background:var(--color-primary); color:white; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:var(--text-sm);">5</span>
-          <span style="font-size:var(--text-base); color:var(--color-text); line-height:var(--leading-relaxed);" data-i18n="import_vehicle.sentimental_value_they_c722f1f3">Sentimental value... they just love their car!</span>
-        </li>
-      </ul>
-    </div>
-  </section>
+ <!-- 5 KEY REASONS -->
+ <section class="section" aria-labelledby="reasons-heading">
+ <div class="container">
+ <div class="section__header" data-aos="fade-up">
+ <h2 class="section__title" id="reasons-heading" data-i18n="import_vehicle.5_key_reasons_117e4bf0">5 Key Reasons Our Customers Choose To Ship Their Cars</h2>
+ </div>
+ <ul style="max-width:700px; margin: var(--space-8) auto 0; display:flex; flex-direction:column; gap:var(--space-4);">
+ <li style="display:flex; gap:var(--space-4); align-items:flex-start;" data-aos="fade-up" data-aos-delay="100">
+ <span style="width:32px; height:32px; min-width:32px; border-radius:50%; background:var(--color-primary); color:white; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:var(--text-sm);">1</span>
+ <span style="font-size:var(--text-base); color:var(--color-text); line-height:var(--leading-relaxed);" data-i18n="import_vehicle.vehicles_are_often_698ed51e">Vehicles are often worth more in the destination country, shipping your car can make good economic sense</span>
+ </li>
+ <li style="display:flex; gap:var(--space-4); align-items:flex-start;" data-aos="fade-up" data-aos-delay="150">
+ <span style="width:32px; height:32px; min-width:32px; border-radius:50%; background:var(--color-primary); color:white; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:var(--text-sm);">2</span>
+ <span style="font-size:var(--text-base); color:var(--color-text); line-height:var(--leading-relaxed);" data-i18n="import_vehicle.there_are_great_c44c4b0b">Specific customs regimes may apply to people relocating or returning to settle — we assess your eligibility.</span>
+ </li>
+ <li style="display:flex; gap:var(--space-4); align-items:flex-start;" data-aos="fade-up" data-aos-delay="200">
+ <span style="width:32px; height:32px; min-width:32px; border-radius:50%; background:var(--color-primary); color:white; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:var(--text-sm);">3</span>
+ <span style="font-size:var(--text-base); color:var(--color-text); line-height:var(--leading-relaxed);" data-i18n="import_vehicle.they_don_t_e056b4c2">They don't have to deal with the hassle of selling the vehicle privately for a huge loss</span>
+ </li>
+ <li style="display:flex; gap:var(--space-4); align-items:flex-start;" data-aos="fade-up" data-aos-delay="250">
+ <span style="width:32px; height:32px; min-width:32px; border-radius:50%; background:var(--color-primary); color:white; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:var(--text-sm);">4</span>
+ <span style="font-size:var(--text-base); color:var(--color-text); line-height:var(--leading-relaxed);" data-i18n="import_vehicle.some_car_models_7ded34bf">Some car models are simply too rare or unique to attempt to buy again</span>
+ </li>
+ <li style="display:flex; gap:var(--space-4); align-items:flex-start;" data-aos="fade-up" data-aos-delay="300">
+ <span style="width:32px; height:32px; min-width:32px; border-radius:50%; background:var(--color-primary); color:white; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:var(--text-sm);">5</span>
+ <span style="font-size:var(--text-base); color:var(--color-text); line-height:var(--leading-relaxed);" data-i18n="import_vehicle.sentimental_value_they_c722f1f3">Sentimental value... they just love their car!</span>
+ </li>
+ </ul>
+ </div>
+ </section>
 
-  <!-- WITH IdrisMans ALL YOUR CONCERNS ARE GONE -->
-  <section class="section section--light" aria-labelledby="concerns-heading">
-    <div class="container">
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--space-12); align-items:center;">
-        <div data-aos="fade-right">
-          <h2 class="section__title" id="concerns-heading" data-i18n="import_vehicle.with_idrismans_all_6abf545e">With IdrisMans, All Your Concerns Are Gone</h2>
-          <ul style="margin-top:var(--space-6); display:flex; flex-direction:column; gap:var(--space-3);">
-            <li style="display:flex; align-items:center; gap:var(--space-3); font-size:var(--text-base); color:var(--color-text);">
-              <i class="fa-solid fa-circle-check" style="color:var(--color-primary); flex-shrink:0;" aria-hidden="true"></i> will it arrive safely?
-            </li>
-            <li style="display:flex; align-items:center; gap:var(--space-3); font-size:var(--text-base); color:var(--color-text);">
-              <i class="fa-solid fa-circle-check" style="color:var(--color-primary); flex-shrink:0;" aria-hidden="true"></i> what documentation do I need?
-            </li>
-            <li style="display:flex; align-items:center; gap:var(--space-3); font-size:var(--text-base); color:var(--color-text);">
-              <i class="fa-solid fa-circle-check" style="color:var(--color-primary); flex-shrink:0;" aria-hidden="true"></i> will I need to pay tax?
-            </li>
-            <li style="display:flex; align-items:center; gap:var(--space-3); font-size:var(--text-base); color:var(--color-text);">
-              <i class="fa-solid fa-circle-check" style="color:var(--color-primary); flex-shrink:0;" aria-hidden="true"></i> am I able to leave anything in the car?
-            </li>
-            <li style="display:flex; align-items:center; gap:var(--space-3); font-size:var(--text-base); color:var(--color-text);">
-              <i class="fa-solid fa-circle-check" style="color:var(--color-primary); flex-shrink:0;" aria-hidden="true"></i> what happens at the destination?
-            </li>
-            <li style="display:flex; align-items:center; gap:var(--space-3); font-size:var(--text-base); color:var(--color-text);">
-              <i class="fa-solid fa-circle-check" style="color:var(--color-primary); flex-shrink:0;" aria-hidden="true"></i> how long does it take?
-            </li>
-            <li style="display:flex; align-items:center; gap:var(--space-3); font-size:var(--text-base); color:var(--color-text);">
-              <i class="fa-solid fa-circle-check" style="color:var(--color-primary); flex-shrink:0;" aria-hidden="true"></i> how much will it cost?
-            </li>
-          </ul>
-          <p style="margin-top:var(--space-5); font-size:var(--text-base); color:var(--color-text);" data-i18n="import_vehicle.idrismans_will_make_2296e4d3">IdrisMans will make the process easy - we're here to handle it all and answer all your questions.</p>
-          <div style="display:flex; gap:var(--space-3); flex-wrap:wrap; margin-top:var(--space-6);">
-            <a href="contact.html" class="btn btn--primary" data-i18n="welcome.cta">Get Started</a>
-            <a href="contact.html" class="btn btn--outline" data-i18n="nav.contact">Contact Us</a>
-          </div>
-        </div>
-        <div data-aos="fade-left">
-          <img src="../automotive/vehicle.webp" alt="Vehicle shipping concerns resolved" width="600" height="460" loading="lazy" style="border-radius:var(--radius-lg); box-shadow:var(--shadow-xl);">
-        </div>
-      </div>
-    </div>
-  </section>
+ <!-- WITH IdrisMans ALL YOUR CONCERNS ARE GONE -->
+ <section class="section section--light" aria-labelledby="concerns-heading">
+ <div class="container">
+ <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--space-12); align-items:center;">
+ <div data-aos="fade-right">
+ <h2 class="section__title" id="concerns-heading" data-i18n="import_vehicle.with_idrismans_all_6abf545e">With IdrisMans, All Your Concerns Are Gone</h2>
+ <ul style="margin-top:var(--space-6); display:flex; flex-direction:column; gap:var(--space-3);">
+ <li style="display:flex; align-items:center; gap:var(--space-3); font-size:var(--text-base); color:var(--color-text);">
+ <i class="fa-solid fa-circle-check" style="color:var(--color-primary); flex-shrink:0;" aria-hidden="true"></i> will it arrive safely?
+ </li>
+ <li style="display:flex; align-items:center; gap:var(--space-3); font-size:var(--text-base); color:var(--color-text);">
+ <i class="fa-solid fa-circle-check" style="color:var(--color-primary); flex-shrink:0;" aria-hidden="true"></i> what documentation do I need?
+ </li>
+ <li style="display:flex; align-items:center; gap:var(--space-3); font-size:var(--text-base); color:var(--color-text);">
+ <i class="fa-solid fa-circle-check" style="color:var(--color-primary); flex-shrink:0;" aria-hidden="true"></i> will I need to pay tax?
+ </li>
+ <li style="display:flex; align-items:center; gap:var(--space-3); font-size:var(--text-base); color:var(--color-text);">
+ <i class="fa-solid fa-circle-check" style="color:var(--color-primary); flex-shrink:0;" aria-hidden="true"></i> am I able to leave anything in the car?
+ </li>
+ <li style="display:flex; align-items:center; gap:var(--space-3); font-size:var(--text-base); color:var(--color-text);">
+ <i class="fa-solid fa-circle-check" style="color:var(--color-primary); flex-shrink:0;" aria-hidden="true"></i> what happens at the destination?
+ </li>
+ <li style="display:flex; align-items:center; gap:var(--space-3); font-size:var(--text-base); color:var(--color-text);">
+ <i class="fa-solid fa-circle-check" style="color:var(--color-primary); flex-shrink:0;" aria-hidden="true"></i> how long does it take?
+ </li>
+ <li style="display:flex; align-items:center; gap:var(--space-3); font-size:var(--text-base); color:var(--color-text);">
+ <i class="fa-solid fa-circle-check" style="color:var(--color-primary); flex-shrink:0;" aria-hidden="true"></i> how much will it cost?
+ </li>
+ </ul>
+ <p style="margin-top:var(--space-5); font-size:var(--text-base); color:var(--color-text);" data-i18n="import_vehicle.idrismans_will_make_2296e4d3">IdrisMans will make the process easy - we're here to handle it all and answer all your questions.</p>
+ <div style="display:flex; gap:var(--space-3); flex-wrap:wrap; margin-top:var(--space-6);">
+ <a href="contact.html" class="btn btn--primary" data-i18n="welcome.cta">Get Started</a>
+ <a href="contact.html" class="btn btn--outline" data-i18n="nav.contact">Contact Us</a>
+ </div>
+ </div>
+ <div data-aos="fade-left">
+ <img src="../automotive/vehicle.webp" alt="Vehicle shipping concerns resolved" width="600" height="460" loading="lazy" style="border-radius:var(--radius-lg); box-shadow:var(--shadow-xl);">
+ </div>
+ </div>
+ </div>
+ </section>
 
-  <!-- A SAFER JOURNEY WITH HIGH-TECH SHIPPING -->
-  <section class="section" aria-labelledby="tracking-heading">
-    <div class="container">
-      <div class="section__header" data-aos="fade-up">
-        <h2 class="section__title" id="tracking-heading" data-i18n="import_vehicle.a_safer_journey_bd3185b9">A Safer Journey With High-Tech Shipping</h2>
-        <p style="color:#666; margin-top:1rem; line-height:1.7;" data-i18n="import_vehicle.with_our_interactive_71e26745">With our interactive online platform, data is always logged as it moves from one stage to the next.</p>
-      </div>
-      <div data-aos="fade-up" style="margin-bottom:2.5rem;">
-        <img src="../generated/hightech_shipping_car.png" alt="Voiture chargée dans un conteneur maritime — processus étape par étape" class="ph-img" data-label="Image : Voiture dans conteneur — illustration du processus de chargement" style="width:100%;height:360px;object-fit:cover;border-radius:10px;display:block;box-shadow:0 10px 30px rgba(0,0,0,0.15);">
-      </div>
-      <ul class="journey-steps" aria-label="8-step tracking process">
-        <li data-aos="fade-up" data-aos-delay="50"><div class="step-num" aria-hidden="true">1</div><div class="step-content"><h4 data-i18n="import_vehicle.receiving_on_to_ade2949b">Receiving on to the tow truck</h4><p data-i18n="import_vehicle.our_security_cleared_8cc1857a">Our security-cleared tow truck collects your vehicle from your nominated address.</p></div></li>
-        <li data-aos="fade-up" data-aos-delay="100"><div class="step-num" aria-hidden="true">2</div><div class="step-content"><h4 data-i18n="import_vehicle.delivery_off_the_eab85c1a">Delivery off the tow truck to the port</h4><p data-i18n="import_vehicle.your_vehicle_is_39918ea9">Your vehicle is transported to the port and logged into the terminal system.</p></div></li>
-        <li data-aos="fade-up" data-aos-delay="150"><div class="step-num" aria-hidden="true">3</div><div class="step-content"><h4 data-i18n="import_vehicle.receiving_into_the_3a83311d">Receiving into the port</h4><p data-i18n="import_vehicle.a_condition_report_55dbc23b">A condition report is completed and your vehicle is secured within the terminal.</p></div></li>
-        <li data-aos="fade-up" data-aos-delay="200"><div class="step-num" aria-hidden="true">4</div><div class="step-content"><h4 data-i18n="import_vehicle.movement_from_the_99b94b6f">Movement from the port on to the vessel</h4><p data-i18n="import_vehicle.your_vehicle_is_ab6f89a8">Your vehicle is loaded and secured on board the vessel for ocean transit.</p></div></li>
-        <li data-aos="fade-up" data-aos-delay="250"><div class="step-num" aria-hidden="true">5</div><div class="step-content"><h4 data-i18n="import_vehicle.movement_from_the_dcadd6c9">Movement from the vessel on to the destination port</h4><p data-i18n="import_vehicle.vessel_arrives_at_5f798400">Vessel arrives at destination and your vehicle is offloaded at the terminal.</p></div></li>
-        <li data-aos="fade-up" data-aos-delay="300"><div class="step-num" aria-hidden="true">6</div><div class="step-content"><h4 data-i18n="import_vehicle.clearance_through_customs_3b309661">Clearance through customs and quarantine</h4><p data-i18n="import_vehicle.our_team_manages_ff61f972">Our team manages all customs paperwork and MPI quarantine inspections.</p></div></li>
-        <li data-aos="fade-up" data-aos-delay="350"><div class="step-num" aria-hidden="true">7</div><div class="step-content"><h4 data-i18n="import_vehicle.handover_to_the_a896b809">Handover to the destination tow truck</h4><p data-i18n="import_vehicle.your_vehicle_is_ee99d109">Your vehicle is handed over to our local delivery partner after clearance.</p></div></li>
-        <li data-aos="fade-up" data-aos-delay="400"><div class="step-num" aria-hidden="true">8</div><div class="step-content"><h4 data-i18n="import_vehicle.final_delivery_to_30e13151">Final delivery to your chosen destination</h4><p data-i18n="import_vehicle.your_vehicle_arrives_4f4ae811">Your vehicle arrives at your door — Comprehensively monitored the whole way through - so there is no chance of it 'going missing'. We know exactly where it is every step of the way.</p></div></li>
-      </ul>
-      <div style="text-align:center; margin-top:var(--space-8);" data-aos="fade-up">
-        <a href="contact.html" class="btn btn--primary" data-i18n="welcome.cta">Get Started</a>
-      </div>
-    </div>
-  </section>
+ <!-- A SAFER JOURNEY WITH HIGH-TECH SHIPPING -->
+ <section class="section" aria-labelledby="tracking-heading">
+ <div class="container">
+ <div class="section__header" data-aos="fade-up">
+ <h2 class="section__title" id="tracking-heading" data-i18n="import_vehicle.a_safer_journey_bd3185b9">A Safer Journey With High-Tech Shipping</h2>
+ <p style="color:#666; margin-top:1rem; line-height:1.7;" data-i18n="import_vehicle.with_our_interactive_71e26745">With our interactive online platform, data is always logged as it moves from one stage to the next.</p>
+ </div>
+ <div data-aos="fade-up" style="margin-bottom:2.5rem;">
+ <img src="../authentic/cars-roro-quay.webp" alt="Voiture chargée dans un conteneur maritime — processus étape par étape" class="ph-img" data-label="Image : Voiture dans conteneur — illustration du processus de chargement" style="width:100%;height:360px;object-fit:cover;border-radius:10px;display:block;box-shadow:0 10px 30px rgba(0,0,0,0.15);">
+ </div>
+ <ul class="journey-steps" aria-label="8-step tracking process">
+ <li data-aos="fade-up" data-aos-delay="50"><div class="step-num" aria-hidden="true">1</div><div class="step-content"><h4 data-i18n="import_vehicle.receiving_on_to_ade2949b">Receiving on to the tow truck</h4><p data-i18n="import_vehicle.our_security_cleared_8cc1857a">Our security-cleared tow truck collects your vehicle from your nominated address.</p></div></li>
+ <li data-aos="fade-up" data-aos-delay="100"><div class="step-num" aria-hidden="true">2</div><div class="step-content"><h4 data-i18n="import_vehicle.delivery_off_the_eab85c1a">Delivery off the tow truck to the port</h4><p data-i18n="import_vehicle.your_vehicle_is_39918ea9">Your vehicle is transported to the port and logged into the terminal system.</p></div></li>
+ <li data-aos="fade-up" data-aos-delay="150"><div class="step-num" aria-hidden="true">3</div><div class="step-content"><h4 data-i18n="import_vehicle.receiving_into_the_3a83311d">Receiving into the port</h4><p data-i18n="import_vehicle.a_condition_report_55dbc23b">A condition report is completed and your vehicle is secured within the terminal.</p></div></li>
+ <li data-aos="fade-up" data-aos-delay="200"><div class="step-num" aria-hidden="true">4</div><div class="step-content"><h4 data-i18n="import_vehicle.movement_from_the_99b94b6f">Movement from the port on to the vessel</h4><p data-i18n="import_vehicle.your_vehicle_is_ab6f89a8">Your vehicle is loaded and secured on board the vessel for ocean transit.</p></div></li>
+ <li data-aos="fade-up" data-aos-delay="250"><div class="step-num" aria-hidden="true">5</div><div class="step-content"><h4 data-i18n="import_vehicle.movement_from_the_dcadd6c9">Movement from the vessel on to the destination port</h4><p data-i18n="import_vehicle.vessel_arrives_at_5f798400">Vessel arrives at destination and your vehicle is offloaded at the terminal.</p></div></li>
+ <li data-aos="fade-up" data-aos-delay="300"><div class="step-num" aria-hidden="true">6</div><div class="step-content"><h4 data-i18n="import_vehicle.clearance_through_customs_3b309661">Clearance through customs and quarantine</h4><p data-i18n="import_vehicle.our_team_manages_ff61f972">Our team manages all customs paperwork and customs and sanitary inspections.</p></div></li>
+ <li data-aos="fade-up" data-aos-delay="350"><div class="step-num" aria-hidden="true">7</div><div class="step-content"><h4 data-i18n="import_vehicle.handover_to_the_a896b809">Handover to the destination tow truck</h4><p data-i18n="import_vehicle.your_vehicle_is_ee99d109">Your vehicle is handed over to our local delivery partner after clearance.</p></div></li>
+ <li data-aos="fade-up" data-aos-delay="400"><div class="step-num" aria-hidden="true">8</div><div class="step-content"><h4 data-i18n="import_vehicle.final_delivery_to_30e13151">Final delivery to your chosen destination</h4><p data-i18n="import_vehicle.your_vehicle_arrives_4f4ae811">Your vehicle arrives at your door — Comprehensively monitored the whole way through - so there is no chance of it 'going missing'. We know exactly where it is every step of the way.</p></div></li>
+ </ul>
+ <div style="text-align:center; margin-top:var(--space-8);" data-aos="fade-up">
+ <a href="contact.html" class="btn btn--primary" data-i18n="welcome.cta">Get Started</a>
+ </div>
+ </div>
+ </section>
 
-  <!-- LEAVE IT ALL TO IdrisMans -->
-  <section class="section section--light" aria-labelledby="leave-it-heading">
-    <div class="container">
-      <div class="section__header" data-aos="fade-up">
-        <h2 class="section__title" id="leave-it-heading" data-i18n="import_vehicle.leave_it_all_a44651dd">Leave It All To IdrisMans</h2>
-        <p style="color:#666; margin-top:1rem;" data-i18n="import_vehicle.this_includes_d6b25f15">This includes:</p>
-      </div>
-      <ul style="max-width:700px; margin:var(--space-6) auto 0; display:flex; flex-direction:column; gap:var(--space-4);">
-        <li style="display:flex; align-items:flex-start; gap:var(--space-3);" data-aos="fade-up" data-aos-delay="100">
-          <i class="fa-solid fa-check" style="color:var(--color-primary); flex-shrink:0; margin-top:3px;" aria-hidden="true"></i>
-          <span style="font-size:var(--text-base); color:var(--color-text);" data-i18n="import_vehicle.understanding_your_personal_f5d80027">Understanding your personal circumstances and prepare the ideal plan</span>
-        </li>
-        <li style="display:flex; align-items:flex-start; gap:var(--space-3);" data-aos="fade-up" data-aos-delay="150">
-          <i class="fa-solid fa-check" style="color:var(--color-primary); flex-shrink:0; margin-top:3px;" aria-hidden="true"></i>
-          <span style="font-size:var(--text-base); color:var(--color-text);" data-i18n="import_vehicle.full_documentation_support_1050e3f6">Full documentation support</span>
-        </li>
-        <li style="display:flex; align-items:flex-start; gap:var(--space-3);" data-aos="fade-up" data-aos-delay="200">
-          <i class="fa-solid fa-check" style="color:var(--color-primary); flex-shrink:0; margin-top:3px;" aria-hidden="true"></i>
-          <span style="font-size:var(--text-base); color:var(--color-text);" data-i18n="import_vehicle.all_customs_and_b63dca45">All customs and quarantine clearances</span>
-        </li>
-        <li style="display:flex; align-items:flex-start; gap:var(--space-3);" data-aos="fade-up" data-aos-delay="250">
-          <i class="fa-solid fa-check" style="color:var(--color-primary); flex-shrink:0; margin-top:3px;" aria-hidden="true"></i>
-          <span style="font-size:var(--text-base); color:var(--color-text);" data-i18n="import_vehicle.on_road_compliance_aeb97ab2">On road compliance including safety checks and relevant inspections in order to get the vehicle registered in your destination country (optional)</span>
-        </li>
-        <li style="display:flex; align-items:flex-start; gap:var(--space-3);" data-aos="fade-up" data-aos-delay="300">
-          <i class="fa-solid fa-check" style="color:var(--color-primary); flex-shrink:0; margin-top:3px;" aria-hidden="true"></i>
-          <span style="font-size:var(--text-base); color:var(--color-text);" data-i18n="import_vehicle.identify_exactly_what_53bdcabc">Identify exactly what you can expect in terms of costs without hidden surprises</span>
-        </li>
-      </ul>
-    </div>
-  </section>
+ <!-- LEAVE IT ALL TO IdrisMans -->
+ <section class="section section--light" aria-labelledby="leave-it-heading">
+ <div class="container">
+ <div class="section__header" data-aos="fade-up">
+ <h2 class="section__title" id="leave-it-heading" data-i18n="import_vehicle.leave_it_all_a44651dd">Leave It All To IdrisMans</h2>
+ <p style="color:#666; margin-top:1rem;" data-i18n="import_vehicle.this_includes_d6b25f15">This includes:</p>
+ </div>
+ <ul style="max-width:700px; margin:var(--space-6) auto 0; display:flex; flex-direction:column; gap:var(--space-4);">
+ <li style="display:flex; align-items:flex-start; gap:var(--space-3);" data-aos="fade-up" data-aos-delay="100">
+ <i class="fa-solid fa-check" style="color:var(--color-primary); flex-shrink:0; margin-top:3px;" aria-hidden="true"></i>
+ <span style="font-size:var(--text-base); color:var(--color-text);" data-i18n="import_vehicle.understanding_your_personal_f5d80027">Understanding your personal circumstances and prepare the ideal plan</span>
+ </li>
+ <li style="display:flex; align-items:flex-start; gap:var(--space-3);" data-aos="fade-up" data-aos-delay="150">
+ <i class="fa-solid fa-check" style="color:var(--color-primary); flex-shrink:0; margin-top:3px;" aria-hidden="true"></i>
+ <span style="font-size:var(--text-base); color:var(--color-text);" data-i18n="import_vehicle.full_documentation_support_1050e3f6">Full documentation support</span>
+ </li>
+ <li style="display:flex; align-items:flex-start; gap:var(--space-3);" data-aos="fade-up" data-aos-delay="200">
+ <i class="fa-solid fa-check" style="color:var(--color-primary); flex-shrink:0; margin-top:3px;" aria-hidden="true"></i>
+ <span style="font-size:var(--text-base); color:var(--color-text);" data-i18n="import_vehicle.all_customs_and_b63dca45">All customs and quarantine clearances</span>
+ </li>
+ <li style="display:flex; align-items:flex-start; gap:var(--space-3);" data-aos="fade-up" data-aos-delay="250">
+ <i class="fa-solid fa-check" style="color:var(--color-primary); flex-shrink:0; margin-top:3px;" aria-hidden="true"></i>
+ <span style="font-size:var(--text-base); color:var(--color-text);" data-i18n="import_vehicle.on_road_compliance_aeb97ab2">On road compliance including safety checks and relevant inspections in order to get the vehicle registered in your destination country (optional)</span>
+ </li>
+ <li style="display:flex; align-items:flex-start; gap:var(--space-3);" data-aos="fade-up" data-aos-delay="300">
+ <i class="fa-solid fa-check" style="color:var(--color-primary); flex-shrink:0; margin-top:3px;" aria-hidden="true"></i>
+ <span style="font-size:var(--text-base); color:var(--color-text);" data-i18n="import_vehicle.identify_exactly_what_53bdcabc">Identify exactly what you can expect in terms of costs without hidden surprises</span>
+ </li>
+ </ul>
+ </div>
+ </section>
 
-  <!-- EASY SAFE AFFORDABLE -->
-  <section class="section" aria-labelledby="options-heading">
-    <div class="container">
-      <div class="section__header" data-aos="fade-up">
-        <span class="section__eyebrow" data-i18n="import_vehicle.shipping_options_c03af610">Shipping Options</span>
-        <h2 class="section__title" id="options-heading" data-i18n="import_vehicle.easy_safe_and_94186e77">Easy, Safe ... And Affordable</h2>
-        <p style="color:#666; margin-top:1rem; line-height:1.7;" data-i18n="import_vehicle.choose_the_shipping_97412cf3">Choose the shipping method that suits your needs and budget. Every option includes full tracking, customs documentation and dedicated support.</p>
-      </div>
-      <div class="options-grid">
-        <div class="option-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="option-card__icon"><i class="fa-solid fa-ship"></i></div>
-          <h3 class="option-card__title" data-i18n="import_vehicle.roll_on_roll_a88b12ae">Roll On Roll Off (RoRo)</h3>
-          <p class="option-card__text" data-i18n="import_vehicle.the_most_cost_2e0b8149">The most cost-effective way to ship your vehicle internationally. Your vehicle is driven directly onto the vessel and secured for transit. Best for standard cars, motorcycles and light vehicles.</p>
-        </div>
-        <div class="option-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="option-card__icon"><i class="fa-solid fa-box-open"></i></div>
-          <h3 class="option-card__title" data-i18n="import_vehicle.shared_container_lcl_2e8cb51a">Shared Container (LCL)</h3>
-          <p class="option-card__text" data-i18n="import_vehicle.your_vehicle_shares_b4e24de6">Your vehicle shares a container with other cargo, reducing costs while providing excellent protection. Ideal for smaller vehicles, motorcycles and when budget is a priority.</p>
-        </div>
-        <div class="option-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="option-card__icon"><i class="fa-solid fa-cube"></i></div>
-          <h3 class="option-card__title" data-i18n="import_vehicle.full_container_fcl_b52dff58">Full Container (FCL)</h3>
-          <p class="option-card__text" data-i18n="import_vehicle.your_vehicle_occupies_947660dd">Your vehicle occupies a dedicated container for maximum security and protection. Ideal for high-value vehicles, classic cars, or when you need to ship personal belongings alongside your vehicle.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+ <!-- EASY SAFE AFFORDABLE -->
+ <section class="section" aria-labelledby="options-heading">
+ <div class="container">
+ <div class="section__header" data-aos="fade-up">
+ <span class="section__eyebrow" data-i18n="import_vehicle.shipping_options_c03af610">Shipping Options</span>
+ <h2 class="section__title" id="options-heading" data-i18n="import_vehicle.easy_safe_and_94186e77">Easy, Safe ... And Affordable</h2>
+ <p style="color:#666; margin-top:1rem; line-height:1.7;" data-i18n="import_vehicle.choose_the_shipping_97412cf3">Choose the shipping method that suits your needs and budget. Every option includes full tracking, customs documentation and dedicated support.</p>
+ </div>
+ <div class="options-grid">
+ <div class="option-card" data-aos="fade-up" data-aos-delay="100">
+ <div class="option-card__icon"><i class="fa-solid fa-ship"></i></div>
+ <h3 class="option-card__title" data-i18n="import_vehicle.roll_on_roll_a88b12ae">Roll On Roll Off (RoRo)</h3>
+ <p class="option-card__text" data-i18n="import_vehicle.the_most_cost_2e0b8149">The most cost-effective way to ship your vehicle internationally. Your vehicle is driven directly onto the vessel and secured for transit. Best for standard cars, motorcycles and light vehicles.</p>
+ </div>
+ <div class="option-card" data-aos="fade-up" data-aos-delay="200">
+ <div class="option-card__icon"><i class="fa-solid fa-box-open"></i></div>
+ <h3 class="option-card__title" data-i18n="import_vehicle.shared_container_lcl_2e8cb51a">Shared Container (LCL)</h3>
+ <p class="option-card__text" data-i18n="import_vehicle.your_vehicle_shares_b4e24de6">Your vehicle shares a container with other cargo, reducing costs while providing excellent protection. Ideal for smaller vehicles, motorcycles and when budget is a priority.</p>
+ </div>
+ <div class="option-card" data-aos="fade-up" data-aos-delay="300">
+ <div class="option-card__icon"><i class="fa-solid fa-cube"></i></div>
+ <h3 class="option-card__title" data-i18n="import_vehicle.full_container_fcl_b52dff58">Full Container (FCL)</h3>
+ <p class="option-card__text" data-i18n="import_vehicle.your_vehicle_occupies_947660dd">Your vehicle occupies a dedicated container for maximum security and protection. Ideal for high-value vehicles, classic cars, or when you need to ship personal belongings alongside your vehicle.</p>
+ </div>
+ </div>
+ </div>
+ </section>
 
-  <!-- WE TAKE CARE -->
-  <section class="section" aria-labelledby="journey-heading">
-    <div class="container">
-      <div class="section__header" data-aos="fade-up">
-        <span class="section__eyebrow" data-i18n="import_vehicle.our_process_a8750a3f">Our Process</span>
-        <h2 class="section__title" id="journey-heading" data-i18n="import_vehicle.we_take_care_2e322190">We Take Care Of The Entire Journey</h2>
-        <p style="color:#666; margin-top:1rem; line-height:1.7;" data-i18n="import_vehicle.from_the_moment_e2ffa2dc">From the moment you contact us to the moment your vehicle arrives, we handle every single step — so you don't have to.</p>
-      </div>
-      <ul class="journey-steps" aria-label="Shipping journey steps">
-        <li data-aos="fade-up" data-aos-delay="50">
-          <div class="step-num" aria-hidden="true">1</div>
-          <div class="step-content"><h4 data-i18n="import_vehicle.tow_truck_collection_6c44354f">Tow Truck Collection</h4><p data-i18n="import_vehicle.we_arrange_a_0701f778">We arrange a tow truck to collect your vehicle from your nominated address at a time convenient to you.</p></div>
-        </li>
-        <li data-aos="fade-up" data-aos-delay="100">
-          <div class="step-num" aria-hidden="true">2</div>
-          <div class="step-content"><h4 data-i18n="import_vehicle.port_delivery_44c8350b">Port Delivery</h4><p data-i18n="import_vehicle.your_vehicle_is_b8f1a532">Your vehicle is safely transported to and checked in at the departure port facility by our team.</p></div>
-        </li>
-        <li data-aos="fade-up" data-aos-delay="150">
-          <div class="step-num" aria-hidden="true">3</div>
-          <div class="step-content"><h4 data-i18n="import_vehicle.port_receiving_amp_c6237d36">Port Receiving &amp; Inspection</h4><p data-i18n="import_vehicle.the_port_team_ef069402">The port team conducts a condition report on your vehicle before it enters the shipping terminal.</p></div>
-        </li>
-        <li data-aos="fade-up" data-aos-delay="200">
-          <div class="step-num" aria-hidden="true">4</div>
-          <div class="step-content"><h4 data-i18n="import_vehicle.vessel_loading_bdc4b8e2">Vessel Loading</h4><p data-i18n="import_vehicle.your_vehicle_is_976e2fc8">Your vehicle is loaded onto the vessel by experienced handlers and secured for ocean transit.</p></div>
-        </li>
-        <li data-aos="fade-up" data-aos-delay="250">
-          <div class="step-num" aria-hidden="true">5</div>
-          <div class="step-content"><h4 data-i18n="import_vehicle.destination_port_arrival_376004b8">Destination Port Arrival</h4><p data-i18n="import_vehicle.we_notify_you_9ca9ab49">We notify you when your vessel arrives at the destination port and provide an estimated clearance timeline.</p></div>
-        </li>
-        <li data-aos="fade-up" data-aos-delay="300">
-          <div class="step-num" aria-hidden="true">6</div>
-          <div class="step-content"><h4 data-i18n="import_vehicle.customs_amp_quarantine_440908bb">Customs &amp; Quarantine Clearance</h4><p data-i18n="import_vehicle.our_team_manages_62ae24c0">Our team manages all customs documentation, duty calculations and MPI quarantine inspections on your behalf.</p></div>
-        </li>
-        <li data-aos="fade-up" data-aos-delay="350">
-          <div class="step-num" aria-hidden="true">7</div>
-          <div class="step-content"><h4 data-i18n="import_vehicle.destination_tow_truck_2d50c49e">Destination Tow Truck Handover</h4><p data-i18n="import_vehicle.once_cleared_your_d85451a2">Once cleared, your vehicle is handed over to our local delivery partner for final transport.</p></div>
-        </li>
-        <li data-aos="fade-up" data-aos-delay="400">
-          <div class="step-num" aria-hidden="true">8</div>
-          <div class="step-content"><h4 data-i18n="import_vehicle.final_delivery_cd85313b">Final Delivery</h4><p data-i18n="import_vehicle.your_vehicle_is_ffa67690">Your vehicle is delivered directly to your nominated address — ready for the road.</p></div>
-        </li>
-      </ul>
-    </div>
-  </section>
+ <!-- WE TAKE CARE -->
+ <section class="section" aria-labelledby="journey-heading">
+ <div class="container">
+ <div class="section__header" data-aos="fade-up">
+ <span class="section__eyebrow" data-i18n="import_vehicle.our_process_a8750a3f">Our Process</span>
+ <h2 class="section__title" id="journey-heading" data-i18n="import_vehicle.we_take_care_2e322190">We Take Care Of The Entire Journey</h2>
+ <p style="color:#666; margin-top:1rem; line-height:1.7;" data-i18n="import_vehicle.from_the_moment_e2ffa2dc">From the moment you contact us to the moment your vehicle arrives, we handle every single step — so you don't have to.</p>
+ </div>
+ <ul class="journey-steps" aria-label="Shipping journey steps">
+ <li data-aos="fade-up" data-aos-delay="50">
+ <div class="step-num" aria-hidden="true">1</div>
+ <div class="step-content"><h4 data-i18n="import_vehicle.tow_truck_collection_6c44354f">Tow Truck Collection</h4><p data-i18n="import_vehicle.we_arrange_a_0701f778">We arrange a tow truck to collect your vehicle from your nominated address at a time convenient to you.</p></div>
+ </li>
+ <li data-aos="fade-up" data-aos-delay="100">
+ <div class="step-num" aria-hidden="true">2</div>
+ <div class="step-content"><h4 data-i18n="import_vehicle.port_delivery_44c8350b">Port Delivery</h4><p data-i18n="import_vehicle.your_vehicle_is_b8f1a532">Your vehicle is safely transported to and checked in at the departure port facility by our team.</p></div>
+ </li>
+ <li data-aos="fade-up" data-aos-delay="150">
+ <div class="step-num" aria-hidden="true">3</div>
+ <div class="step-content"><h4 data-i18n="import_vehicle.port_receiving_amp_c6237d36">Port Receiving &amp; Inspection</h4><p data-i18n="import_vehicle.the_port_team_ef069402">The port team conducts a condition report on your vehicle before it enters the shipping terminal.</p></div>
+ </li>
+ <li data-aos="fade-up" data-aos-delay="200">
+ <div class="step-num" aria-hidden="true">4</div>
+ <div class="step-content"><h4 data-i18n="import_vehicle.vessel_loading_bdc4b8e2">Vessel Loading</h4><p data-i18n="import_vehicle.your_vehicle_is_976e2fc8">Your vehicle is loaded onto the vessel by experienced handlers and secured for ocean transit.</p></div>
+ </li>
+ <li data-aos="fade-up" data-aos-delay="250">
+ <div class="step-num" aria-hidden="true">5</div>
+ <div class="step-content"><h4 data-i18n="import_vehicle.destination_port_arrival_376004b8">Destination Port Arrival</h4><p data-i18n="import_vehicle.we_notify_you_9ca9ab49">We notify you when your vessel arrives at the destination port and provide an estimated clearance timeline.</p></div>
+ </li>
+ <li data-aos="fade-up" data-aos-delay="300">
+ <div class="step-num" aria-hidden="true">6</div>
+ <div class="step-content"><h4 data-i18n="import_vehicle.customs_amp_quarantine_440908bb">Customs &amp; Quarantine Clearance</h4><p data-i18n="import_vehicle.our_team_manages_62ae24c0">Our team manages all customs documentation, duty calculations and customs and sanitary inspections on your behalf.</p></div>
+ </li>
+ <li data-aos="fade-up" data-aos-delay="350">
+ <div class="step-num" aria-hidden="true">7</div>
+ <div class="step-content"><h4 data-i18n="import_vehicle.destination_tow_truck_2d50c49e">Destination Tow Truck Handover</h4><p data-i18n="import_vehicle.once_cleared_your_d85451a2">Once cleared, your vehicle is handed over to our local delivery partner for final transport.</p></div>
+ </li>
+ <li data-aos="fade-up" data-aos-delay="400">
+ <div class="step-num" aria-hidden="true">8</div>
+ <div class="step-content"><h4 data-i18n="import_vehicle.final_delivery_cd85313b">Final Delivery</h4><p data-i18n="import_vehicle.your_vehicle_is_ffa67690">Your vehicle is delivered directly to your nominated address — ready for the road.</p></div>
+ </li>
+ </ul>
+ </div>
+ </section>
 
-  <!-- WHAT WE SHIP CARDS -->
-  <section class="section section--light" aria-labelledby="ship-types-heading">
-    <div class="container">
-      <div class="section__header" data-aos="fade-up">
-        <span class="section__eyebrow" data-i18n="import_vehicle.our_specialities_3e08f67a">Our Specialities</span>
-        <h2 class="section__title" id="ship-types-heading" data-i18n="import_vehicle.what_we_can_2590c724">What We Can Help You Ship</h2>
-      </div>
-      <div class="ship-cards-grid">
-        <article class="ship-card" data-aos="fade-up" data-aos-delay="100">
-          <img class="ship-card__img" src="../automotive/vehicle.webp" alt="Vehicle shipping" loading="lazy" width="400" height="250">
-          <div class="ship-card__body">
-            <h3 class="ship-card__title" data-i18n="nav.vehicles">Vehicles</h3>
-            <p class="ship-card__text" data-i18n="import_vehicle.the_cost_for_ad618465">The cost for car shipping in and out of l'International can vary depending on a number of factors, click here to learn more.</p>
-            <a href="import-car.html" class="btn btn--primary btn--sm" data-i18n="welcome.cta">Get Started</a>
-          </div>
-        </article>
-        <article class="ship-card" data-aos="fade-up" data-aos-delay="200">
-          <img class="ship-card__img" src="../automotive/boat.webp" alt="Trailer boat shipping" loading="lazy" width="400" height="250">
-          <div class="ship-card__body">
-            <h3 class="ship-card__title" data-i18n="import_vehicle.trailer_boats_9ecf0238">Trailer Boats</h3>
-            <p class="ship-card__text" data-i18n="import_vehicle.shipping_a_trailer_c5a07923">Shipping a trailer boat makes good economic sense, click here to learn more.</p>
-            <a href="import-boat.html" class="btn btn--primary btn--sm" data-i18n="welcome.cta">Get Started</a>
-          </div>
-        </article>
-        <article class="ship-card" data-aos="fade-up" data-aos-delay="300">
-          <img class="ship-card__img" src="../automotive/motorbike.webp" alt="Motorcycle shipping" loading="lazy" width="400" height="250">
-          <div class="ship-card__body">
-            <h3 class="ship-card__title" data-i18n="nav.motorcycles">Motorcycles</h3>
-            <p class="ship-card__text" data-i18n="import_vehicle.shipping_a_motorcycle_ed6dfc6d">Shipping a motorcycle in and out of l'International has never been easier, click here to learn more.</p>
-            <a href="import-motorcycle.html" class="btn btn--primary btn--sm" data-i18n="welcome.cta">Get Started</a>
-          </div>
-        </article>
-        <article class="ship-card" data-aos="fade-up" data-aos-delay="100">
-          <img class="ship-card__img" src="../automotive/caravan.webp" alt="Caravan shipping" loading="lazy" width="400" height="250">
-          <div class="ship-card__body">
-            <h3 class="ship-card__title" data-i18n="nav.caravans">Caravans</h3>
-            <p class="ship-card__text" data-i18n="import_vehicle.our_international_caravan_d3837a18">Our International Caravan Shipping Service is Easy, Safe, And Affordable, click here to learn more.</p>
-            <a href="import-caravan.html" class="btn btn--primary btn--sm" data-i18n="welcome.cta">Get Started</a>
-          </div>
-        </article>
-        <article class="ship-card" data-aos="fade-up" data-aos-delay="200">
-          <img class="ship-card__img" src="../automotive/motorhome.webp" alt="Motorhome shipping" loading="lazy" width="400" height="250">
-          <div class="ship-card__body">
-            <h3 class="ship-card__title" data-i18n="nav.motorhomes">Motorhomes</h3>
-            <p class="ship-card__text" data-i18n="import_vehicle.shipping_a_motorhome_4626d91d">Shipping a Motorhome between l'International and l'Afrique has plenty of benefits, click here to learn more.</p>
-            <a href="import-motorhome.html" class="btn btn--primary btn--sm" data-i18n="welcome.cta">Get Started</a>
-          </div>
-        </article>
-        <article class="ship-card" data-aos="fade-up" data-aos-delay="300">
-          <img class="ship-card__img" src="../automotive/machinery.webp" alt="Machinery shipping" loading="lazy" width="400" height="250">
-          <div class="ship-card__body">
-            <h3 class="ship-card__title" data-i18n="nav.machinery">Machinery</h3>
-            <p class="ship-card__text" data-i18n="import_vehicle.international_machinery_shipping_a1a8bbcf">International Machinery Shipping can be complicated and costly - it's important your chosen freight forwarder knows what they're doing. Click here to see how we can help.</p>
-            <a href="import-machinery.html" class="btn btn--primary btn--sm" data-i18n="welcome.cta">Get Started</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
+ <!-- WHAT WE SHIP CARDS -->
+ <section class="section section--light" aria-labelledby="ship-types-heading">
+ <div class="container">
+ <div class="section__header" data-aos="fade-up">
+ <span class="section__eyebrow" data-i18n="import_vehicle.our_specialities_3e08f67a">Our Specialities</span>
+ <h2 class="section__title" id="ship-types-heading" data-i18n="import_vehicle.what_we_can_2590c724">What We Can Help You Ship</h2>
+ </div>
+ <div class="ship-cards-grid">
+ <article class="ship-card" data-aos="fade-up" data-aos-delay="100">
+ <img class="ship-card__img" src="../automotive/vehicle.webp" alt="Vehicle shipping" loading="lazy" width="400" height="250">
+ <div class="ship-card__body">
+ <h3 class="ship-card__title" data-i18n="nav.vehicles">Vehicles</h3>
+ <p class="ship-card__text" data-i18n="import_vehicle.the_cost_for_ad618465">The cost for car shipping in and out of international can vary depending on a number of factors, click here to learn more.</p>
+ <a href="import-car.html" class="btn btn--primary btn--sm" data-i18n="welcome.cta">Get Started</a>
+ </div>
+ </article>
+ <article class="ship-card" data-aos="fade-up" data-aos-delay="200">
+ <img class="ship-card__img" src="../automotive/boat.webp" alt="Trailer boat shipping" loading="lazy" width="400" height="250">
+ <div class="ship-card__body">
+ <h3 class="ship-card__title" data-i18n="import_vehicle.trailer_boats_9ecf0238">Trailer Boats</h3>
+ <p class="ship-card__text" data-i18n="import_vehicle.shipping_a_trailer_c5a07923">Shipping a trailer boat makes good economic sense, click here to learn more.</p>
+ <a href="import-boat.html" class="btn btn--primary btn--sm" data-i18n="welcome.cta">Get Started</a>
+ </div>
+ </article>
+ <article class="ship-card" data-aos="fade-up" data-aos-delay="300">
+ <img class="ship-card__img" src="../automotive/motorbike.webp" alt="Motorcycle shipping" loading="lazy" width="400" height="250">
+ <div class="ship-card__body">
+ <h3 class="ship-card__title" data-i18n="nav.motorcycles">Motorcycles</h3>
+ <p class="ship-card__text" data-i18n="import_vehicle.shipping_a_motorcycle_ed6dfc6d">Shipping a motorcycle in and out of international has never been easier, click here to learn more.</p>
+ <a href="import-motorcycle.html" class="btn btn--primary btn--sm" data-i18n="welcome.cta">Get Started</a>
+ </div>
+ </article>
+ <article class="ship-card" data-aos="fade-up" data-aos-delay="100">
+ <img class="ship-card__img" src="../automotive/caravan.webp" alt="Caravan shipping" loading="lazy" width="400" height="250">
+ <div class="ship-card__body">
+ <h3 class="ship-card__title" data-i18n="nav.caravans">Caravans</h3>
+ <p class="ship-card__text" data-i18n="import_vehicle.our_international_caravan_d3837a18">Our International Caravan Shipping Service is Easy, Safe, And Affordable, click here to learn more.</p>
+ <a href="import-caravan.html" class="btn btn--primary btn--sm" data-i18n="welcome.cta">Get Started</a>
+ </div>
+ </article>
+ <article class="ship-card" data-aos="fade-up" data-aos-delay="200">
+ <img class="ship-card__img" src="../automotive/motorhome.webp" alt="Motorhome shipping" loading="lazy" width="400" height="250">
+ <div class="ship-card__body">
+ <h3 class="ship-card__title" data-i18n="nav.motorhomes">Motorhomes</h3>
+ <p class="ship-card__text" data-i18n="import_vehicle.shipping_a_motorhome_4626d91d">Shipping a Motorhome between international and l'Afrique has plenty of benefits, click here to learn more.</p>
+ <a href="import-motorhome.html" class="btn btn--primary btn--sm" data-i18n="welcome.cta">Get Started</a>
+ </div>
+ </article>
+ <article class="ship-card" data-aos="fade-up" data-aos-delay="300">
+ <img class="ship-card__img" src="../authentic/machinery-yard-aerial.jpg" alt="Machinery shipping" loading="lazy" width="400" height="250">
+ <div class="ship-card__body">
+ <h3 class="ship-card__title" data-i18n="nav.machinery">Machinery</h3>
+ <p class="ship-card__text" data-i18n="import_vehicle.international_machinery_shipping_a1a8bbcf">International Machinery Shipping can be complicated and costly - it's important your chosen freight forwarder knows what they're doing. Click here to see how we can help.</p>
+ <a href="import-machinery.html" class="btn btn--primary btn--sm" data-i18n="welcome.cta">Get Started</a>
+ </div>
+ </article>
+ </div>
+ </div>
+ </section>
 
-  <!-- WE CAN MOVE IT ALL — DESTINATIONS -->
-  <section class="section section--light" aria-labelledby="destinations-heading">
-    <div class="container">
-      <div class="section__header" data-aos="fade-up">
-        <h2 class="section__title" id="destinations-heading" data-i18n="import_vehicle.we_can_move_c8b7f7b4">We Can Move It All</h2>
-        <p style="color:#666; margin-top:1rem;" data-i18n="import_vehicle.vehicles_caravans_motorhomes_0a6f8f3a">Vehicles, Caravans, Motorhomes, Trailer Boats, Motorcycles, Machinery - All Over The World.</p>
-        <p style="color:#666; margin-top:0.5rem;" data-i18n="import_vehicle.please_click_on_ae6dc3a7">Please Click On The Below Destination For Information Specific To Each Location</p>
-      </div>
-      <div data-aos="fade-up" style="margin-bottom:2rem;">
-        <img src="../generated/corridor_map_auto.png" alt="Carte mondiale des corridors de transport IdrisMans" class="ph-img" data-label="Image : Carte des corridors Afrique - UE" style="width:100%;height:340px;object-fit:cover;border-radius:10px;display:block;box-shadow:0 10px 30px rgba(0,0,0,0.15);">
-      </div>
-      <div style="display:flex; justify-content:center; gap:var(--space-5); flex-wrap:wrap; margin-top:var(--space-8);">
-        <a href="contact.html" class="btn btn--primary btn--lg" data-aos="fade-up" data-aos-delay="100" data-i18n="import_vehicle.afrique_05ef42e8">AFRIQUE</a>
-        <a href="contact.html" class="btn btn--outline btn--lg" data-aos="fade-up" data-aos-delay="150" data-i18n="import_vehicle.union_europ_enne_352d30cb">UNION EUROPÉENNE</a>
-        <a href="contact.html" class="btn btn--outline btn--lg" data-aos="fade-up" data-aos-delay="200" data-i18n="import_vehicle.demande_sp_ciale_f49a4223">DEMANDE SPÉCIALE</a>
-      </div>
-    </div>
-  </section>
+ <!-- WE CAN MOVE IT ALL — DESTINATIONS -->
+ <section class="section section--light" aria-labelledby="destinations-heading">
+ <div class="container">
+ <div class="section__header" data-aos="fade-up">
+ <h2 class="section__title" id="destinations-heading" data-i18n="import_vehicle.we_can_move_c8b7f7b4">We Can Move It All</h2>
+ <p style="color:#666; margin-top:1rem;" data-i18n="import_vehicle.vehicles_caravans_motorhomes_0a6f8f3a">Vehicles, Caravans, Motorhomes, Trailer Boats, Motorcycles, Machinery - All Over The World.</p>
+ <p style="color:#666; margin-top:0.5rem;" data-i18n="import_vehicle.please_click_on_ae6dc3a7">Please Click On The Below Destination For Information Specific To Each Location</p>
+ </div>
+ <div data-aos="fade-up" style="margin-bottom:2rem;">
+ <img src="../authentic/port-cranes-aerial.jpg" alt="Carte mondiale des corridors de transport IdrisMans" class="ph-img" data-label="Image : Carte des corridors Afrique - UE" style="width:100%;height:340px;object-fit:cover;border-radius:10px;display:block;box-shadow:0 10px 30px rgba(0,0,0,0.15);">
+ </div>
+ <div style="display:flex; justify-content:center; gap:var(--space-5); flex-wrap:wrap; margin-top:var(--space-8);">
+ <a href="contact.html" class="btn btn--primary btn--lg" data-aos="fade-up" data-aos-delay="100" data-i18n="import_vehicle.afrique_05ef42e8">AFRIQUE</a>
+ <a href="contact.html" class="btn btn--outline btn--lg" data-aos="fade-up" data-aos-delay="150" data-i18n="import_vehicle.union_europ_enne_352d30cb">UNION EUROPÉENNE</a>
+ <a href="contact.html" class="btn btn--outline btn--lg" data-aos="fade-up" data-aos-delay="200" data-i18n="import_vehicle.demande_sp_ciale_f49a4223">DEMANDE SPÉCIALE</a>
+ </div>
+ </div>
+ </section>
 
-  <!-- TRUSTED BY 10,000+ — 10 TESTIMONIALS -->
-  <section class="section" aria-labelledby="testimonials-heading">
-    <div class="container">
-      <div class="section__header" data-aos="fade-up">
-        <h2 class="section__title" id="testimonials-heading" data-i18n="import_vehicle.trusted_by_10_d8293e5b">Trusted by 10,000+ Families and Businesses - and counting!</h2>
-      </div>
-      <div class="testimonials-carousel" style="margin-top:var(--space-8);">
-        <div class="testimonial-slide active testimonial-card">
-          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p class="testimonial-card__text" data-i18n="import_vehicle.a_big_thanks_9a214c04">"A big thanks to the Team at IdrisMans Transit. They've just shipped my Triton from Perth to Wellington. If you want a totally Stress free, reliable company these guys are the ones to use. Fantastic Price and I was always kept up to date on the arrival of my Ute. Thanks so much!"</p>
-          <p class="testimonial-card__author" data-i18n="import_vehicle.paul_webster_147b117c">Paul Webster</p>
-        </div>
-        <div class="testimonial-slide testimonial-card">
-          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p class="testimonial-card__text" data-i18n="import_vehicle.highly_professional_company_203e2ef2">"Highly professional company who do what they say they will. I was extremely happy with their efforts to assist me in importing my car into NZ recently. Highly recommended!"</p>
-          <p class="testimonial-card__author" data-i18n="import_vehicle.stuart_kath_6eacc08f">Stuart Kath</p>
-        </div>
-        <div class="testimonial-slide testimonial-card">
-          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p class="testimonial-card__text" data-i18n="import_vehicle.easy_straightforward_service_c53106ed">"Easy straightforward service and great advice they gave us saving hundreds of dollars. Great companies highly recommend if we ever move vehicles and are so affordable. We are happy customers"</p>
-          <p class="testimonial-card__author" data-i18n="import_vehicle.engelbert_amp_helen_af0b90b2">Engelbert &amp; Helen Shum</p>
-        </div>
-        <div class="testimonial-slide testimonial-card">
-          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p class="testimonial-card__text" data-i18n="import_vehicle.shipped_our_vehicle_481d62d7">"Shipped our vehicle from Brisbane to Auckland l'Afrique. The process was a total breeze. The whole team was fantastic to deal with. Prompt communication, forwarded all necessary information and very pleasant to deal with. Answered all of our questions. Compliance was pre-paid through IdrisMans Transit and was the best decision we made. Thank you to the IdrisMans team."</p>
-          <p class="testimonial-card__author" data-i18n="import_vehicle.terry_mun_8fa9fbc4">Terry Mun</p>
-        </div>
-        <div class="testimonial-slide testimonial-card">
-          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p class="testimonial-card__text" data-i18n="import_vehicle.they_looked_after_d77f2395">"They looked after me and kept me up to date on both sides of the Tasman. Every person I spoke to was courteous and happy and that includes the pick of and delivery guys."</p>
-          <p class="testimonial-card__author" data-i18n="import_vehicle.rick_purnell_23651d41">Rick Purnell</p>
-        </div>
-        <div class="testimonial-slide testimonial-card">
-          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p class="testimonial-card__text" data-i18n="import_vehicle.the_staff_in_34698ad1">"The staff in both Brisbane and Wellington were amazing. They made the process so much less stressful than I had anticipated. The team in Wellington kept me updated several times a day on what was happening with my car. I would highly recommend IdrisMans to anyone needing to ship their vehicle overseas."</p>
-          <p class="testimonial-card__author" data-i18n="import_vehicle.trudi_taylor_cbfa373a">Trudi Taylor</p>
-        </div>
-        <div class="testimonial-slide testimonial-card">
-          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p class="testimonial-card__text" data-i18n="import_vehicle.i_have_to_f339fe3d">"I have to say that Carol &amp; I are extremely happy with the service provided, both in l'International and l'Afrique in these difficult times, instant responses to emails and questions and we would have no hesitation in recommending IdrisMans Transit to future customers"</p>
-          <p class="testimonial-card__author" data-i18n="import_vehicle.derek_adams_e8ffe34e">Derek Adams</p>
-        </div>
-        <div class="testimonial-slide testimonial-card">
-          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p class="testimonial-card__text" data-i18n="import_vehicle.thanks_to_the_eef11f2c">"Thanks to the team at IdrisMans for making the movement of my 2 cars from Aus to NZ so smooth and effortless, awesome people to deal with, highly recommend them"</p>
-          <p class="testimonial-card__author" data-i18n="import_vehicle.patrick_lynch_7a7bd27f">Patrick Lynch</p>
-        </div>
-        <div class="testimonial-slide testimonial-card">
-          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p class="testimonial-card__text" data-i18n="import_vehicle.we_used_idrismans_09e6fb46">"We used IdrisMans Transit to bring our truck to NZ from Brisbane. From organizing our quote, insurances to dropping the truck into Brisbane and getting it to our doorstep in NZ was AMAZING!!! Communication from The Brisbane Crew to the Great Team in NZ made the whole process so easy and stress-free. Definitely recommend these guys to anyone wanting to move vehicles over the water. Five-star service guys and girls. ☆☆☆☆☆ Very grateful."</p>
-          <p class="testimonial-card__author" data-i18n="import_vehicle.monique_maree_d60443a4">Monique Maree</p>
-        </div>
-        <div class="testimonial-slide testimonial-card">
-          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p class="testimonial-card__text" data-i18n="import_vehicle.i_couldn_t_0e189d72">"I couldn't be happier with the service I received from IdrisMans when I sent my car home to Wellington from Melbourne. The team were out of this world helpful, answered all my questions, there were no surprises at all and even the paperwork was made easy with their help. Thank you all so very much. Totally recommend them."</p>
-          <p class="testimonial-card__author" data-i18n="import_vehicle.cathy_clifford_05ffeac8">Cathy Clifford</p>
-        </div>
-      <div class="testimonial-dots">
-  <div class="testimonial-dot active" onclick="showTestimonial(0)"></div>
-  <div class="testimonial-dot" onclick="showTestimonial(1)"></div>
-  <div class="testimonial-dot" onclick="showTestimonial(2)"></div>
-  <div class="testimonial-dot" onclick="showTestimonial(3)"></div>
-  <div class="testimonial-dot" onclick="showTestimonial(4)"></div>
-  <div class="testimonial-dot" onclick="showTestimonial(5)"></div>
-  <div class="testimonial-dot" onclick="showTestimonial(6)"></div>
-  <div class="testimonial-dot" onclick="showTestimonial(7)"></div>
-  <div class="testimonial-dot" onclick="showTestimonial(8)"></div>
-  <div class="testimonial-dot" onclick="showTestimonial(9)"></div>
+ <!-- TRUSTED BY 10,000+ — 10 TESTIMONIALS -->
+ <section class="section" aria-labelledby="testimonials-heading">
+ <div class="container">
+ <div class="section__header" data-aos="fade-up">
+ <h2 class="section__title" id="testimonials-heading" data-i18n="import_vehicle.trusted_by_10_d8293e5b">Trusted by 10,000+ Families and Businesses - and counting!</h2>
+ </div>
+ <div class="testimonials-carousel" style="margin-top:var(--space-8);">
+ <div class="testimonial-slide active testimonial-card">
+ <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+ <p class="testimonial-card__text" data-i18n="import_vehicle.a_big_thanks_9a214c04">“IdrisMans m'a sorti d'affaire en un temps record lors d'un dédouanement complexe du Maroc vers la France. Il s'est investi pleinement, même en plein week-end malgré ma demande de dernière minute.”</p>
+ <p class="testimonial-card__author" data-i18n="import_vehicle.paul_webster_147b117c">Europe Europe</p>
+ </div>
+ <div class="testimonial-slide testimonial-card">
+ <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+ <p class="testimonial-card__text" data-i18n="import_vehicle.highly_professional_company_203e2ef2">“IdrisMans m'a géré l'importation de mon véhicule et les formalités douanières avec professionnalisme et rapidité. Je suis satisfait de leur travail soigné et je les recommande fortement.”</p>
+ <p class="testimonial-card__author" data-i18n="import_vehicle.stuart_kath_6eacc08f">Bandiougou D.</p>
+ </div>
+ <div class="testimonial-slide testimonial-card">
+ <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+ <p class="testimonial-card__text" data-i18n="import_vehicle.easy_straightforward_service_c53106ed">“Je recommande cette entreprise pour son professionnalisme, sa disponibilité et sa fiabilité. Idriss est une personne de confiance qui connaît très bien son métier.”</p>
+ <p class="testimonial-card__author" data-i18n="import_vehicle.engelbert_amp_helen_af0b90b2">Fatiha Maarouf</p>
+ </div>
+ <div class="testimonial-slide testimonial-card">
+ <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+ <p class="testimonial-card__text" data-i18n="import_vehicle.shipped_our_vehicle_481d62d7">“Professionnel, réactif et très efficace, rien à dire. Très satisfait de leur suivi.”</p>
+ <p class="testimonial-card__author" data-i18n="import_vehicle.terry_mun_8fa9fbc4">Reda Benmabrouk</p>
+ </div>
+ <div class="testimonial-slide testimonial-card">
+ <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+ <p class="testimonial-card__text" data-i18n="import_vehicle.they_looked_after_d77f2395">“J'ai appelé pour la première fois pour un conseil : réponse très efficace et rapide, contrairement à d'autres. Je recommande.”</p>
+ <p class="testimonial-card__author" data-i18n="import_vehicle.rick_purnell_23651d41">Driss Khellafi</p>
+ </div>
+ <div class="testimonial-slide testimonial-card">
+ <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+ <p class="testimonial-card__text" data-i18n="import_vehicle.the_staff_in_34698ad1">“Premier appel à ce prestataire et son professionnalisme est à la hauteur de sa gentillesse et de l'attention qu'il porte à ses dossiers. Un PRO à l'état pur. Bravo M. Idris.”</p>
+ <p class="testimonial-card__author" data-i18n="import_vehicle.trudi_taylor_cbfa373a">Bruno Collos</p>
+ </div>
+ <div class="testimonial-slide testimonial-card">
+ <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+ <p class="testimonial-card__text" data-i18n="import_vehicle.i_have_to_f339fe3d">“Une très bonne entreprise avec une qualité de service hors pair. Le gérant est à l'écoute de ses clients et on se sent bien entouré. Je recommande.”</p>
+ <p class="testimonial-card__author" data-i18n="import_vehicle.derek_adams_e8ffe34e">Grace Janett Aboussou</p>
+ </div>
+ <div class="testimonial-slide testimonial-card">
+ <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+ <p class="testimonial-card__text" data-i18n="import_vehicle.thanks_to_the_eef11f2c">“Très bon contact, explications très limpides. Réactif et très sympathique, un exemple de courtoisie.”</p>
+ <p class="testimonial-card__author" data-i18n="import_vehicle.patrick_lynch_7a7bd27f">Franck Perrichon</p>
+ </div>
+ <div class="testimonial-slide testimonial-card">
+ <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+ <p class="testimonial-card__text" data-i18n="import_vehicle.we_used_idrismans_09e6fb46">“Une personne de principe, professionnelle, serviable et sérieuse. Je vous recommande avec une très bonne note.”</p>
+ <p class="testimonial-card__author" data-i18n="import_vehicle.monique_maree_d60443a4">Eya Nsibi</p>
+ </div>
+ <div class="testimonial-slide testimonial-card">
+ <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+ <p class="testimonial-card__text" data-i18n="import_vehicle.i_couldn_t_0e189d72">“Vraiment très satisfait de votre service professionnel. Merci beaucoup IdrisMans Transit et surtout M. Mansour.”</p>
+ <p class="testimonial-card__author" data-i18n="import_vehicle.cathy_clifford_05ffeac8">Ghabi Haythem</p>
+ </div>
+ <div class="testimonial-dots">
+ <div class="testimonial-dot active" onclick="showTestimonial(0)"></div>
+ <div class="testimonial-dot" onclick="showTestimonial(1)"></div>
+ <div class="testimonial-dot" onclick="showTestimonial(2)"></div>
+ <div class="testimonial-dot" onclick="showTestimonial(3)"></div>
+ <div class="testimonial-dot" onclick="showTestimonial(4)"></div>
+ <div class="testimonial-dot" onclick="showTestimonial(5)"></div>
+ <div class="testimonial-dot" onclick="showTestimonial(6)"></div>
+ <div class="testimonial-dot" onclick="showTestimonial(7)"></div>
+ <div class="testimonial-dot" onclick="showTestimonial(8)"></div>
+ <div class="testimonial-dot" onclick="showTestimonial(9)"></div>
 </div>
 </div>
-        <div style="text-align:center; margin-top:var(--space-8);" data-aos="fade-up">
-        <a href="contact.html" class="btn btn--primary" data-i18n="welcome.cta">Get Started</a>
-      </div>
-    </div>
-  </section>
+ <div style="text-align:center; margin-top:var(--space-8);" data-aos="fade-up">
+ <a href="contact.html" class="btn btn--primary" data-i18n="welcome.cta">Get Started</a>
+ </div>
+ </div>
+ </section>
 
-  <!-- CTA -->
-  <section class="cta-section" aria-labelledby="cta-heading">
-    <div class="container">
-      <h2 id="cta-heading" style="font-family:'Montserrat',sans-serif; font-size:clamp(1.6rem,3vw,2.4rem); font-weight:800; color:#fff; margin-bottom:1rem;" data-aos="fade-up" data-i18n="import_vehicle.ready_to_ship_06320474">Ready to Ship Your Vehicle?</h2>
-      <p style="color:rgba(255,255,255,0.8); font-size:1.1rem; max-width:550px; margin:0 auto 2rem;" data-aos="fade-up" data-aos-delay="100" data-i18n="import_vehicle.get_a_free_92bd3dd5">Get a free, no-obligation quote today. Our team is standing by to help.</p>
-      <a href="contact.html" class="btn btn--primary" style="background:#fff; color:var(--color-primary,#1a5f9e); font-size:1.1rem; padding:0.9rem 2.5rem;" data-aos="fade-up" data-aos-delay="200" data-i18n="welcome.cta">Get Started</a>
-    </div>
-  </section>
+ <!-- CTA -->
+ <section class="cta-section" aria-labelledby="cta-heading">
+ <div class="container">
+ <h2 id="cta-heading" style="font-family:'Montserrat',sans-serif; font-size:clamp(1.6rem,3vw,2.4rem); font-weight:800; color:#fff; margin-bottom:1rem;" data-aos="fade-up" data-i18n="import_vehicle.ready_to_ship_06320474">Ready to Ship Your Vehicle?</h2>
+ <p style="color:rgba(255,255,255,0.8); font-size:1.1rem; max-width:550px; margin:0 auto 2rem;" data-aos="fade-up" data-aos-delay="100" data-i18n="import_vehicle.get_a_free_92bd3dd5">Get a free, no-obligation quote today. Our team is standing by to help.</p>
+ <a href="contact.html" class="btn btn--primary" style="background:#fff; color:var(--color-primary,#1a5f9e); font-size:1.1rem; padding:0.9rem 2.5rem;" data-aos="fade-up" data-aos-delay="200" data-i18n="welcome.cta">Get Started</a>
+ </div>
+ </section>
 
-  <!-- FAQ -->
-  <section class="section" aria-labelledby="faq-heading">
-    <div class="container">
-      <div class="section__header" data-aos="fade-up">
-        <h2 class="section__title" id="faq-heading" data-i18n="import_vehicle.common_questions_and_1cd5ea12">Common Questions And Responses</h2>
-        <p style="color:#666; margin-top:0.5rem; font-weight:600;" data-i18n="import_vehicle.l_international_to_4f848917">l'International To l'Afrique RoRo Shipping</p>
-      </div>
-      <div class="accordion" role="list">
+ <!-- FAQ -->
+ <section class="section" aria-labelledby="faq-heading">
+ <div class="container">
+ <div class="section__header" data-aos="fade-up">
+ <h2 class="section__title" id="faq-heading" data-i18n="import_vehicle.common_questions_and_1cd5ea12">Common Questions And Responses</h2>
+ <p style="color:#666; margin-top:0.5rem; font-weight:600;" data-i18n="import_vehicle.l_international_to_4f848917">RoRo Shipping International</p>
+ </div>
+ <div class="accordion" role="list">
 
-        <div class="accordion-item" role="listitem">
-          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq1"><span data-i18n="missing3.can i put anything in my car _44764299">Can I put anything in my car?</span> <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></button>
-          <div class="accordion-content" id="faq1" role="region">It depends on the method of car shipping you choose, if you want to go with Roll on, Roll off then nothing can be left inside the vehicle – all personal items will need to be removed.<br><br>If you would like to send extra items along with the vehicle then we will need to go for either a 20ft or 40ft container, or if you are going to Auckland ex one of the East Coast ports in l'International then you can make use of our 40ft shared container service.</div>
-        </div>
+ <div class="accordion-item" role="listitem">
+ <button class="accordion-trigger" aria-expanded="false" aria-controls="faq1"><span data-i18n="missing3.can i put anything in my car _44764299">Can I put anything in my car?</span> <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></button>
+ <div class="accordion-content" id="faq1" role="region">It depends on the method of car shipping you choose, if you want to go with Roll on, Roll off then nothing can be left inside the vehicle – all personal items will need to be removed.<br><br>If you would like to send extra items along with the vehicle then we will need to go for either a 20ft or 40ft container, or if you are going to Europe from one of the main ports then you can make use of our 40ft shared container service.</div>
+ </div>
 
-        <div class="accordion-item" role="listitem">
-          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq2"><span data-i18n="missing3.why can t i put things in my car when shipping roll on  roll off _ea28ff8e">Why can't I put things in my car when shipping Roll on, Roll off?</span> <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></button>
-          <div class="accordion-content" id="faq2" role="region">Roll on, Roll off shipping is specifically designed for the movement of empty vehicle's, there are several reasons why you can't include personal items with the vehicle:<br><br>
-          • Theft and Pillaging can be a bit of an issue with RoRo shipping – We have no control over who works on the ports or who the shipping line employ to staff the vessel. The vehicle needs to remain unlocked and accessible at all times during the shipping process so customs and quarantine can complete their relevant inspections so if you choose to leave personal items inside the vehicle then these items are more or less 'free for the taking' for anyone working on the port as they all know that they shouldn't be there in the first place<br><br>
-          • The shipping line won't accept any responsibility for any items left inside vehicles, nor will they allow us to declare them on any of the Bills of Lading meaning that any item left inside the vehicle technically means you are trying to smuggle undeclared items in through the border.<br><br>
-          • Lastly, if the shipping lines gave the OK for people to load items inside their vehicle's it would open a pandora's box of what is and isn't allowed.</div>
-        </div>
+ <div class="accordion-item" role="listitem">
+ <button class="accordion-trigger" aria-expanded="false" aria-controls="faq2"><span data-i18n="missing3.why can t i put things in my car when shipping roll on roll off _ea28ff8e">Why can't I put things in my car when shipping Roll on, Roll off?</span> <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></button>
+ <div class="accordion-content" id="faq2" role="region">Roll on, Roll off shipping is specifically designed for the movement of empty vehicle's, there are several reasons why you can't include personal items with the vehicle:<br><br>
+ • Theft and Pillaging can be a bit of an issue with RoRo shipping – We have no control over who works on the ports or who the shipping line employ to staff the vessel. The vehicle needs to remain unlocked and accessible at all times during the shipping process so customs and quarantine can complete their relevant inspections so if you choose to leave personal items inside the vehicle then these items are more or less 'free for the taking' for anyone working on the port as they all know that they shouldn't be there in the first place<br><br>
+ • The shipping line won't accept any responsibility for any items left inside vehicles, nor will they allow us to declare them on any of the Bills of Lading meaning that any item left inside the vehicle technically means you are trying to smuggle undeclared items in through the border.<br><br>
+ • Lastly, if the shipping lines gave the OK for people to load items inside their vehicle's it would open a pandora's box of what is and isn't allowed.</div>
+ </div>
 
-        <div class="accordion-item" role="listitem">
-          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq3"><span data-i18n="missing.can i ship my car still under finance _2b6d81a9">Can I ship my car still under finance?</span> <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></button>
-          <div class="accordion-content" id="faq3" role="region">It completely depends on the conditions of your contract with your finance company, every financial lender is different so the first step will be to contact your current finance company and ask for their terms regarding taking the vehicle out of the country.<br><br>If the finance company will NOT allow the export of the vehicle outside of l'International you still have a couple of options: Pay your loan out here in l'International, take out a personal loan to pay off the vehicle, or re-finance through an l'Internationaln or NZ lender who will allow you to move the vehicle.<br><br>*Please note that if you do have finance owing on a vehicle at the time of arrival into l'Afrique, then you will NOT be eligible for the GST exemption as you technically don't own the vehicle – the finance company does.</div>
-        </div>
+ <div class="accordion-item" role="listitem">
+ <button class="accordion-trigger" aria-expanded="false" aria-controls="faq3"><span data-i18n="missing.can i ship my car still under finance _2b6d81a9">Can I ship my car still under finance?</span> <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></button>
+ <div class="accordion-content" id="faq3" role="region">It completely depends on the conditions of your contract with your finance company, every financial lender is different so the first step will be to contact your current finance company and ask for their terms regarding taking the vehicle out of the country.<br><br>If the finance company will NOT allow the export of the vehicle outside of international you still have a couple of options: Pay your loan out here in international, take out a personal loan to pay off the vehicle, or re-finance through an international or lender who will allow you to move the vehicle.<br><br>*Please note that if you do have finance owing on a vehicle at the time of arrival into l'Afrique, then you will NOT be eligible for the import taxes exemption as you technically don't own the vehicle – the finance company does.</div>
+ </div>
 
-        <div class="accordion-item" role="listitem">
-          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq4"><span data-i18n="missing3.what if i can t get a registration certificate or purchase invoice   bill of sale _0f81fc2a">What if I can't get a registration certificate or Purchase Invoice / Bill of Sale?</span> <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></button>
-          <div class="accordion-content" id="faq4" role="region">If you don't have a registration certificate or old renewal notice lying around then you will need to contact the department of transport and request one to be mailed out to you.<br><br>If you don't have a purchase invoice you will have a couple of options. If you purchase the vehicle through a dealership then you could get in contact with them and ask them to send you out a copy.<br><br>Important: If you can't get any form of bill of sale or any supporting evidence documenting the transaction, then NZ customs will order a valuation on the vehicle on arrival, the valuation will cost AUD 300.00 so it's best to try and dig up the paperwork to avoid this cost if at all possible.</div>
-        </div>
+ <div class="accordion-item" role="listitem">
+ <button class="accordion-trigger" aria-expanded="false" aria-controls="faq4"><span data-i18n="missing3.what if i can t get a registration certificate or purchase invoice bill of sale _0f81fc2a">What if I can't get a registration certificate or Purchase Invoice / Bill of Sale?</span> <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></button>
+ <div class="accordion-content" id="faq4" role="region">If you don't have a registration certificate or old renewal notice lying around then you will need to contact the department of transport and request one to be mailed out to you.<br><br>If you don't have a purchase invoice you will have a couple of options. If you purchase the vehicle through a dealership then you could get in contact with them and ask them to send you out a copy.<br><br>Important: If you can't get any form of bill of sale or any supporting evidence documenting the transaction, then customs will order a valuation on the vehicle on arrival, the valuation will cost EUR 300.00 so it's best to try and dig up the paperwork to avoid this cost if at all possible.</div>
+ </div>
 
-        <div class="accordion-item" role="listitem">
-          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq5"><span data-i18n="missing3.do i apply for the gst exemption _e1df07ab">Do I apply for the GST exemption?</span> <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></button>
-          <div class="accordion-content" id="faq5" role="region" data-i18n="import_vehicle.no_we_do_417c7115">No, we do all this for you, our team over in NZ will work with customs on your behalf to do this all for you.</div>
-        </div>
+ <div class="accordion-item" role="listitem">
+ <button class="accordion-trigger" aria-expanded="false" aria-controls="faq5"><span data-i18n="missing3.do i apply for the gst exemption _e1df07ab">Who handles the customs and VAT formalities?</span> <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></button>
+ <div class="accordion-content" id="faq5" role="region" data-i18n="import_vehicle.no_we_do_417c7115">No, we do all this for you, our team will work with customs on your behalf to do this all for you.</div>
+ </div>
 
-        <div class="accordion-item" role="listitem">
-          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq6"><span data-i18n="missing3.can i drop my car off or pick my car up from the port directly _54175fbc">Can I drop my car off or pick my car up from the port directly?</span> <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></button>
-          <div class="accordion-content" id="faq6" role="region">It is possible to deliver the vehicle into the port yourself in Brisbane, Port Kembla, Melbourne and Adelaide although if you do not hold an MSIC card you will need to pay an escort fee to the terminal and sit through an induction. The induction cost is generally more than the towing cost into the port anyway, so for any port except Port Kembla it's much easier / cheaper just to let us organize the car transportation into the port via our security cleared tow trucks.<br><br>Since Port Kembla is so far away from Sydney (approx 100km) we always give you the option to deliver yourself or to have it collected and delivered via tow truck so the decision is yours.</div>
-        </div>
+ <div class="accordion-item" role="listitem">
+ <button class="accordion-trigger" aria-expanded="false" aria-controls="faq6"><span data-i18n="missing3.can i drop my car off or pick my car up from the port directly _54175fbc">Can I drop my car off or pick my car up from the port directly?</span> <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></button>
+ <div class="accordion-content" id="faq6" role="region">It is possible to deliver the vehicle into the port yourself in Le Havre, Marseille, Antwerp and Rotterdam although if you do not hold an port-access authorisation card you will need to pay an escort fee to the terminal and sit through an induction. The induction cost is generally more than the towing cost into the port anyway, so for any port except Anvers it's much easier / cheaper just to let us organize the car transportation into the port via our security cleared tow trucks.<br><br>Since Anvers is so far away from Paris (approx 100km) we always give you the option to deliver yourself or to have it collected and delivered via tow truck so the decision is yours.</div>
+ </div>
 
-        <div class="accordion-item" role="listitem">
-          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq7"><span data-i18n="missing.do you have to be there when the vehicle is collected _143e1e21">Do you have to be there when the vehicle is collected?</span> <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></button>
-          <div class="accordion-content" id="faq7" role="region" data-i18n="import_vehicle.no_you_can_c631b69e">No, you can nominate a friend or family member to hand the car over to us.</div>
-        </div>
+ <div class="accordion-item" role="listitem">
+ <button class="accordion-trigger" aria-expanded="false" aria-controls="faq7"><span data-i18n="missing.do you have to be there when the vehicle is collected _143e1e21">Do you have to be there when the vehicle is collected?</span> <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></button>
+ <div class="accordion-content" id="faq7" role="region" data-i18n="import_vehicle.no_you_can_c631b69e">No, you can nominate a friend or family member to hand the car over to us.</div>
+ </div>
 
-        <div class="accordion-item" role="listitem">
-          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq8"><span data-i18n="missing3.do i have to be in nz to pick my car up _b99c6126">Do I have to be in NZ to pick my car up?</span> <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></button>
-          <div class="accordion-content" id="faq8" role="region" data-i18n="import_vehicle.no_you_can_14512ead">No, you can nominate anyone to collect the vehicle on your behalf. If you are claiming the GST exemption however you will need to ensure you are somewhere in l'Afrique when the vessel carrying your vehicle arrives into NZ. If you are not claiming the GST exemption and are happy to pay the import tax then you don't need to be in l'Afrique and anyone can collect the car for you.</div>
-        </div>
+ <div class="accordion-item" role="listitem">
+ <button class="accordion-trigger" aria-expanded="false" aria-controls="faq8"><span data-i18n="missing3.do i have to be in nz to pick my car up _b99c6126">Do I have to be in Europe to pick my car up?</span> <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></button>
+ <div class="accordion-content" id="faq8" role="region" data-i18n="import_vehicle.no_you_can_14512ead">No, you can nominate anyone to collect the vehicle on your behalf. If you are claiming the import taxes exemption however you will need to ensure you are somewhere in l'Afrique when the vessel carrying your vehicle arrives in Europe. If you are not claiming the import taxes exemption and are happy to pay the import tax then you don't need to be in l'Afrique and anyone can collect the car for you.</div>
+ </div>
 
-        <div class="accordion-item" role="listitem">
-          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq9"><span data-i18n="missing.can i leave a baby seat in my car _77d9c1d4">Can I leave a baby seat in my car?</span> <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></button>
-          <div class="accordion-content" id="faq9" role="region" data-i18n="import_vehicle.you_can_but_4058ccf8">You can, but we do not recommend it and it's shipped strictly at your own risk. Roll on, Roll off shipping is designed strictly for the movement of empty vehicles, so if you choose to leave the baby seat in there then there is a chance it won't be there at the other end. If you want to ensure you have it over in NZ then you are best off taking it as excess luggage on the plane when you fly across.</div>
-        </div>
+ <div class="accordion-item" role="listitem">
+ <button class="accordion-trigger" aria-expanded="false" aria-controls="faq9"><span data-i18n="missing.can i leave a baby seat in my car _77d9c1d4">Can I leave a baby seat in my car?</span> <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></button>
+ <div class="accordion-content" id="faq9" role="region" data-i18n="import_vehicle.you_can_but_4058ccf8">You can, but we do not recommend it and it's shipped strictly at your own risk. Roll on, Roll off shipping is designed strictly for the movement of empty vehicles, so if you choose to leave the baby seat in there then there is a chance it won't be there at the other end. If you want to ensure you have it then you are best off taking it as excess luggage on the plane when you fly across.</div>
+ </div>
 
-        <div class="accordion-item" role="listitem">
-          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq10"><span data-i18n="missing3.what does the compliance process entail _f6efc604">What does the compliance process entail?</span> <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></button>
-          <div class="accordion-content" id="faq10" role="region" data-i18n="import_vehicle.compliance_is_a_32c817a9">Compliance is a very thorough, one time process that your vehicle has to go through before it can be registered for the first time in NZ. They test a range of safety features on your vehicle – seatbelt restraints, tyre tread, break pads, windscreens, etc. – they strip the inside of the vehicle so that the actual structure of the vehicle can be inspected to ensure it's never been significantly damaged, and they test the emissions that your vehicle produces. Once this process is complete you'll be issued with a certificate of compliance and a warrant of fitness and will be able to register your vehicle.</div>
-        </div>
+ <div class="accordion-item" role="listitem">
+ <button class="accordion-trigger" aria-expanded="false" aria-controls="faq10"><span data-i18n="missing3.what does the compliance process entail _f6efc604">What does the compliance process entail?</span> <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></button>
+ <div class="accordion-content" id="faq10" role="region" data-i18n="import_vehicle.compliance_is_a_32c817a9">Compliance is a very thorough, one time process that your vehicle has to go through before it can be registered for the first time in Europe. They test a range of safety features on your vehicle – seatbelt restraints, tyre tread, break pads, windscreens, etc. – they strip the inside of the vehicle so that the actual structure of the vehicle can be inspected to ensure it's never been significantly damaged, and they test the emissions that your vehicle produces. Once this process is complete you'll be issued with a certificate of compliance and a warrant of fitness and will be able to register your vehicle.</div>
+ </div>
 
-        <div class="accordion-item" role="listitem">
-          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq11"><span data-i18n="missing3.why do i need to put my car through compliance _2753d66c">Why do I need to put my car through compliance?</span> <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></button>
-          <div class="accordion-content" id="faq11" role="region" data-i18n="import_vehicle.your_vehicle_needs_fc68753b">Your vehicle needs to be tested and inspected to ensure it meets l'Afrique's safety and environmental standards set by their transport authority. Basically, they want to make sure your vehicle is fit to be on the road and isn't causing the environment too much harm.</div>
-        </div>
+ <div class="accordion-item" role="listitem">
+ <button class="accordion-trigger" aria-expanded="false" aria-controls="faq11"><span data-i18n="missing3.why do i need to put my car through compliance _2753d66c">Why do I need to put my car through compliance?</span> <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></button>
+ <div class="accordion-content" id="faq11" role="region" data-i18n="import_vehicle.your_vehicle_needs_fc68753b">Your vehicle needs to be tested and inspected to ensure it meets l'Afrique's safety and environmental standards set by their transport authority. Basically, they want to make sure your vehicle is fit to be on the road and isn't causing the environment too much harm.</div>
+ </div>
 
-        <div class="accordion-item" role="listitem">
-          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq12"><span data-i18n="missing3.can i get my car roadworthy here for it to be complied in nz _910a695c">Can I get my car roadworthy here for it to be complied in NZ?</span> <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></button>
-          <div class="accordion-content" id="faq12" role="region" data-i18n="import_vehicle.no_your_vehicle_64712384">No, your vehicle will have to be tested and complied to l'Afrique's safety and environmental rules. While they would be very similar to l'Internationaln standards, it's still a different country with different processes so your vehicle needs to be tested at an authorised l'Afrique testing facility.</div>
-        </div>
+ <div class="accordion-item" role="listitem">
+ <button class="accordion-trigger" aria-expanded="false" aria-controls="faq12"><span data-i18n="missing3.can i get my car roadworthy here for it to be complied in nz _910a695c">Can I get my car roadworthy here for it to be complied in Europe?</span> <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></button>
+ <div class="accordion-content" id="faq12" role="region" data-i18n="import_vehicle.no_your_vehicle_64712384">No, your vehicle will have to be tested and complied to l'Afrique's safety and environmental rules. While they would be very similar to international standards, it's still a different country with different processes so your vehicle needs to be tested at an authorised l'Afrique testing facility.</div>
+ </div>
 
-        <div class="accordion-item" role="listitem">
-          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq13"><span data-i18n="missing3.i want to proceed with a booking what steps do i take from here _ac360f96">I want to proceed with a booking what steps do I take from here?</span> <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></button>
-          <div class="accordion-content" id="faq13" role="region">Our first step is to choose a sailing date. Once we have your dates worked out we'll send you an email with the list of documents and information that we need from you to be able to get your booking in place.<br><br>Vehicle Shipping from l'International is what we specialize in so rest assured you'll be in good hands with IdrisMans.</div>
-        </div>
+ <div class="accordion-item" role="listitem">
+ <button class="accordion-trigger" aria-expanded="false" aria-controls="faq13"><span data-i18n="missing3.i want to proceed with a booking what steps do i take from here _ac360f96">I want to proceed with a booking what steps do I take from here?</span> <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></button>
+ <div class="accordion-content" id="faq13" role="region">Our first step is to choose a sailing date. Once we have your dates worked out we'll send you an email with the list of documents and information that we need from you to be able to get your booking in place.<br><br>Vehicle Shipping from international is what we specialize in so rest assured you'll be in good hands with IdrisMans.</div>
+ </div>
 
-        <div class="accordion-item" role="listitem">
-          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq14"><span data-i18n="missing3.when do i need to pay my invoice _f393246b">When do I need to pay my invoice?</span> <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></button>
-          <div class="accordion-content" id="faq14" role="region" data-i18n="import_vehicle.once_we_have_af546cec">Once we have your booking in place and we know exactly which of our services you wish to use, then we will send you through an invoice and this will need to be paid around the time of shipping. We can accept payment via bank transfer or credit card. We do not require a deposit in order to proceed with a booking.</div>
-        </div>
+ <div class="accordion-item" role="listitem">
+ <button class="accordion-trigger" aria-expanded="false" aria-controls="faq14"><span data-i18n="missing3.when do i need to pay my invoice _f393246b">When do I need to pay my invoice?</span> <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></button>
+ <div class="accordion-content" id="faq14" role="region" data-i18n="import_vehicle.once_we_have_af546cec">Once we have your booking in place and we know exactly which of our services you wish to use, then we will send you through an invoice and this will need to be paid around the time of shipping. We can accept payment via bank transfer or credit card. We do not require a deposit in order to proceed with a booking.</div>
+ </div>
 
-        <div class="accordion-item" role="listitem">
-          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq15"><span data-i18n="missing3.how clean does my car need to be _1795586b">How clean does my car need to be?</span> <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></button>
-          <div class="accordion-content" id="faq15" role="region">When it comes to Car Shipping from l'International, you'll need to be sure that you make an effort to clean it up as best you can prior to shipping.<br><br>Your vehicle will be going through a quarantine inspection when it arrives in NZ, so you'll have to try to make sure there is no biological matter (plant or animal material, grass clippings, seeds, leaves, animal hairs, bugs etc.) on your vehicle prior to shipping to ensure it has the best chance at passing that initial inspection.</div>
-        </div>
+ <div class="accordion-item" role="listitem">
+ <button class="accordion-trigger" aria-expanded="false" aria-controls="faq15"><span data-i18n="missing3.how clean does my car need to be _1795586b">How clean does my car need to be?</span> <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></button>
+ <div class="accordion-content" id="faq15" role="region">When it comes to Car Shipping from international, you'll need to be sure that you make an effort to clean it up as best you can prior to shipping.<br><br>Your vehicle will be going through a quarantine inspection when it arrives in Europe, so you'll have to try to make sure there is no biological matter (plant or animal material, grass clippings, seeds, leaves, animal hairs, bugs etc.) on your vehicle prior to shipping to ensure it has the best chance at passing that initial inspection.</div>
+ </div>
 
-        <div class="accordion-item" role="listitem">
-          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq16"><span data-i18n="missing3.how long does it take to receive my vehicle after the vessel arrives _233c68ee">How long does it take to receive my vehicle after the vessel arrives?</span> <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></button>
-          <div class="accordion-content" id="faq16" role="region">This will depend on your chosen method of shipping.<br><br>Roll on Roll off is 3-5 business days after the arrival of the vessel.<br><br>A dedicated 20ft or 40ft container is 5-8 business days after the arrival of the vessel.<br><br>A shared Container is 7-14 business days after the arrival of the vessel.<br><br>If you choose our compliance included option then allow a further 5 working days extra from the above stated timeframes. Please remember if your car is stopped for quarantine cleaning or treatment purposes it can take longer depending on how much work is required.</div>
-        </div>
+ <div class="accordion-item" role="listitem">
+ <button class="accordion-trigger" aria-expanded="false" aria-controls="faq16"><span data-i18n="missing3.how long does it take to receive my vehicle after the vessel arrives _233c68ee">How long does it take to receive my vehicle after the vessel arrives?</span> <span class="icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span></button>
+ <div class="accordion-content" id="faq16" role="region">This will depend on your chosen method of shipping.<br><br>Roll on Roll off is 3-5 business days after the arrival of the vessel.<br><br>A dedicated 20ft or 40ft container is 5-8 business days after the arrival of the vessel.<br><br>A shared Container is 7-14 business days after the arrival of the vessel.<br><br>If you choose our compliance included option then allow a further 5 working days extra from the above stated timeframes. Please remember if your car is stopped for quarantine cleaning or treatment purposes it can take longer depending on how much work is required.</div>
+ </div>
 
-      </div>
-    </div>
-  </section>
+ </div>
+ </div>
+ </section>
 
-  <!-- AWARDS -->
-  <section class="awards-section" aria-labelledby="awards-heading">
-    <div class="container">
-      <div style="text-align:center; margin-bottom:var(--space-10);" data-aos="fade-up">
-        <h2 id="awards-heading" style="font-family:'Montserrat',sans-serif; font-size:clamp(1.4rem,3vw,2rem); font-weight:800; color:#fff;" data-i18n="awards.title">Award Winning Industry Leader</h2>
-      </div>
-      <div class="awards-grid">
-        <div class="award-badge" data-aos="zoom-in" data-aos-delay="100">
-          <div class="award-badge__icon"><i class="fa-solid fa-trophy" style="color:#ffd700;"></i></div>
-          <div class="award-badge__status" style="font-size:0.75rem; font-weight:700; text-transform:uppercase; color:#ffd700; margin-bottom:0.25rem;" data-i18n="import_vehicle.winner_b5a15fdf">WINNER</div>
-          <div class="award-badge__label" data-i18n="import_vehicle.best_international_automotive_fc300dc8">Best International Automotive Cargo Logistics Enterprise - 2021</div>
-        </div>
-        <div class="award-badge" data-aos="zoom-in" data-aos-delay="150">
-          <div class="award-badge__icon"><i class="fa-solid fa-trophy" style="color:#ffd700;"></i></div>
-          <div class="award-badge__status" style="font-size:0.75rem; font-weight:700; text-transform:uppercase; color:#ffd700; margin-bottom:0.25rem;" data-i18n="import_vehicle.winner_b5a15fdf">WINNER</div>
-          <div class="award-badge__label" data-i18n="import_vehicle.award_for_innovation_b9e0268c">Award for Innovation in End-to-End Freight Transport - 2021</div>
-        </div>
-        <div class="award-badge" data-aos="zoom-in" data-aos-delay="200">
-          <div class="award-badge__icon"><i class="fa-solid fa-medal" style="color:#c0c0c0;"></i></div>
-          <div class="award-badge__status" style="font-size:0.75rem; font-weight:700; text-transform:uppercase; color:#c0c0c0; margin-bottom:0.25rem;" data-i18n="import_vehicle.finalist_b89b34c9">FINALIST</div>
-          <div class="award-badge__label" data-i18n="import_vehicle.freight_forwarder_of_4fb1fb1a">Freight Forwarder of the Year Award - 2018</div>
-        </div>
-        <div class="award-badge" data-aos="zoom-in" data-aos-delay="250">
-          <div class="award-badge__icon"><i class="fa-solid fa-medal" style="color:#c0c0c0;"></i></div>
-          <div class="award-badge__status" style="font-size:0.75rem; font-weight:700; text-transform:uppercase; color:#c0c0c0; margin-bottom:0.25rem;" data-i18n="import_vehicle.finalist_b89b34c9">FINALIST</div>
-          <div class="award-badge__label" data-i18n="import_vehicle.young_achievement_award_534feafc">Young Achievement Award 2018 (Nick Proctor)</div>
-        </div>
-        <div class="award-badge" data-aos="zoom-in" data-aos-delay="300">
-          <div class="award-badge__icon"><i class="fa-solid fa-medal" style="color:#c0c0c0;"></i></div>
-          <div class="award-badge__status" style="font-size:0.75rem; font-weight:700; text-transform:uppercase; color:#c0c0c0; margin-bottom:0.25rem;" data-i18n="import_vehicle.finalist_b89b34c9">FINALIST</div>
-          <div class="award-badge__label" data-i18n="import_vehicle.young_achievement_award_7520195c">Young Achievement Award 2018 (Mel Mather)</div>
-        </div>
-        <div class="award-badge" data-aos="zoom-in" data-aos-delay="350">
-          <div class="award-badge__icon"><i class="fa-solid fa-medal" style="color:#c0c0c0;"></i></div>
-          <div class="award-badge__status" style="font-size:0.75rem; font-weight:700; text-transform:uppercase; color:#c0c0c0; margin-bottom:0.25rem;" data-i18n="import_vehicle.finalist_b89b34c9">FINALIST</div>
-          <div class="award-badge__label" data-i18n="import_vehicle.freight_forwarder_of_f627ef26">Freight Forwarder of the Year Award - 2017</div>
-        </div>
-        <div class="award-badge" data-aos="zoom-in" data-aos-delay="400">
-          <div class="award-badge__icon"><i class="fa-solid fa-medal" style="color:#c0c0c0;"></i></div>
-          <div class="award-badge__status" style="font-size:0.75rem; font-weight:700; text-transform:uppercase; color:#c0c0c0; margin-bottom:0.25rem;" data-i18n="import_vehicle.finalist_b89b34c9">FINALIST</div>
-          <div class="award-badge__label" data-i18n="import_vehicle.young_maritime_professional_02f68a85">Young Maritime Professional of the Year 2016</div>
-        </div>
-      </div>
-    </div>
-  </section>
+ <!-- AWARDS -->
+ <section class="awards-section" aria-labelledby="awards-heading">
+ <div class="container">
+ <div style="text-align:center; margin-bottom:var(--space-10);" data-aos="fade-up">
+ <h2 id="awards-heading" style="font-family:'Montserrat',sans-serif; font-size:clamp(1.4rem,3vw,2rem); font-weight:800; color:#fff;" data-i18n="awards.title">Award Winning Industry Leader</h2>
+ </div>
+ <div class="awards-grid">
+ <div class="award-badge" data-aos="zoom-in" data-aos-delay="100">
+ <div class="award-badge__icon"><i class="fa-solid fa-trophy" style="color:#ffd700;"></i></div>
+ <div class="award-badge__status" style="font-size:0.75rem; font-weight:700; text-transform:uppercase; color:#ffd700; margin-bottom:0.25rem;" data-i18n="import_vehicle.winner_b5a15fdf">WINNER</div>
+ <div class="award-badge__label" data-i18n="import_vehicle.best_international_automotive_fc300dc8">Best International Automotive Cargo Logistics Enterprise - 2021</div>
+ </div>
+ <div class="award-badge" data-aos="zoom-in" data-aos-delay="150">
+ <div class="award-badge__icon"><i class="fa-solid fa-trophy" style="color:#ffd700;"></i></div>
+ <div class="award-badge__status" style="font-size:0.75rem; font-weight:700; text-transform:uppercase; color:#ffd700; margin-bottom:0.25rem;" data-i18n="import_vehicle.winner_b5a15fdf">WINNER</div>
+ <div class="award-badge__label" data-i18n="import_vehicle.award_for_innovation_b9e0268c">Award for Innovation in End-to-End Freight Transport - 2021</div>
+ </div>
+ <div class="award-badge" data-aos="zoom-in" data-aos-delay="200">
+ <div class="award-badge__icon"><i class="fa-solid fa-medal" style="color:#c0c0c0;"></i></div>
+ <div class="award-badge__status" style="font-size:0.75rem; font-weight:700; text-transform:uppercase; color:#c0c0c0; margin-bottom:0.25rem;" data-i18n="import_vehicle.finalist_b89b34c9">FINALIST</div>
+ <div class="award-badge__label" data-i18n="import_vehicle.freight_forwarder_of_4fb1fb1a">Freight Forwarder of the Year Award - 2018</div>
+ </div>
+ <div class="award-badge" data-aos="zoom-in" data-aos-delay="250">
+ <div class="award-badge__icon"><i class="fa-solid fa-medal" style="color:#c0c0c0;"></i></div>
+ <div class="award-badge__status" style="font-size:0.75rem; font-weight:700; text-transform:uppercase; color:#c0c0c0; margin-bottom:0.25rem;" data-i18n="import_vehicle.finalist_b89b34c9">FINALIST</div>
+ <div class="award-badge__label" data-i18n="import_vehicle.young_achievement_award_534feafc">Young Achievement Award 2018 (Nick Proctor)</div>
+ </div>
+ <div class="award-badge" data-aos="zoom-in" data-aos-delay="300">
+ <div class="award-badge__icon"><i class="fa-solid fa-medal" style="color:#c0c0c0;"></i></div>
+ <div class="award-badge__status" style="font-size:0.75rem; font-weight:700; text-transform:uppercase; color:#c0c0c0; margin-bottom:0.25rem;" data-i18n="import_vehicle.finalist_b89b34c9">FINALIST</div>
+ <div class="award-badge__label" data-i18n="import_vehicle.young_achievement_award_7520195c">Young Achievement Award 2018 (Mel Mather)</div>
+ </div>
+ <div class="award-badge" data-aos="zoom-in" data-aos-delay="350">
+ <div class="award-badge__icon"><i class="fa-solid fa-medal" style="color:#c0c0c0;"></i></div>
+ <div class="award-badge__status" style="font-size:0.75rem; font-weight:700; text-transform:uppercase; color:#c0c0c0; margin-bottom:0.25rem;" data-i18n="import_vehicle.finalist_b89b34c9">FINALIST</div>
+ <div class="award-badge__label" data-i18n="import_vehicle.freight_forwarder_of_f627ef26">Freight Forwarder of the Year Award - 2017</div>
+ </div>
+ <div class="award-badge" data-aos="zoom-in" data-aos-delay="400">
+ <div class="award-badge__icon"><i class="fa-solid fa-medal" style="color:#c0c0c0;"></i></div>
+ <div class="award-badge__status" style="font-size:0.75rem; font-weight:700; text-transform:uppercase; color:#c0c0c0; margin-bottom:0.25rem;" data-i18n="import_vehicle.finalist_b89b34c9">FINALIST</div>
+ <div class="award-badge__label" data-i18n="import_vehicle.young_maritime_professional_02f68a85">Young Maritime Professional of the Year 2016</div>
+ </div>
+ </div>
+ </div>
+ </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__grid">
-        <div class="footer__brand"><a href="../index.html" class="footer__logo"><img src="../logo.png" alt="IdrisMans Transit" style="max-height: 80px; width: auto; object-fit: contain;"></a><address class="footer__address" style="font-style:normal;">IdrisMans Transit<br>15 Rue Jules Guesde,<br>75014 Paris, France</address><div class="footer__contacts"><a href="tel:+33695724985" class="footer__contact-item"><i class="fa-solid fa-phone"></i> +33 6 95 72 49 85</a><a href="tel:+33695724985" class="footer__contact-item"><i class="fa-solid fa-phone"></i> +33 6 95 72 49 85</a><a href="mailto:commercial@IdrisMans.com.au" class="footer__contact-item"><i class="fa-solid fa-envelope"></i> commercial@IdrisMans.com.au</a></div></div>
-        <div class="footer__col"><h3 class="footer__col-title" data-i18n="footer.navigation">Navigation</h3><ul class="footer__links"><li><a href="about.html" class="footer__link" data-i18n="nav.about">About Us</a></li><li><a href="what-we-ship.html" class="footer__link" data-i18n="footer.what_we_ship">What We Ship</a></li><li><a href="gallery.html" class="footer__link" data-i18n="nav.gallery">Gallery</a></li><li><a href="contact.html" class="footer__link" data-i18n="nav.contact">Contact Us</a></li></ul></div>
-        <div class="footer__col"><h3 class="footer__col-title" data-i18n="nav.services">
+ <!-- FOOTER -->
+ <footer class="footer">
+ <div class="container">
+ <div class="footer__grid">
+ <div class="footer__brand"><a href="../index.html" class="footer__logo"><img src="../logo.png" alt="IdrisMans Transit" style="max-height: 80px; width: auto; object-fit: contain;"></a><address class="footer__address" style="font-style:normal;">IdrisMans Transit<br>15 Rue Jules Guesde,<br>75014 Paris, France</address><div class="footer__contacts"><a href="tel:+33695724985" class="footer__contact-item"><i class="fa-solid fa-phone"></i> +33 6 95 72 49 85</a><a href="tel:+33695724985" class="footer__contact-item"><i class="fa-solid fa-phone"></i> +33 6 95 72 49 85</a><a href="mailto:contact@idrismans.com" class="footer__contact-item"><i class="fa-solid fa-envelope"></i> contact@idrismans.com</a></div></div>
+ <div class="footer__col"><h3 class="footer__col-title" data-i18n="footer.navigation">Navigation</h3><ul class="footer__links"><li><a href="about.html" class="footer__link" data-i18n="nav.about">About Us</a></li><li><a href="what-we-ship.html" class="footer__link" data-i18n="footer.what_we_ship">What We Ship</a></li><li><a href="gallery.html" class="footer__link" data-i18n="nav.gallery">Gallery</a></li><li><a href="contact.html" class="footer__link" data-i18n="nav.contact">Contact Us</a></li></ul></div>
+ <div class="footer__col"><h3 class="footer__col-title" data-i18n="nav.services">
 Services
 </h3><ul class="footer__links"><li><a href="importing.html" class="footer__link" data-i18n="nav.importing">
 Importation vers la France / UE
 </a></li><li><a href="exporting.html" class="footer__link" data-i18n="nav.exporting">
 Exportation depuis la France / UE
-</a></li><li></li><li><a href="freight-forwarder.html" class="footer__link" data-i18n="nav.freight_forwarding">Freight Forwarding</a></li><li><a href="customs.html" class="footer__link" data-i18n="nav.customs">Custom Services &amp; Clearances</a></li><li><a href="warehousing.html" class="footer__link" data-i18n="nav.warehousing">Warehousing &amp; Transport</a></li><li><a href="project-logistics.html" class="footer__link" data-i18n="nav.project_logistics">Project Logistics &amp; Management</a></li></ul></div>
-        <div class="footer__col"><h3 class="footer__col-title" data-i18n="footer.what_we_ship">What We Ship</h3><ul class="footer__links"><li><a href="import-car.html" class="footer__link" data-i18n="nav.vehicles">Vehicles</a></li><li><a href="import-boat.html" class="footer__link" data-i18n="nav.boats">Boats</a></li><li><a href="import-motorcycle.html" class="footer__link" data-i18n="nav.motorcycles">Motorcycles</a></li><li><a href="import-motorhome.html" class="footer__link" data-i18n="nav.motorhomes">Motorhomes</a></li><li><a href="import-caravan.html" class="footer__link" data-i18n="nav.caravans">Caravans</a></li><li><a href="import-machinery.html" class="footer__link" data-i18n="nav.machinery">Machinery</a></li></ul></div>
-        <div class="footer__col"><h3 class="footer__col-title" data-i18n="footer.quick_links">Quick Links</h3><ul class="footer__links"><li><a href="about.html" class="footer__link" data-i18n="footer.who_are_we">Who are we?</a></li><li><a href="contact.html" class="footer__link" data-i18n="nav.contact">Contact Us</a></li><li><a href="import-vehicle.html" class="footer__link" data-i18n="footer.get_quote">Get Instant Quote</a></li>
-            <li><a href="faq.html" class="footer__link" data-i18n="footer.blog">Blog</a></li></ul></div>
-      </div>
-      <div class="footer__bottom"><p class="footer__copyright" data-i18n="footer.copyright">© 2026 IdrisMans Transit. All Rights Reserved.</p><div class="footer__legal-links"><a href="terms.html" class="footer__legal-link" data-i18n="footer.terms">Terms</a><a href="privacy.html" class="footer__legal-link" data-i18n="footer.privacy">Privacy</a><a href="faq.html" class="footer__legal-link" data-i18n="footer.faqs">FAQs</a></div><div class="footer__dmca"><a href="https://www.dmca.com/Protection/Status.aspx" target="_blank" rel="noopener"><img src="https://images.dmca.com/Badges/dmca_protected_sml_120n.png" alt="DMCA.com Protection Status" width="120" height="24" loading="lazy"></a></div></div>
-    </div>
-  </footer>
+</a></li><li></li><li><a href="freight-forwarder.html" class="footer__link" data-i18n="nav.freight_forwarding">Freight Forwarding</a></li><li><a href="customs.html" class="footer__link" data-i18n="nav.customs">Custom Services &amp; Clearances</a></li><li><a href="warehousing.html" class="footer__link" data-i18n="nav.warehousing">Warehousing &amp; Transport</a></li><li><a href="project-logistics.html" class="footer__link" data-i18n="nav.project_logistics">Project Logistics &amp; Management</a></li><li><a href="china-to-europe.html" class="footer__link" data-i18n="nav.china_europe">Chine → Europe</a></li><li><a href="africa-europe-freight.html" class="footer__link" data-i18n="nav.africa_europe">Afrique ↔ Europe</a></li><li><a href="asia-europe-freight.html" class="footer__link" data-i18n="nav.asia_europe">Asie → Europe</a></li><li><a href="vehicles-africa-europe.html" class="footer__link" data-i18n="nav.veh_africa_europe">Véhicules Afrique ↔ Europe</a></li><li><a href="crates.html" class="footer__link" data-i18n="nav.crates">Caisses &amp; Emballage</a></li><li><a href="roro-shipping-schedule.html" class="footer__link" data-i18n="nav.roro">Calendrier RoRo</a></li><li><a href="hub-paris.html" class="footer__link" data-i18n="nav.hub_paris">Hub Paris</a></li><li><a href="hub-le-havre.html" class="footer__link" data-i18n="nav.hub_le_havre">Hub Le Havre</a></li><li><a href="hub-marseille.html" class="footer__link" data-i18n="nav.hub_marseille">Hub Marseille</a></li></ul></div>
+ <div class="footer__col"><h3 class="footer__col-title" data-i18n="footer.what_we_ship">What We Ship</h3><ul class="footer__links"><li><a href="import-car.html" class="footer__link" data-i18n="nav.vehicles">Vehicles</a></li><li><a href="import-boat.html" class="footer__link" data-i18n="nav.boats">Boats</a></li><li><a href="import-motorcycle.html" class="footer__link" data-i18n="nav.motorcycles">Motorcycles</a></li><li><a href="import-motorhome.html" class="footer__link" data-i18n="nav.motorhomes">Motorhomes</a></li><li><a href="import-caravan.html" class="footer__link" data-i18n="nav.caravans">Caravans</a></li><li><a href="import-machinery.html" class="footer__link" data-i18n="nav.machinery">Machinery</a></li></ul></div>
+ <div class="footer__col"><h3 class="footer__col-title" data-i18n="footer.quick_links">Quick Links</h3><ul class="footer__links"><li><a href="about.html" class="footer__link" data-i18n="footer.who_are_we">Who are we?</a></li><li><a href="contact.html" class="footer__link" data-i18n="nav.contact">Contact Us</a></li><li><a href="import-vehicle.html" class="footer__link" data-i18n="footer.get_quote">Get Instant Quote</a></li>
+ <li><a href="faq.html" class="footer__link" data-i18n="footer.blog">Blog</a></li></ul></div>
+ </div>
+ <div class="footer__bottom"><p class="footer__copyright" data-i18n="footer.copyright">© 2026 IdrisMans Transit. All Rights Reserved.</p><div class="footer__legal-links"><a href="mentions-legales.html" class="footer__legal-link" data-i18n="footer.mentions">Mentions légales</a><a href="terms.html" class="footer__legal-link" data-i18n="footer.terms">CGU</a><a href="privacy.html" class="footer__legal-link" data-i18n="footer.privacy">Confidentialité</a><a href="reclamation.html" class="footer__legal-link" data-i18n="footer.reclamation">Réclamation</a><a href="faq.html" class="footer__legal-link" data-i18n="footer.faqs">FAQs</a></div><div class="footer__dmca"><a href="https://www.dmca.com/Protection/Status.aspx" target="_blank" rel="noopener"><img src="https://images.dmca.com/Badges/dmca_protected_sml_120n.png" alt="DMCA.com Protection Status" width="120" height="24" loading="lazy"></a></div></div>
+ </div>
+ </footer>
 
-  <script src="../js/navbar.js" defer></script>
-  <script src="../js/animations.js" defer></script>
-  <script src="../js/forms.js" defer></script>
-  <script src="../js/main.js" defer></script>
-  <script src="../js/i18n.js" defer></script>
-  <script>
-    // Simple accordion
-    document.querySelectorAll('.accordion-trigger').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const expanded = btn.getAttribute('aria-expanded') === 'true';
-        document.querySelectorAll('.accordion-trigger').forEach(b => { b.setAttribute('aria-expanded', 'false'); });
-        document.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('is-open'));
-        if (!expanded) {
-          btn.setAttribute('aria-expanded', 'true');
-          document.getElementById(btn.getAttribute('aria-controls')).classList.add('is-open');
-        }
-      });
-    });
-  </script>
+ <script src="../js/navbar.js" defer></script>
+ <script src="../js/animations.js" defer></script>
+ <script src="../js/forms.js" defer></script>
+ <script src="../js/main.js" defer></script>
+ <script src="../js/i18n.js" defer></script>
+ <script>
+ // Simple accordion
+ document.querySelectorAll('.accordion-trigger').forEach(btn => {
+ btn.addEventListener('click', () => {
+ const expanded = btn.getAttribute('aria-expanded') === 'true';
+ document.querySelectorAll('.accordion-trigger').forEach(b => { b.setAttribute('aria-expanded', 'false'); });
+ document.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('is-open'));
+ if (!expanded) {
+ btn.setAttribute('aria-expanded', 'true');
+ document.getElementById(btn.getAttribute('aria-controls')).classList.add('is-open');
+ }
+ });
+ });
+ </script>
 
-  <script>
-    var slides = document.querySelectorAll('.testimonial-slide');
-    var dots   = document.querySelectorAll('.testimonial-dot');
-    var current = 0;
-    var timer;
+ <script>
+ var slides = document.querySelectorAll('.testimonial-slide');
+ var dots = document.querySelectorAll('.testimonial-dot');
+ var current = 0;
+ var timer;
 
-    function showTestimonial(index) {
-      if(!slides.length) return;
-      slides[current].classList.remove('active');
-      if (dots[current]) dots[current].classList.remove('active');
-      current = (index + slides.length) % slides.length;
-      slides[current].classList.add('active');
-      if (dots[current]) dots[current].classList.add('active');
-      resetTimer();
-    }
+ function showTestimonial(index) {
+ if(!slides.length) return;
+ slides[current].classList.remove('active');
+ if (dots[current]) dots[current].classList.remove('active');
+ current = (index + slides.length) % slides.length;
+ slides[current].classList.add('active');
+ if (dots[current]) dots[current].classList.add('active');
+ resetTimer();
+ }
 
-    function autoPlay() {
-      if(!slides.length) return;
-      showTestimonial(current + 1);
-    }
+ function autoPlay() {
+ if(!slides.length) return;
+ showTestimonial(current + 1);
+ }
 
-    function resetTimer() {
-      clearInterval(timer);
-      timer = setInterval(autoPlay, 5000);
-    }
+ function resetTimer() {
+ clearInterval(timer);
+ timer = setInterval(autoPlay, 5000);
+ }
 
-    if(slides.length > 0) {
-      resetTimer();
-    }
-  </script>
+ if(slides.length > 0) {
+ resetTimer();
+ }
+ </script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 /*
- * buttons.css — Willship International Clone
+ * buttons.css — IdrisMans Transit
  * Tous les styles de boutons avec états normal / hover / active / disabled
  */
 
@@ -30,7 +30,7 @@
   outline-offset: 3px;
 }
 
-/* ─── Bouton primaire (orange-rouge Willship) ─── */
+/* ─── Bouton primaire (rouge vif IdrisMans) ─── */
 
 .btn--primary {
   background-color: var(--color-primary);
